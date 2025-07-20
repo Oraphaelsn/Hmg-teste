@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import EstanciaLogoSVG from "./logo-svg";
+import logoImage from "@assets/image_1752987732055.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +35,11 @@ export default function Header() {
               {/* Subtle shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800 rounded-xl"></div>
               
-              <EstanciaLogoSVG className="w-8 h-8 relative z-10 drop-shadow-sm" color="white" />
+              <img 
+                src={logoImage} 
+                alt="Estância Morro Grande" 
+                className="w-10 h-8 object-contain relative z-10 drop-shadow-sm filter brightness-0 invert"
+              />
             </div>
             <div className="flex flex-col relative">
               {/* Text container with subtle styling */}
