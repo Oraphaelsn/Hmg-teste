@@ -28,15 +28,15 @@ export default function TreatmentsSection() {
             </p>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-center">
-                <Check className="text-secondary mr-3" size={20} />
+                <Check className="text-secondary mr-3 hover:scale-110 transition-transform duration-300" size={24} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.1))' }} />
                 Avaliação psiquiátrica completa
               </li>
               <li className="flex items-center">
-                <Check className="text-secondary mr-3" size={20} />
+                <Check className="text-secondary mr-3 hover:scale-110 transition-transform duration-300" size={24} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.1))' }} />
                 Terapia individual e em grupo
               </li>
               <li className="flex items-center">
-                <Check className="text-secondary mr-3" size={20} />
+                <Check className="text-secondary mr-3 hover:scale-110 transition-transform duration-300" size={24} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.1))' }} />
                 Acompanhamento medicamentoso
               </li>
             </ul>
@@ -56,15 +56,15 @@ export default function TreatmentsSection() {
             </p>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-center">
-                <Check className="text-secondary mr-3" size={20} />
+                <Check className="text-secondary mr-3 hover:scale-110 transition-transform duration-300" size={24} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.1))' }} />
                 Desintoxicação supervisionada
               </li>
               <li className="flex items-center">
-                <Check className="text-secondary mr-3" size={20} />
+                <Check className="text-secondary mr-3 hover:scale-110 transition-transform duration-300" size={24} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.1))' }} />
                 Programa de prevenção à recaída
               </li>
               <li className="flex items-center">
-                <Check className="text-secondary mr-3" size={20} />
+                <Check className="text-secondary mr-3 hover:scale-110 transition-transform duration-300" size={24} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.1))' }} />
                 Terapia cognitivo-comportamental
               </li>
             </ul>
@@ -97,26 +97,26 @@ export default function TreatmentsSection() {
           <h3 className="text-3xl font-bold text-brand-green mb-8">Equipe Multidisciplinar 24h</h3>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Brain className="text-primary drop-shadow-sm" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                <Brain className="text-primary drop-shadow-sm hover:scale-110 transition-transform duration-300" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Psiquiatras</h4>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-secondary text-5xl font-bold tracking-wider drop-shadow-sm" style={{ fontFamily: 'serif', textShadow: '2px 2px 4px rgba(0,0,0,0.15)', fontSize: '2.5rem' }}>Ψ</div>
+              <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                <div className="text-secondary font-bold tracking-wider drop-shadow-sm hover:scale-110 transition-transform duration-300" style={{ fontFamily: 'serif', textShadow: '2px 2px 4px rgba(0,0,0,0.15)', fontSize: '2.25rem' }}>Ψ</div>
               </div>
               <h4 className="font-semibold text-slate-800">Psicólogos</h4>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserCheck className="text-accent drop-shadow-sm" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
+              <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                <UserCheck className="text-accent drop-shadow-sm hover:scale-110 transition-transform duration-300" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Enfermagem</h4>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-primary drop-shadow-sm" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                <Shield className="text-primary drop-shadow-sm hover:scale-110 transition-transform duration-300" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Monitores 24h</h4>
             </div>

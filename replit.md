@@ -159,6 +159,14 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 ## Recent Changes (July 20, 2025)
 
 ✓ **MIGRAÇÃO COMPLETA PARA REPLIT**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
+✓ **ÍCONES MELHORADOS GLOBALMENTE**: Implementadas animações suaves e efeitos visuais em todos os ícones informativos
+  - Ícone de psicologia atualizado para símbolo Ψ (psi) oficial com tipografia serif elegante
+  - Ícones de psiquiatras mantidos como Brain (cérebro) representando área médica neurológica
+  - Todos os ícones da equipe multidisciplinar com hover animations e sombras profissionais
+  - Ícones de checkmarks aumentados e animados nas listas de benefícios
+  - Ícones de diferenciais na seção estrutura com efeitos hover scale e sombras
+  - Ícones do footer (contato, localização, telefone) com animações hover suaves
+  - Ícone de confidencialidade (Shield) aprimorado com efeitos visuais
 ✓ **BANCO DE DADOS IMPLEMENTADO**: Adicionada tabela de vídeos com schema completo
 ✓ **VÍDEO LOCAL INTEGRADO**: Substituído vídeo externo pelo arquivo local "WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4"
 ✓ **API DE VÍDEOS**: Implementadas rotas REST para gerenciar vídeos por seção

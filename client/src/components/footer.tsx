@@ -66,19 +66,19 @@ export default function Footer() {
             <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white text-center">Contato</h4>
             <div className="space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm">
               <div className="flex items-start">
-                <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0" size={16} />
+                <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0 hover:scale-110 transition-transform duration-300" size={18} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))' }} />
                 <span>Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
               </div>
               <div className="flex items-center">
-                <Phone className="mr-3 text-[#2c744c]" size={16} />
+                <Phone className="mr-3 text-[#2c744c] hover:scale-110 transition-transform duration-300" size={18} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))' }} />
                 <span>(11) 3333-4444</span>
               </div>
               <div className="flex items-center">
-                <MessageCircle className="mr-3 text-[#25D366]" size={16} />
+                <MessageCircle className="mr-3 text-[#25D366] hover:scale-110 transition-transform duration-300" size={18} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))' }} />
                 <span>(11) 99999-9999</span>
               </div>
               <div className="flex items-center">
-                <Mail className="mr-3 text-[#2c744c]" size={16} />
+                <Mail className="mr-3 text-[#2c744c] hover:scale-110 transition-transform duration-300" size={18} style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))' }} />
                 <span>contato@estanciamorrogrande.com.br</span>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="mt-12 flex justify-center">
           <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 max-w-md text-center">
             <div className="flex items-center justify-center mb-3">
-              <Shield className="text-[#2c744c] mr-2" size={20} />
+              <Shield className="text-[#2c744c] mr-2 hover:scale-110 transition-transform duration-300" size={22} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.3))' }} />
               <span className="font-medium text-base text-white">Confidencialidade Total</span>
             </div>
             <p className="text-gray-400 text-sm">

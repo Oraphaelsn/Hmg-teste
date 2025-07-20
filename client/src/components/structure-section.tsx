@@ -96,8 +96,8 @@ export default function StructureSection() {
               const IconComponent = differential.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-${differential.color}/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
-                    <IconComponent className={`text-${differential.color}`} size={24} />
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-${differential.color}/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 hover:scale-105 transition-all duration-300 hover:shadow-lg`}>
+                    <IconComponent className={`text-${differential.color} hover:scale-110 transition-transform duration-300`} size={28} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.1))' }} />
                   </div>
                   <h4 className="text-base sm:text-lg font-semibold text-slate-800 mb-2">{differential.title}</h4>
                   <p className="text-slate-600 text-xs sm:text-sm">{differential.description}</p>
