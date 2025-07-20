@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { UserCheck } from "lucide-react";
-import { useEffect } from "react";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -10,61 +9,19 @@ export default function HeroSection() {
     }
   };
 
-  useEffect(() => {
-    const video = document.querySelector('.hero-video') as HTMLVideoElement;
-    if (video) {
-      const resizeVideo = () => {
-        const container = video.parentElement;
-        if (container) {
-          const containerWidth = container.offsetWidth;
-          const containerHeight = container.offsetHeight;
-          const videoAspectRatio = 16 / 9; // Assuming video is 16:9
-          
-          let newWidth, newHeight;
-          
-          if (containerWidth / containerHeight > videoAspectRatio) {
-            // Container is wider than video aspect ratio
-            newWidth = containerWidth;
-            newHeight = containerWidth / videoAspectRatio;
-          } else {
-            // Container is taller than video aspect ratio
-            newHeight = containerHeight;
-            newWidth = containerHeight * videoAspectRatio;
-          }
-          
-          video.style.width = `${newWidth}px`;
-          video.style.height = `${newHeight}px`;
-          video.style.left = `${(containerWidth - newWidth) / 2}px`;
-          video.style.top = `${(containerHeight - newHeight) / 2}px`;
-        }
-      };
-      
-      resizeVideo();
-      window.addEventListener('resize', resizeVideo);
-      window.addEventListener('orientationchange', resizeVideo);
-      
-      return () => {
-        window.removeEventListener('resize', resizeVideo);
-        window.removeEventListener('orientationchange', resizeVideo);
-      };
-    }
-  }, []);
-
   return (
-    <section id="inicio" className="hero-section pt-20 relative min-h-screen flex items-center justify-center">
+    <section id="inicio" className="hero-section pt-20 relative overflow-hidden" style={{ minHeight: '100vh', minHeight: '100dvh' }}>
       {/* High-Quality Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full">
         <video
-          className="hero-video filter brightness-110 contrast-105 saturate-110"
+          className="hero-video-mobile md:hero-video-desktop"
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
           style={{
-            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
-            position: 'absolute',
-            objectFit: 'cover'
+            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)'
           }}
         >
           {/* Multiple sources for better quality and compatibility */}
