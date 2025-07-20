@@ -169,11 +169,21 @@ export default function ContactForm() {
 
             <Button 
               type="submit" 
-              className="w-full gradient-brand-bg text-white font-semibold py-3 px-6 h-auto hover:opacity-90 transition-all duration-300 transform hover:scale-105"
+              className="relative w-full bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-varela font-black py-5 px-8 h-auto text-lg rounded-full transform hover:scale-110 transition-all duration-500 shadow-xl shadow-[#2c744c]/30 hover:shadow-2xl hover:shadow-[#2c744c]/60 group overflow-hidden"
               disabled={submitLead.isPending}
             >
-              <Send className="mr-2" size={20} />
-              {submitLead.isPending ? "Enviando..." : "Solicitar Atendimento"}
+              {/* Pulse animation background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full animate-pulse"></div>
+              
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div className="relative flex items-center justify-center">
+                <div className="bg-white/20 p-1 rounded-full mr-3 group-hover:bg-white/30 transition-colors duration-300">
+                  <Send className="text-white" size={20} />
+                </div>
+                <span className="tracking-wide">{submitLead.isPending ? "Enviando..." : "Solicitar Atendimento"}</span>
+              </div>
             </Button>
 
             <div className="mt-6 text-center">
