@@ -10,17 +10,53 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/30 border-b border-emerald-400/20">
-      {/* Soft edge shadows */}
-      <div className="absolute -bottom-2 left-0 right-0 h-2 bg-gradient-to-b from-black/20 to-transparent blur-sm"></div>
-      <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/15 to-transparent blur-sm"></div>
-      <div className="absolute -right-2 top-0 bottom-0 w-2 bg-gradient-to-l from-black/15 to-transparent blur-sm"></div>
+    <header className="fixed top-0 w-full z-50 overflow-hidden">
+      {/* Container principal com efeito de onda na direita */}
+      <div className="relative bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/30">
+        {/* Efeito de onda SVG no lado direito */}
+        <div className="absolute right-0 top-0 bottom-0 w-16 overflow-hidden">
+          <svg 
+            className="absolute right-0 top-0 h-full w-full" 
+            viewBox="0 0 64 80" 
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            {/* Onda principal */}
+            <path 
+              d="M0 0 Q16 15 32 0 Q48 -15 64 0 L64 80 Q48 65 32 80 Q16 95 0 80 Z" 
+              fill="url(#waveGradient)"
+              className="drop-shadow-lg"
+            />
+            {/* Onda secundária para profundidade */}
+            <path 
+              d="M8 5 Q20 18 36 5 Q52 -8 64 5 L64 75 Q52 62 36 75 Q20 88 8 75 Z" 
+              fill="url(#waveGradient2)"
+              opacity="0.6"
+            />
+            
+            {/* Gradientes para as ondas */}
+            <defs>
+              <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#1e5233" stopOpacity="0.8"/>
+                <stop offset="50%" stopColor="#2c744c" stopOpacity="0.9"/>
+                <stop offset="100%" stopColor="#34d399" stopOpacity="0.3"/>
+              </linearGradient>
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#065f46" stopOpacity="0.6"/>
+                <stop offset="100%" stopColor="#10b981" stopOpacity="0.2"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
 
-      
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
-      
-      <nav className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
+        {/* Soft edge shadows */}
+        <div className="absolute -bottom-2 left-0 right-0 h-2 bg-gradient-to-b from-black/20 to-transparent blur-sm"></div>
+        <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/15 to-transparent blur-sm"></div>
+        
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
+        
+        <nav className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-14 sm:h-20">
           {/* Logo */}
           <div 
@@ -144,9 +180,8 @@ export default function Header() {
             </button>
           </div>
         </div>
-
-
       </nav>
+      </div>
     </header>
   );
 }
