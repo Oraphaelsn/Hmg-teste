@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import logoImage from "@assets/image_1752987732055.png";
+import logoImage from "@assets/Estância Morro Grande Branco_1752989297686.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,14 +31,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="relative w-12 h-12 bg-gradient-to-r from-[#2c744c] to-[#1e5233] rounded-xl flex items-center justify-center shadow-lg shadow-emerald-900/40 group-hover:shadow-emerald-500/50 transition-all duration-300 group-hover:scale-105 border border-white/30 group-hover:border-emerald-300/60">
-              {/* Subtle shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800 rounded-xl"></div>
-              
+            <div className="relative">
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
-                className="w-10 h-8 object-contain relative z-10 drop-shadow-sm filter brightness-0 invert"
+                className="w-12 h-10 object-contain drop-shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 group-hover:drop-shadow-2xl group-hover:brightness-110"
               />
             </div>
             <div className="flex flex-col relative">
