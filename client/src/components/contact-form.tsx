@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Shield, Send } from "lucide-react";
+import backgroundImage from "@assets/2021-09-22_1752990382566.webp";
 
 export default function ContactForm() {
   const { toast } = useToast();
@@ -64,8 +65,14 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contato" className="py-20 gradient-brand-bg">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section 
+      id="contato" 
+      className="py-20 relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      {/* Green overlay with opacity */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/85 to-[#1e5233]/85"></div>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-2xl mx-auto text-center text-white mb-12">
           <h2 className="text-4xl font-bold mb-6 text-white">Solicite Atendimento</h2>
           <p className="text-xl opacity-90">

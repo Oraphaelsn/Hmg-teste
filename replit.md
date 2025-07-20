@@ -184,8 +184,11 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 ✓ Enhanced differentials grid layout to accommodate 5 items
 ✓ Replaced medical team photo with diverse healthcare professionals smiling together
 ✓ Enhanced header with soft edge shadows matching CTA button styling
-✓ Removed decorative border lines for cleaner corporate appearance
+✓ Removed decorative border lines for cleaner corporate appearance  
 ✓ Increased header height and removed text elements for minimal branding
+✓ Added custom medical team photo to "Corpo Clínico" section
+✓ Implemented Estância Morro Grande facility photo as contact form background
+✓ Applied green brand overlay (85% opacity) over background image for visual consistency
 
 ## Recent Changes
 
