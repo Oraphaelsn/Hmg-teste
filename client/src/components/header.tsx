@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-primary/80 backdrop-blur-md border-b border-primary/30 z-50">
+    <header className="fixed top-0 w-full border-b border-green-700/30 z-50" style={{ backgroundColor: '#2c744c' }}>
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -72,7 +72,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-primary/90 backdrop-blur-md border-t border-primary/30">
+          <div className="md:hidden border-t border-green-700/30" style={{ backgroundColor: '#2c744c' }}>
             <div className="px-4 py-3 space-y-3">
               <button 
                 onClick={() => scrollToSection("inicio")}
