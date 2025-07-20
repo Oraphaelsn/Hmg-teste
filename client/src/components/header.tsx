@@ -26,8 +26,8 @@ export default function Header() {
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
       
-      <nav className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="flex items-center justify-between h-20">
+      <nav className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div 
             className="flex items-center group cursor-pointer"
@@ -42,7 +42,7 @@ export default function Header() {
               <img 
                 src={logoOficial} 
                 alt="Estância Morro Grande" 
-                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 filter contrast-125"
+                className="w-16 h-10 sm:w-20 sm:h-12 md:w-24 md:h-16 object-contain drop-shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 filter contrast-125"
               />
             </div>
           </div>
@@ -111,8 +111,8 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-white/30 bg-gradient-to-b from-[#2c744c] to-[#1e5233]">
-            <div className="px-4 py-4 space-y-2">
+          <div className="md:hidden absolute top-full left-0 right-0 border-t border-white/30 bg-gradient-to-b from-[#2c744c] to-[#1e5233] shadow-xl backdrop-blur-sm">
+            <div className="px-3 py-4 space-y-1">
               <button 
                 onClick={() => scrollToSection("inicio")}
                 className="block w-full text-left px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"

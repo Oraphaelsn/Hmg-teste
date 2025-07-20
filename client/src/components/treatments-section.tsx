@@ -2,24 +2,24 @@ import { Brain, Leaf, Check, UserCheck, Heart, Shield, Clock } from "lucide-reac
 
 export default function TreatmentsSection() {
   return (
-    <section id="tratamentos" className="py-20 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-brand-green mb-6">Nossos Tratamentos</h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+    <section id="tratamentos" className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-green mb-4 sm:mb-6">Nossos Tratamentos</h2>
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
             Oferecemos cuidado especializado para saúde mental e dependência química, 
             com abordagem humanizada e equipe multidisciplinar.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-10 sm:mb-12 md:mb-16">
           {/* Saúde Mental */}
-          <div className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                <Brain className="text-primary" size={32} />
+          <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                <Brain className="text-primary" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-green">Saúde Mental</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-green">Saúde Mental</h3>
             </div>
             <p className="text-slate-600 mb-6 leading-relaxed">
               Tratamento especializado para depressão, ansiedade, transtorno bipolar, 
@@ -43,12 +43,12 @@ export default function TreatmentsSection() {
           </div>
 
           {/* Dependência Química */}
-          <div className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
-                <Leaf className="text-secondary" size={32} />
+          <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-secondary/10 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                <Leaf className="text-secondary" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-green">Dependência Química</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-green">Dependência Química</h3>
             </div>
             <p className="text-slate-600 mb-6 leading-relaxed">
               Programa de recuperação para dependência de álcool, drogas e outras substâncias. 

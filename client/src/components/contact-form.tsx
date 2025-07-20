@@ -72,16 +72,16 @@ export default function ContactForm() {
     >
       {/* Green overlay with opacity */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/85 to-[#1e5233]/85"></div>
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-2xl mx-auto text-center text-white mb-12">
-          <h2 className="text-4xl font-bold mb-6 text-white">Solicite Atendimento</h2>
-          <p className="text-xl opacity-90">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
+        <div className="max-w-2xl mx-auto text-center text-white mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-white">Solicite Atendimento</h2>
+          <p className="text-base sm:text-lg md:text-xl opacity-90">
             Entre em contato conosco. Nossa equipe está pronta para ajudar você ou sua família.
           </p>
         </div>
 
         <div className="max-w-lg mx-auto">
-          <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white rounded-2xl p-8 shadow-xl">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl">
             <div className="mb-6">
               <Label htmlFor="name" className="text-slate-700 font-medium">
                 Nome Completo *

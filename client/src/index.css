@@ -63,6 +63,29 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+    
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* Prevent horizontal scroll on mobile */
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  @media (min-width: 641px) {
+    html {
+      font-size: 16px;
+    }
+  }
 }
 
 @layer components {

@@ -37,16 +37,16 @@ function ISO9001Seal() {
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="bg-black text-white py-8 sm:py-12 md:py-16">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo e Descrição */}
-          <div className="text-center">
-            <div className="mb-6 flex justify-center">
+          <div className="text-center sm:col-span-2 md:col-span-1">
+            <div className="mb-4 sm:mb-6 flex justify-center">
               <img 
                 src={logoOficial} 
                 alt="Estância Morro Grande" 
-                className="w-20 h-16 object-contain filter contrast-125 cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
+                className="w-16 h-12 sm:w-18 sm:h-14 md:w-20 md:h-16 object-contain filter contrast-125 cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
                 onClick={() => {
                   const element = document.getElementById("inicio");
                   if (element) {
@@ -63,8 +63,8 @@ export default function Footer() {
 
           {/* Informações de Contato */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white text-center">Contato</h4>
-            <div className="space-y-3 text-gray-300 text-sm">
+            <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white text-center">Contato</h4>
+            <div className="space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm">
               <div className="flex items-start">
                 <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0" size={16} />
                 <span>Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
