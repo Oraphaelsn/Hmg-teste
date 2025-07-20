@@ -40,14 +40,28 @@ export default function HeroSection() {
         <Button 
           onClick={scrollToContact}
           size="lg"
-          className="bg-white text-brand-green hover:bg-slate-50 font-varela font-bold px-8 py-4 h-auto text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
+          className="relative bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-varela font-black px-10 py-5 h-auto text-xl rounded-full transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-green-500/50 border-2 border-white/20 hover:border-white/40 group overflow-hidden"
         >
-          <UserCheck className="mr-2" size={20} />
-          Fale com um Especialista
+          {/* Pulse animation background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full animate-pulse"></div>
+          
+          {/* Shine effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          
+          <div className="relative flex items-center justify-center">
+            <div className="bg-white/20 p-1 rounded-full mr-3 group-hover:bg-white/30 transition-colors duration-300">
+              <UserCheck className="text-white" size={24} />
+            </div>
+            <span className="tracking-wide">Fale com um Especialista</span>
+          </div>
         </Button>
-        <p className="text-white/80 text-sm font-light text-center bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
-          • Atendimento 24 horas •
-        </p>
+        <div className="relative">
+          <p className="text-white/90 text-sm font-medium text-center bg-gradient-to-r from-black/40 to-slate-900/40 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 shadow-lg">
+            <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+            Atendimento 24 horas
+            <span className="inline-block w-2 h-2 bg-green-400 rounded-full ml-2 animate-pulse"></span>
+          </p>
+        </div>
       </div>
     </section>
   );
