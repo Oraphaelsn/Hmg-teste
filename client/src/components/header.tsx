@@ -145,8 +145,8 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Sistema de ondas/morros suaves em camadas */}
-        <div className="absolute left-0 right-0 top-full z-40">
+        {/* Sistema de ondas/morros suaves em camadas - conectado diretamente */}
+        <div className="absolute left-0 right-0 top-full -mt-1 z-40">
           {/* Sombra suave das ondas */}
           <div className="absolute inset-0 transform translate-y-1 blur-lg opacity-30">
             <svg 
@@ -162,7 +162,7 @@ export default function Header() {
             </svg>
           </div>
 
-          {/* Onda de fundo (mais ampla) */}
+          {/* Onda de fundo (mais ampla) - preenchimento completo */}
           <svg 
             className="absolute w-full h-12 sm:h-14 md:h-16" 
             viewBox="0 0 1200 60" 
@@ -170,7 +170,7 @@ export default function Header() {
             fill="none"
           >
             <path 
-              d="M0,0 C300,40 900,40 1200,0 L1200,60 L0,60 Z" 
+              d="M0,0 L1200,0 L1200,0 C900,40 300,40 0,0 L0,0 Z" 
               fill="url(#waveGradient1)"
               opacity="0.85"
             />
@@ -184,7 +184,7 @@ export default function Header() {
             fill="none"
           >
             <path 
-              d="M0,5 C150,30 250,15 400,30 C550,15 650,30 800,15 C950,30 1050,15 1200,5 L1200,60 L0,60 Z" 
+              d="M0,0 L1200,0 L1200,5 C1050,15 950,30 800,15 C650,30 550,15 400,30 C250,15 150,30 0,5 L0,0 Z" 
               fill="url(#waveGradient2)"
               opacity="0.90"
             />
@@ -198,7 +198,7 @@ export default function Header() {
             fill="none"
           >
             <path 
-              d="M0,8 C100,25 200,12 300,25 C400,12 500,25 600,12 C700,25 800,12 900,25 C1000,12 1100,25 1200,8 L1200,60 L0,60 Z" 
+              d="M0,0 L1200,0 L1200,8 C1100,25 1000,12 900,25 C800,12 700,25 600,12 C500,25 400,12 300,25 C200,12 100,25 0,8 L0,0 Z" 
               fill="url(#waveGradient3)"
             />
               
