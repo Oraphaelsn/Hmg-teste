@@ -11,22 +11,37 @@ export default function HeroSection() {
 
   return (
     <section id="inicio" className="pt-20 relative min-h-screen flex items-center justify-center">
-      {/* Video Background */}
+      {/* High-Quality Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover filter brightness-110 contrast-105 saturate-110"
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          style={{
+            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
+            transform: 'scale(1.02)',
+            imageRendering: 'crisp-edges'
+          }}
         >
+          {/* Multiple sources for better quality and compatibility */}
           <source 
             src="https://estanciamorrogrande.com.br/wp-content/uploads/2023/10/Slider-WEBM-1080.webm" 
             type="video/webm"
           />
+          <source 
+            src="https://estanciamorrogrande.com.br/wp-content/uploads/2023/10/Slider-MP4-1080.mp4" 
+            type="video/mp4"
+          />
         </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 to-brand-green/75" />
+        {/* Professional overlay with subtle gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-transparent to-[#2c744c]/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+        
+        {/* Subtle vignette effect for cinematic quality */}
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/30" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-white">

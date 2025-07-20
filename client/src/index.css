@@ -129,6 +129,21 @@
   .carousel-slide.active {
     opacity: 1;
   }
+  
+  /* Video quality enhancements for corporate presentation */
+  video {
+    -webkit-filter: brightness(1.1) contrast(1.05) saturate(1.1);
+    filter: brightness(1.1) contrast(1.05) saturate(1.1);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Radial gradient for cinematic vignette effect */
+  .bg-radial-gradient {
+    background: radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(0,0,0,0.3) 100%);
+  }
 
   .whatsapp-float-enhanced {
     position: relative;
