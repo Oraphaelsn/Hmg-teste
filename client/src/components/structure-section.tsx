@@ -22,7 +22,7 @@ const facilities = [
     title: "Restaurante"
   },
   {
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: "@assets/ChatGPT Image 20 de jul. de 2025, 02_43_08_1752990204871.png",
     title: "Corpo Clínico"
   }
 ];
