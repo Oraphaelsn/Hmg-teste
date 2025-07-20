@@ -1,5 +1,6 @@
 import { Heart, MapPin, Phone, MessageCircle, Mail, Shield } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import logoImage from "@assets/Estância Morro Grande Branco_1752989297686.png";
 
 export default function Footer() {
   return (
@@ -9,10 +10,11 @@ export default function Footer() {
           {/* Logo and Description */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 gradient-brand-bg rounded-lg flex items-center justify-center">
-                <Heart className="text-white" size={20} />
-              </div>
-              <span className="text-xl font-bold">Estância Morro Grande</span>
+              <img 
+                src={logoImage} 
+                alt="Estância Morro Grande" 
+                className="w-16 h-12 object-contain filter contrast-125"
+              />
             </div>
             <p className="text-slate-300 leading-relaxed">
               Especializada em tratamento de saúde mental e dependência química, 

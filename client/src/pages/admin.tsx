@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, EyeOff, Phone, User, Calendar, FileText, Shield } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import logoImage from "@assets/Estância Morro Grande Branco_1752989297686.png";
 
 interface Lead {
   id: number;
@@ -68,8 +69,12 @@ export default function AdminPage() {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-[#2c744c]/10 flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
-            <div className="mx-auto w-16 h-16 bg-[#2c744c] rounded-full flex items-center justify-center mb-4">
-              <Shield className="text-white" size={32} />
+            <div className="mx-auto mb-4">
+              <img 
+                src={logoImage} 
+                alt="Estância Morro Grande" 
+                className="w-20 h-16 object-contain mx-auto filter brightness-0 invert"
+              />
             </div>
             <CardTitle className="text-2xl font-bold text-[#2c744c]">
               Painel Administrativo
