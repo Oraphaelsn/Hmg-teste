@@ -14,7 +14,7 @@ export default function Header() {
       {/* Container principal com efeito de onda que desce */}
       <div className="relative">
         {/* Fundo principal do header com integração perfeita */}
-        <div className="bg-gradient-to-r from-[#2c744c] via-[#1e5233] to-[#2c744c] shadow-2xl shadow-[#2c744c]/50">
+        <div className="bg-gradient-to-r from-[#2c744c] via-[#245f3a] to-[#2c744c] shadow-2xl shadow-[#2c744c]/50">
           {/* Textura sutil unificada */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
           
@@ -71,7 +71,7 @@ export default function Header() {
                 </button>
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="relative px-4 py-2 ml-4 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
+                  className="relative px-4 py-2 ml-4 bg-gradient-to-r from-[#2c744c] to-[#245f3a] hover:from-[#245f3a] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
                 >
                   {/* Subtle background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
@@ -123,7 +123,7 @@ export default function Header() {
                 {/* Contact button */}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="relative px-3 py-1.5 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
+                  className="relative px-3 py-1.5 bg-gradient-to-r from-[#2c744c] to-[#245f3a] hover:from-[#245f3a] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
                 >
                   {/* Subtle background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
@@ -204,27 +204,27 @@ export default function Header() {
               
             {/* Gradientes para as ondas */}
             <defs>
-              {/* Onda de fundo */}
+              {/* Onda de fundo - tom mais escuro para profundidade */}
               <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#2c744c"/>
-                <stop offset="50%" stopColor="#1e5233"/>
+                <stop offset="50%" stopColor="#245f3a"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
               
-              {/* Onda intermediária */}
+              {/* Onda intermediária - gradiente intercalado */}
               <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1e5233"/>
+                <stop offset="0%" stopColor="#245f3a"/>
                 <stop offset="33%" stopColor="#2c744c"/>
-                <stop offset="66%" stopColor="#1e5233"/>
+                <stop offset="66%" stopColor="#245f3a"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
               
-              {/* Onda frontal */}
+              {/* Onda frontal - tom principal dominante */}
               <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#2c744c"/>
-                <stop offset="25%" stopColor="#1e5233"/>
+                <stop offset="25%" stopColor="#245f3a"/>
                 <stop offset="50%" stopColor="#2c744c"/>
-                <stop offset="75%" stopColor="#1e5233"/>
+                <stop offset="75%" stopColor="#245f3a"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
             </defs>
