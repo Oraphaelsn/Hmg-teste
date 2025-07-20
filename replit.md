@@ -15,6 +15,7 @@ This is a modern, responsive mental health and addiction treatment landing page 
 - Hero section: No carousel, centralized "Fale com Especialista" button at bottom center aligned with WhatsApp button
 - **Asset Management**: All uploaded images must be saved in the project and included in GitHub repository
 - **Logo**: Use official Estância Morro Grande logo (white version: "Estância Morro Grande Branco_1752992752131.png")
+- **Corpo Clínico**: Use professional medical team photo ("ChatGPT Image 20 de jul. de 2025, 02_43_08_1752992995219.png")
 
 ## System Architecture
 

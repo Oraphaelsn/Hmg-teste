@@ -1,5 +1,5 @@
 import { Clock, Users, Shield, Heart, Brain } from "lucide-react";
-import corpoClinicoImage from "@assets/image_1752981495579.png";
+import corpoClinicoImage from "@assets/ChatGPT Image 20 de jul. de 2025, 02_43_08_1752992995219.png";
 
 const facilities = [
   {
