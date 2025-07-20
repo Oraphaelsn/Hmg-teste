@@ -62,31 +62,31 @@ export default function Footer() {
           </div>
 
           {/* Informações de Contato */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold mb-6 text-white">Contato</h4>
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white text-center">Contato</h4>
             <div className="space-y-3 text-gray-300 text-sm">
-              <div className="flex items-start justify-center">
+              <div className="flex items-start">
                 <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0" size={16} />
-                <span className="text-left">Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
+                <span>Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 <Phone className="mr-3 text-[#2c744c]" size={16} />
                 <span>(11) 3333-4444</span>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 <MessageCircle className="mr-3 text-[#25D366]" size={16} />
                 <span>(11) 99999-9999</span>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 <Mail className="mr-3 text-[#2c744c]" size={16} />
-                <span className="text-left">contato@estanciamorrogrande.com.br</span>
+                <span>contato@estanciamorrogrande.com.br</span>
               </div>
             </div>
           </div>
 
           {/* Redes Sociais */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold mb-6 text-white">Redes Sociais</h4>
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white text-center">Redes Sociais</h4>
             <div className="flex justify-center space-x-3 mb-6">
               <a
                 href="#"
