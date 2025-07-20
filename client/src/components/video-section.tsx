@@ -1,10 +1,19 @@
 import { Play, PlayCircle } from "lucide-react";
 import { useState } from "react";
-// Video file available in assets - using placeholder for now due to format
-const videoFile = "https://estanciamorrogrande.com.br/wp-content/uploads/2023/10/Slider-MP4-1080.mp4"; // Using facility video as placeholder
+import { useQuery } from "@tanstack/react-query";
+// Video file from local assets (fallback)
+import videoFileLocal from "@assets/WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4";
 
 export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(true); // Start with video playing
+  
+  // Fetch video data from API
+  const { data: videoData } = useQuery({
+    queryKey: ['/api/videos/section/tour'],
+  });
+
+  // Use video from database or fallback to local file
+  const videoFile = videoData ? `@assets/${videoData.filename}` : videoFileLocal;
 
   const handlePlay = () => {
     setIsPlaying(true);
