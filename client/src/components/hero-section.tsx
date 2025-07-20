@@ -4,28 +4,22 @@ import { UserCheck } from "lucide-react";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     title: "Você não está sozinho",
     subtitle: "Recuperar é possível com acolhimento, dignidade e segurança",
     highlight: "RECUPERAR É POSSÍVEL",
-    description: "Na Estância Morro Grande, oferecemos tratamento humanizado e especializado para dependência química e saúde mental, com ambiente seguro e equipe 24h.",
-    gradient: "from-slate-900/85 to-brand-green/75"
+    description: "Na Estância Morro Grande, oferecemos tratamento humanizado e especializado para dependência química e saúde mental, com ambiente seguro e equipe 24h."
   },
   {
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     title: "Recomeçar com dignidade",
     subtitle: "Tratamento humanizado com equipe especializada",
     highlight: "AMBIENTE SEGURO",
-    description: "Estrutura preparada para acolher você e sua família com total privacidade, conforto e segurança em todas as etapas do tratamento.",
-    gradient: "from-slate-900/85 to-brand-green/75"
+    description: "Estrutura preparada para acolher você e sua família com total privacidade, conforto e segurança em todas as etapas do tratamento."
   },
   {
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     title: "Sua nova vida começa aqui",
     subtitle: "Equipe multidisciplinar especializada em dependência",
     highlight: "TRATAMENTO COMPLETO",
-    description: "Abordagem integral com psicólogos, médicos psiquiatras, terapeutas e enfermeiros especializados em recuperação e saúde mental.",
-    gradient: "from-slate-900/85 to-brand-green/75"
+    description: "Abordagem integral com psicólogos, médicos psiquiatras, terapeutas e enfermeiros especializados em recuperação e saúde mental."
   }
 ];
 
@@ -49,21 +43,22 @@ export default function HeroSection() {
 
   return (
     <section id="inicio" className="pt-20 relative min-h-screen flex items-center justify-center">
+      {/* Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`carousel-slide absolute inset-0 ${
-              index === currentSlide ? "active" : ""
-            }`}
-          >
-            <div 
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url('${slide.image}')` }}
-            />
-            <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient}`} />
-          </div>
-        ))}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source 
+            src="https://estanciamorrogrande.com.br/wp-content/uploads/2023/10/Slider-WEBM-1080.webm" 
+            type="video/webm"
+          />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 to-brand-green/75" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-white">
@@ -104,7 +99,7 @@ export default function HeroSection() {
                 Fale com um Especialista
               </Button>
               <p className="text-white/80 text-sm font-light">
-                Atendimento 24 horas • Primeira consulta gratuita
+                • Atendimento 24 horas • 
               </p>
             </div>
           </div>
