@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import videoFileLocal from "@assets/WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4";
 
 export default function VideoSection() {
-  const [isPlaying, setIsPlaying] = useState(true); // Start with video playing
+  const [isPlaying, setIsPlaying] = useState(false); // Start with video paused
   
   // Fetch video data from API
   const { data: videoData } = useQuery({
@@ -79,7 +79,6 @@ export default function VideoSection() {
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  autoPlay
                   playsInline
                   preload="metadata"
                 >

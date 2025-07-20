@@ -158,6 +158,14 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 20, 2025)
 
+✓ **MIGRAÇÃO COMPLETA PARA REPLIT**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
+✓ **BANCO DE DADOS IMPLEMENTADO**: Adicionada tabela de vídeos com schema completo
+✓ **VÍDEO LOCAL INTEGRADO**: Substituído vídeo externo pelo arquivo local "WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4"
+✓ **API DE VÍDEOS**: Implementadas rotas REST para gerenciar vídeos por seção
+✓ **CORREÇÃO DUPLICAÇÃO**: Removido autoplay para evitar reprodução dupla do vídeo
+
+## Recent Changes (Previous Updates)
+
 ✓ **MIGRATION COMPLETED**: Successfully migrated from Replit Agent to Replit environment
 ✓ **Logo Oficial Implementado**: Substituído SVG genérico pelo logo oficial da Estância Morro Grande
 ✓ **Correção de Assets**: Resolvidos todos os imports de imagens faltantes
