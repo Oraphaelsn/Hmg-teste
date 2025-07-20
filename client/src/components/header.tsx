@@ -17,9 +17,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/50 border-b-4 border-gradient-to-r border-emerald-400/30">
-      {/* Elegant decorative border */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-300/60 via-white/40 to-emerald-300/60"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-200/80 to-transparent"></div>
+
       
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
