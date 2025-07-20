@@ -14,16 +14,14 @@ export default function HeroSection() {
       {/* High-Quality Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover filter brightness-110 contrast-105 saturate-110"
+          className="absolute inset-0 w-full h-full hero-video filter brightness-110 contrast-105 saturate-110"
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
           style={{
-            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
-            transform: 'scale(1.02)',
-            imageRendering: 'crisp-edges'
+            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)'
           }}
         >
           {/* Multiple sources for better quality and compatibility */}
@@ -51,7 +49,7 @@ export default function HeroSection() {
       </div>
 
       {/* Centralized CTA Button with info text - Fixed only on hero section */}
-      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-2 sm:space-y-3 px-4">
+      <div className="absolute bottom-8 sm:bottom-16 md:bottom-20 lg:bottom-24 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-2 sm:space-y-3 px-4">
         <Button 
           onClick={scrollToContact}
           size="lg"

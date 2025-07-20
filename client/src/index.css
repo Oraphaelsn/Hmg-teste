@@ -162,6 +162,38 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
+
+  /* Responsive video that adapts to device frame */
+  .hero-video {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Mobile-specific video adjustments */
+  @media (max-width: 768px) {
+    .hero-video {
+      object-position: center center;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Portrait orientation adjustments */
+  @media (orientation: portrait) {
+    .hero-video {
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  /* Landscape orientation adjustments */
+  @media (orientation: landscape) {
+    .hero-video {
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
   
   /* Radial gradient for cinematic vignette effect */
   .bg-radial-gradient {
