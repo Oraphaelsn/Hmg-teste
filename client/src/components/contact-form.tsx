@@ -114,7 +114,13 @@ export default function ContactForm() {
               <Label htmlFor="treatment" className="text-slate-700 font-medium">
                 Tipo de Tratamento
               </Label>
-              <Select onValueChange={(value) => form.setValue("treatment", value)}>
+              <Select 
+                onValueChange={(value) => {
+                  form.setValue("treatment", value);
+                  form.clearErrors("treatment");
+                }}
+                value={form.watch("treatment") || ""}
+              >
                 <SelectTrigger className="mt-2">
                   <SelectValue placeholder="Selecione uma opção" />
                 </SelectTrigger>
@@ -125,13 +131,22 @@ export default function ContactForm() {
                   <SelectItem value="nao-sei">Não sei qual preciso</SelectItem>
                 </SelectContent>
               </Select>
+              {form.formState.errors.treatment && (
+                <p className="text-red-500 text-sm mt-1">{form.formState.errors.treatment.message}</p>
+              )}
             </div>
 
             <div className="mb-6">
               <Label htmlFor="insurance" className="text-slate-700 font-medium">
                 Convênio/Plano de Saúde
               </Label>
-              <Select onValueChange={(value) => form.setValue("insurance", value)}>
+              <Select 
+                onValueChange={(value) => {
+                  form.setValue("insurance", value);
+                  form.clearErrors("insurance");
+                }}
+                value={form.watch("insurance") || ""}
+              >
                 <SelectTrigger className="mt-2">
                   <SelectValue placeholder="Selecione seu convênio" />
                 </SelectTrigger>
@@ -165,6 +180,9 @@ export default function ContactForm() {
                   <SelectItem value="outro">Outro</SelectItem>
                 </SelectContent>
               </Select>
+              {form.formState.errors.insurance && (
+                <p className="text-red-500 text-sm mt-1">{form.formState.errors.insurance.message}</p>
+              )}
             </div>
 
             <Button 
