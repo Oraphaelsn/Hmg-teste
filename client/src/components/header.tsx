@@ -13,13 +13,17 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 overflow-visible">
       {/* Container principal com efeito de onda que desce */}
       <div className="relative">
-        {/* Fundo principal do header */}
-        <div className="bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/30">
-          {/* Soft edge shadows */}
-          <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/15 to-transparent blur-sm"></div>
+        {/* Fundo principal do header corporativo */}
+        <div className="bg-gradient-to-r from-[#2c744c] via-[#1e5233] to-[#2c744c] shadow-2xl shadow-[#2c744c]/40 border-b border-emerald-400/30">
+          {/* Sombras laterais aprimoradas */}
+          <div className="absolute -left-2 top-0 bottom-0 w-3 bg-gradient-to-r from-black/20 to-transparent blur-sm"></div>
+          <div className="absolute -right-2 top-0 bottom-0 w-3 bg-gradient-to-l from-black/20 to-transparent blur-sm"></div>
           
-          {/* Subtle background texture */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
+          {/* Textura de fundo corporativa */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/8 via-transparent to-white/5"></div>
+          
+          {/* Linha de destaque superior */}
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-emerald-300/60 to-transparent"></div>
           
           <nav className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
             <div className="flex items-center justify-between h-14 sm:h-20">
@@ -148,40 +152,96 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Curva de onda que desce por cima do conteúdo */}
+        {/* Curva de onda corporativa que desce por cima do conteúdo */}
         <div className="absolute left-0 right-0 top-full -mt-1 z-40">
+          {/* Sombra principal da onda para profundidade */}
+          <div className="absolute inset-0 transform translate-y-2 blur-lg opacity-60">
+            <svg 
+              className="w-full h-20 sm:h-24 md:h-32 lg:h-36" 
+              viewBox="0 0 1200 120" 
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <path 
+                d="M0,0 C180,35 360,55 540,42 C720,29 900,20 1080,32 C1140,36 1180,40 1200,25 L1200,0 Z" 
+                fill="#000000"
+                opacity="0.4"
+              />
+            </svg>
+          </div>
+
+          {/* Onda principal com design corporativo aprimorado */}
           <svg 
-            className="w-full h-16 sm:h-20 md:h-24" 
-            viewBox="0 0 1200 100" 
+            className="relative w-full h-20 sm:h-24 md:h-32 lg:h-36 drop-shadow-2xl" 
+            viewBox="0 0 1200 120" 
             preserveAspectRatio="none"
             fill="none"
           >
-            {/* Onda principal que desce */}
+            {/* Onda de fundo para profundidade */}
             <path 
-              d="M0,0 C150,25 300,45 450,35 C600,25 750,15 900,25 C1050,35 1150,45 1200,20 L1200,0 Z" 
-              fill="url(#headerWaveGradient)"
-              className="drop-shadow-2xl"
-            />
-            {/* Onda secundária para profundidade */}
-            <path 
-              d="M0,0 C200,30 400,50 600,40 C800,30 1000,20 1200,25 L1200,0 Z" 
-              fill="url(#headerWaveGradient2)"
-              opacity="0.7"
+              d="M0,0 C200,40 400,60 600,50 C800,40 1000,25 1200,35 L1200,0 Z" 
+              fill="url(#headerWaveGradient3)"
+              opacity="0.8"
+              className="filter blur-sm"
             />
             
-            {/* Gradientes para as ondas do header */}
+            {/* Onda secundária intermediária */}
+            <path 
+              d="M0,0 C150,30 350,50 500,38 C650,26 850,18 1050,30 C1125,34 1175,38 1200,22 L1200,0 Z" 
+              fill="url(#headerWaveGradient2)"
+              opacity="0.85"
+            />
+            
+            {/* Onda principal com definição nítida */}
+            <path 
+              d="M0,0 C180,35 360,55 540,42 C720,29 900,20 1080,32 C1140,36 1180,40 1200,25 L1200,0 Z" 
+              fill="url(#headerWaveGradient)"
+              className="filter contrast-110"
+            />
+            
+            {/* Highlight sutil no topo da onda */}
+            <path 
+              d="M0,0 C180,35 360,55 540,42 C720,29 900,20 1080,32 C1140,36 1180,40 1200,25 L1200,0 Z" 
+              fill="url(#headerWaveHighlight)"
+              opacity="0.6"
+            />
+            
+            {/* Gradientes corporativos aprimorados */}
             <defs>
+              {/* Gradiente principal com maior contraste */}
               <linearGradient id="headerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#2c744c" stopOpacity="0.95"/>
-                <stop offset="50%" stopColor="#1e5233" stopOpacity="0.9"/>
-                <stop offset="100%" stopColor="#2c744c" stopOpacity="0.85"/>
+                <stop offset="0%" stopColor="#2c744c" stopOpacity="0.98"/>
+                <stop offset="25%" stopColor="#1e5233" stopOpacity="0.96"/>
+                <stop offset="50%" stopColor="#0f3d2a" stopOpacity="0.94"/>
+                <stop offset="75%" stopColor="#1e5233" stopOpacity="0.96"/>
+                <stop offset="100%" stopColor="#2c744c" stopOpacity="0.92"/>
               </linearGradient>
+              
+              {/* Gradiente secundário para camada intermediária */}
               <linearGradient id="headerWaveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1e5233" stopOpacity="0.8"/>
-                <stop offset="100%" stopColor="#065f46" stopOpacity="0.6"/>
+                <stop offset="0%" stopColor="#1e5233" stopOpacity="0.9"/>
+                <stop offset="50%" stopColor="#065f46" stopOpacity="0.85"/>
+                <stop offset="100%" stopColor="#134e4a" stopOpacity="0.8"/>
+              </linearGradient>
+              
+              {/* Gradiente de fundo para profundidade */}
+              <linearGradient id="headerWaveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#065f46" stopOpacity="0.7"/>
+                <stop offset="50%" stopColor="#064e3b" stopOpacity="0.6"/>
+                <stop offset="100%" stopColor="#0c4a42" stopOpacity="0.5"/>
+              </linearGradient>
+              
+              {/* Highlight para brilho corporativo */}
+              <linearGradient id="headerWaveHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#34d399" stopOpacity="0.4"/>
+                <stop offset="30%" stopColor="#10b981" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#059669" stopOpacity="0.1"/>
               </linearGradient>
             </defs>
           </svg>
+          
+          {/* Borda inferior sutil para definição */}
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#2c744c]/20 via-[#1e5233]/40 to-[#2c744c]/20"></div>
         </div>
       </div>
     </header>
