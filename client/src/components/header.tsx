@@ -15,19 +15,8 @@ export default function Header() {
       <div className="relative">
         {/* Fundo principal do header com integração perfeita */}
         <div className="bg-gradient-to-r from-[#2c744c] via-[#1e5233] to-[#2c744c] shadow-2xl shadow-[#2c744c]/50">
-          {/* Sombras laterais harmoniosas */}
-          <div className="absolute -left-3 top-0 bottom-0 w-4 bg-gradient-to-r from-black/25 to-transparent blur-md"></div>
-          <div className="absolute -right-3 top-0 bottom-0 w-4 bg-gradient-to-l from-black/25 to-transparent blur-md"></div>
-          
-          {/* Textura corporativa refinada */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/8"></div>
+          {/* Textura sutil unificada */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
-          
-          {/* Linha superior de excelência */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent"></div>
-          
-          {/* Preparação para integração perfeita com a curva */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2c744c] via-[#1e5233] to-[#2c744c]"></div>
           
           <nav className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
             <div className="flex items-center justify-between h-14 sm:h-20">
@@ -156,121 +145,45 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Curva corporativa de borda a borda */}
+        {/* Curva unificada simplificada */}
         <div className="absolute left-0 right-0 top-full z-40">
-          {/* Sombra volumétrica para profundidade corporativa */}
-          <div className="absolute inset-0 transform translate-y-4 blur-2xl opacity-60">
+          {/* Sombra suave da curva */}
+          <div className="absolute inset-0 transform translate-y-2 blur-xl opacity-40">
             <svg 
-              className="w-full h-32 sm:h-40 md:h-48 lg:h-56" 
-              viewBox="0 0 1200 200" 
+              className="w-full h-20 sm:h-24 md:h-28" 
+              viewBox="0 0 1200 120" 
               preserveAspectRatio="none"
               fill="none"
             >
               <path 
-                d="M0,0 C120,35 240,65 360,55 C480,45 600,35 720,45 C840,55 960,65 1080,55 C1140,50 1180,45 1200,40 L1200,0 Z" 
+                d="M0,0 C300,60 900,60 1200,0 L1200,120 L0,120 Z" 
                 fill="#000000"
-                opacity="0.7"
               />
             </svg>
           </div>
 
-          {/* Onda principal robusta de borda a borda */}
+          {/* Curva principal unificada */}
           <svg 
-            className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56" 
-            viewBox="0 0 1200 200" 
+            className="relative w-full h-20 sm:h-24 md:h-28" 
+            viewBox="0 0 1200 120" 
             preserveAspectRatio="none"
             fill="none"
-            style={{
-              filter: 'drop-shadow(0 12px 48px rgba(44, 116, 76, 0.5)) drop-shadow(0 6px 24px rgba(0, 0, 0, 0.4))'
-            }}
           >
-            {/* Camada de conexão robusta com o header */}
-            <rect 
-              x="0" 
-              y="0" 
-              width="1200" 
-              height="15"
-              fill="url(#headerConnectionGradient)"
-            />
-            
-            {/* Onda de fundo suave com curva esquerda harmonizada */}
+            {/* Curva principal única */}
             <path 
-              d="M0,45 C30,20 80,35 150,50 C250,55 350,50 450,45 C600,40 750,35 900,40 C1050,45 1150,50 1200,35 L1200,15 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveGradient3)"
-              opacity="0.75"
-            />
-            
-            {/* Onda intermediária suave com transição harmoniosa */}
-            <path 
-              d="M0,35 C25,15 70,25 130,35 C200,40 280,35 380,30 C500,25 650,20 800,25 C950,30 1100,35 1200,25 L1200,12 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveGradient2)"
-              opacity="0.85"
-            />
-            
-            {/* Onda principal suave com curva descendente harmoniosa */}
-            <path 
-              d="M0,30 C20,12 60,20 120,30 C200,35 300,30 420,25 C560,20 720,15 880,20 C1020,25 1150,30 1200,20 L1200,8 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveGradient)"
-            />
-            
-            {/* Camada superior sutil sem brilho excessivo */}
-            <path 
-              d="M0,25 C18,10 55,18 110,25 C180,30 270,25 380,20 C520,15 680,10 840,15 C980,20 1120,25 1200,15 L1200,5 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveSubtle)"
-              opacity="0.4"
+              d="M0,0 C300,60 900,60 1200,0 L1200,120 L0,120 Z" 
+              fill="url(#unifiedGradient)"
             />
               
-              {/* Definições de gradientes harmoniosos */}
-              <defs>
-                {/* Gradiente de conexão para unificar com o header */}
-                <linearGradient id="headerConnectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2c744c" stopOpacity="1"/>
-                  <stop offset="25%" stopColor="#1e5233" stopOpacity="1"/>
-                  <stop offset="50%" stopColor="#2c744c" stopOpacity="1"/>
-                  <stop offset="75%" stopColor="#1e5233" stopOpacity="1"/>
-                  <stop offset="100%" stopColor="#2c744c" stopOpacity="1"/>
-                </linearGradient>
-                
-                {/* Gradiente principal uniforme ao cabeçalho - sem brilho */}
-                <linearGradient id="headerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.98"/>
-                  <stop offset="25%" stopColor="#1e5233" stopOpacity="0.98"/>
-                  <stop offset="50%" stopColor="#2c744c" stopOpacity="0.98"/>
-                  <stop offset="75%" stopColor="#1e5233" stopOpacity="0.98"/>
-                  <stop offset="100%" stopColor="#2c744c" stopOpacity="0.98"/>
-                </linearGradient>
-                
-                {/* Gradiente intermediário suave */}
-                <linearGradient id="headerWaveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.88"/>
-                  <stop offset="33%" stopColor="#1e5233" stopOpacity="0.88"/>
-                  <stop offset="66%" stopColor="#2c744c" stopOpacity="0.88"/>
-                  <stop offset="100%" stopColor="#1e5233" stopOpacity="0.88"/>
-                </linearGradient>
-                
-                {/* Gradiente de base discreto */}
-                <linearGradient id="headerWaveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1e5233" stopOpacity="0.78"/>
-                  <stop offset="25%" stopColor="#2c744c" stopOpacity="0.78"/>
-                  <stop offset="50%" stopColor="#1e5233" stopOpacity="0.78"/>
-                  <stop offset="75%" stopColor="#2c744c" stopOpacity="0.78"/>
-                  <stop offset="100%" stopColor="#1e5233" stopOpacity="0.78"/>
-                </linearGradient>
-                
-                {/* Gradiente sutil para acabamento */}
-                <linearGradient id="headerWaveSubtle" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.6"/>
-                  <stop offset="50%" stopColor="#1e5233" stopOpacity="0.6"/>
-                  <stop offset="100%" stopColor="#2c744c" stopOpacity="0.6"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          
-          {/* Linha de acabamento inferior para definição precisa */}
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent"></div>
-          
-          {/* Reflexo sutil para profissionalismo */}
-          <div className="absolute bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-sm"></div>
+            {/* Gradiente unificado */}
+            <defs>
+              <linearGradient id="unifiedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#2c744c"/>
+                <stop offset="50%" stopColor="#1e5233"/>
+                <stop offset="100%" stopColor="#2c744c"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </div>
     </header>
