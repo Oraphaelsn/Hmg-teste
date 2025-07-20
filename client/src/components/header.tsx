@@ -27,7 +27,7 @@ export default function Header() {
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
       
       <nav className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-20">
           {/* Logo */}
           <div 
             className="flex items-center group cursor-pointer"
@@ -112,34 +112,34 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 border-t border-white/30 bg-gradient-to-b from-[#2c744c] to-[#1e5233] shadow-xl backdrop-blur-sm">
-            <div className="px-3 py-4 space-y-1">
+            <div className="px-3 py-2 space-y-1">
               <button 
                 onClick={() => scrollToSection("inicio")}
-                className="block w-full text-left px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
               >
                 Início
               </button>
               <button 
                 onClick={() => scrollToSection("tratamentos")}
-                className="block w-full text-left px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
               >
                 Tratamentos
               </button>
               <button 
                 onClick={() => scrollToSection("estrutura")}
-                className="block w-full text-left px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
               >
                 Estrutura
               </button>
               <button 
                 onClick={() => scrollToSection("depoimentos")}
-                className="block w-full text-left px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
               >
                 Depoimentos
               </button>
               <button 
                 onClick={() => scrollToSection("contato")}
-                className="relative block w-full text-left px-4 py-2.5 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden mt-2 border border-white/30 hover:border-emerald-300/60"
+                className="relative block w-full text-left px-4 py-2 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden mt-1 border border-white/30 hover:border-emerald-300/60"
               >
                 {/* Subtle background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-lg"></div>
