@@ -145,41 +145,86 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Curva unificada simplificada */}
+        {/* Sistema de ondas/morros suaves em camadas */}
         <div className="absolute left-0 right-0 top-full z-40">
-          {/* Sombra suave da curva */}
-          <div className="absolute inset-0 transform translate-y-2 blur-xl opacity-40">
+          {/* Sombra suave das ondas */}
+          <div className="absolute inset-0 transform translate-y-1 blur-lg opacity-30">
             <svg 
-              className="w-full h-20 sm:h-24 md:h-28" 
-              viewBox="0 0 1200 120" 
+              className="w-full h-12 sm:h-14 md:h-16" 
+              viewBox="0 0 1200 60" 
               preserveAspectRatio="none"
               fill="none"
             >
               <path 
-                d="M0,0 C300,60 900,60 1200,0 L1200,120 L0,120 Z" 
+                d="M0,0 C200,35 400,20 600,35 C800,20 1000,35 1200,0 L1200,60 L0,60 Z" 
                 fill="#000000"
               />
             </svg>
           </div>
 
-          {/* Curva principal unificada */}
+          {/* Onda de fundo (mais ampla) */}
           <svg 
-            className="relative w-full h-20 sm:h-24 md:h-28" 
-            viewBox="0 0 1200 120" 
+            className="absolute w-full h-12 sm:h-14 md:h-16" 
+            viewBox="0 0 1200 60" 
             preserveAspectRatio="none"
             fill="none"
           >
-            {/* Curva principal única */}
             <path 
-              d="M0,0 C300,60 900,60 1200,0 L1200,120 L0,120 Z" 
-              fill="url(#unifiedGradient)"
+              d="M0,0 C300,40 900,40 1200,0 L1200,60 L0,60 Z" 
+              fill="url(#waveGradient1)"
+              opacity="0.85"
+            />
+          </svg>
+
+          {/* Onda intermediária (ondulação média) */}
+          <svg 
+            className="absolute w-full h-12 sm:h-14 md:h-16" 
+            viewBox="0 0 1200 60" 
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path 
+              d="M0,5 C150,30 250,15 400,30 C550,15 650,30 800,15 C950,30 1050,15 1200,5 L1200,60 L0,60 Z" 
+              fill="url(#waveGradient2)"
+              opacity="0.90"
+            />
+          </svg>
+
+          {/* Onda frontal (pequenas ondulações) */}
+          <svg 
+            className="relative w-full h-12 sm:h-14 md:h-16" 
+            viewBox="0 0 1200 60" 
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path 
+              d="M0,8 C100,25 200,12 300,25 C400,12 500,25 600,12 C700,25 800,12 900,25 C1000,12 1100,25 1200,8 L1200,60 L0,60 Z" 
+              fill="url(#waveGradient3)"
             />
               
-            {/* Gradiente unificado */}
+            {/* Gradientes para as ondas */}
             <defs>
-              <linearGradient id="unifiedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              {/* Onda de fundo */}
+              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#2c744c"/>
                 <stop offset="50%" stopColor="#1e5233"/>
+                <stop offset="100%" stopColor="#2c744c"/>
+              </linearGradient>
+              
+              {/* Onda intermediária */}
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#1e5233"/>
+                <stop offset="33%" stopColor="#2c744c"/>
+                <stop offset="66%" stopColor="#1e5233"/>
+                <stop offset="100%" stopColor="#2c744c"/>
+              </linearGradient>
+              
+              {/* Onda frontal */}
+              <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#2c744c"/>
+                <stop offset="25%" stopColor="#1e5233"/>
+                <stop offset="50%" stopColor="#2c744c"/>
+                <stop offset="75%" stopColor="#1e5233"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
             </defs>
