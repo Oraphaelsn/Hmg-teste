@@ -189,6 +189,10 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 ✓ Added custom medical team photo to "Corpo Clínico" section
 ✓ Implemented Estância Morro Grande facility photo as contact form background
 ✓ Applied green brand overlay (85% opacity) over background image for visual consistency
+✓ Added WhatsApp video tour section with custom video player and professional UI
+✓ Integrated uploaded WhatsApp video file showing authentic facility tour
+✓ Created interactive video section with play button and informational cards
+✓ Positioned video section strategically between treatments and structure sections
 
 ## Recent Changes
 

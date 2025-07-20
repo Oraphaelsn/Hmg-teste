@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import TreatmentsSection from "@/components/treatments-section";
+import VideoSection from "@/components/video-section";
 import StructureSection from "@/components/structure-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import ContactForm from "@/components/contact-form";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <TreatmentsSection />
+      <VideoSection />
       <StructureSection />
       <TestimonialsSection />
       <ContactForm />
