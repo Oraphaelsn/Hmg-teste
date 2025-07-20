@@ -1,6 +1,7 @@
 import { Play, PlayCircle } from "lucide-react";
 import { useState } from "react";
-import videoFile from "@assets/WhatsApp Video 2025-07-18 at 09.25.19_1752991561715.mp4";
+// import videoFile from "@assets/WhatsApp Video 2025-07-18 at 09.25.19_1752991561715.mp4"; // Video file not available
+const videoFile = ""; // Temporary placeholder
 
 export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -26,13 +27,13 @@ export default function VideoSection() {
               {!isPlaying ? (
                 // Thumbnail com botão de play
                 <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2c744c]/20 to-slate-900/60">
-                  <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    preload="metadata"
-                    muted
-                  >
-                    <source src={videoFile} type="video/mp4" />
-                  </video>
+                  {/* Video temporarily disabled - video file not available */}
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#2c744c] to-[#1e5233] flex items-center justify-center">
+                    <div className="text-white text-center">
+                      <div className="text-lg font-semibold mb-2">Tour Virtual</div>
+                      <div className="text-sm opacity-75">Em breve</div>
+                    </div>
+                  </div>
                   
                   {/* Overlay escuro */}
                   <div className="absolute inset-0 bg-black/40" />

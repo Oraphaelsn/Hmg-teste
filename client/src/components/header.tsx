@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import logoImage from "@assets/Estância Morro Grande Branco_1752989297686.png";
+import EstanciaLogoSVG from "./logo-svg";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,10 +39,9 @@ export default function Header() {
             }}
           >
             <div className="relative">
-              <img 
-                src={logoImage} 
-                alt="Estância Morro Grande" 
-                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 filter contrast-125"
+              <EstanciaLogoSVG 
+                className="w-24 h-16 drop-shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 filter contrast-125"
+                color="white"
               />
             </div>
           </div>

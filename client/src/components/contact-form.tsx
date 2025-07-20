@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Shield, Send } from "lucide-react";
-import backgroundImage from "@assets/2021-09-22_1752990382566.webp";
+import backgroundImage from "@assets/2021-09-22_1752972757556.webp";
 
 export default function ContactForm() {
   const { toast } = useToast();
