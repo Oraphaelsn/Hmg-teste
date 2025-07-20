@@ -21,7 +21,9 @@ export default function HeroSection() {
           playsInline
           preload="metadata"
           style={{
-            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)'
+            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
+            minWidth: '100%',
+            minHeight: '100%'
           }}
         >
           {/* Multiple sources for better quality and compatibility */}

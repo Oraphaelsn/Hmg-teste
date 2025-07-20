@@ -174,13 +174,16 @@
   /* Mobile-specific video adjustments */
   @media (max-width: 768px) {
     .hero-video {
+      object-fit: cover;
       object-position: center center;
-      transform: scale(1.05);
+      transform: none; /* Remove scale for better mobile fit */
+      width: 100%;
+      height: 100vh; /* Full viewport height */
     }
     
     /* Mobile CTA positioning adjustment - move buttons higher */
     .hero-section .absolute.bottom-20 {
-      bottom: 8rem !important; /* Move significantly higher on mobile for better visibility */
+      bottom: 8rem !important;
     }
     
     /* Ensure text is visible and well-positioned on mobile */
@@ -190,19 +193,46 @@
     }
   }
 
-  /* Portrait orientation adjustments */
-  @media (orientation: portrait) {
-    .hero-video {
-      object-fit: cover;
-      object-position: center top;
-    }
-  }
-
-  /* Landscape orientation adjustments */
-  @media (orientation: landscape) {
+  /* Extra small mobile devices (phones) */
+  @media (max-width: 480px) {
     .hero-video {
       object-fit: cover;
       object-position: center center;
+      transform: none;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+    }
+  }
+
+  /* Portrait orientation adjustments */
+  @media (orientation: portrait) and (max-width: 768px) {
+    .hero-video {
+      object-fit: cover;
+      object-position: center center;
+      width: 100vw;
+      height: 100vh;
+      transform: none;
+    }
+  }
+
+  /* Landscape orientation adjustments for mobile */
+  @media (orientation: landscape) and (max-width: 768px) {
+    .hero-video {
+      object-fit: cover;
+      object-position: center center;
+      width: 100vw;
+      height: 100vh;
+      transform: none;
+    }
+  }
+
+  /* Tablet and larger screens */
+  @media (min-width: 769px) {
+    .hero-video {
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.02);
     }
   }
   
