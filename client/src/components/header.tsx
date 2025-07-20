@@ -35,7 +35,7 @@ export default function Header() {
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
-                className="w-16 h-12 object-contain drop-shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 group-hover:drop-shadow-2xl group-hover:brightness-110 filter contrast-125"
+                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 group-hover:drop-shadow-2xl group-hover:brightness-110 filter contrast-125"
               />
             </div>
             <div className="flex flex-col relative">
