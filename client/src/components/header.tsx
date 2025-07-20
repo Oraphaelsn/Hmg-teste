@@ -156,36 +156,34 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Curva corporativa perfeitamente alinhada */}
+        {/* Curva corporativa de borda a borda */}
         <div className="absolute left-0 right-0 top-full z-40">
-          {/* Container alinhado com o header */}
-          <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative">
-            {/* Sombra volumétrica para profundidade corporativa */}
-            <div className="absolute inset-0 transform translate-y-3 blur-xl opacity-50">
-              <svg 
-                className="w-full h-24 sm:h-28 md:h-36 lg:h-40" 
-                viewBox="0 0 1200 140" 
-                preserveAspectRatio="none"
-                fill="none"
-              >
-                <path 
-                  d="M0,0 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,0 Z" 
-                  fill="#000000"
-                  opacity="0.6"
-                />
-              </svg>
-            </div>
-
-            {/* Onda principal com alinhamento perfeito */}
+          {/* Sombra volumétrica para profundidade corporativa */}
+          <div className="absolute inset-0 transform translate-y-3 blur-xl opacity-50">
             <svg 
-              className="relative w-full h-24 sm:h-28 md:h-36 lg:h-40" 
+              className="w-full h-24 sm:h-28 md:h-36 lg:h-40" 
               viewBox="0 0 1200 140" 
               preserveAspectRatio="none"
               fill="none"
-              style={{
-                filter: 'drop-shadow(0 8px 32px rgba(44, 116, 76, 0.4)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))'
-              }}
             >
+              <path 
+                d="M0,0 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,0 Z" 
+                fill="#000000"
+                opacity="0.6"
+              />
+            </svg>
+          </div>
+
+          {/* Onda principal de borda a borda */}
+          <svg 
+            className="relative w-full h-24 sm:h-28 md:h-36 lg:h-40" 
+            viewBox="0 0 1200 140" 
+            preserveAspectRatio="none"
+            fill="none"
+            style={{
+              filter: 'drop-shadow(0 8px 32px rgba(44, 116, 76, 0.4)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))'
+            }}
+          >
               {/* Camada de conexão uniforme com o header */}
               <rect 
                 x="0" 
@@ -271,13 +269,12 @@ export default function Header() {
                 </linearGradient>
               </defs>
             </svg>
-            
-            {/* Linha de acabamento inferior para definição precisa */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent"></div>
-            
-            {/* Reflexo sutil para profissionalismo */}
-            <div className="absolute bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-sm"></div>
-          </div>
+          
+          {/* Linha de acabamento inferior para definição precisa */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent"></div>
+          
+          {/* Reflexo sutil para profissionalismo */}
+          <div className="absolute bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-sm"></div>
         </div>
       </div>
     </header>
