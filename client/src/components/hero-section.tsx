@@ -14,7 +14,7 @@ export default function HeroSection() {
       {/* High-Quality Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full hero-video filter brightness-110 contrast-105 saturate-110"
+          className="hero-video filter brightness-110 contrast-105 saturate-110"
           autoPlay
           loop
           muted
@@ -22,8 +22,15 @@ export default function HeroSection() {
           preload="metadata"
           style={{
             filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
             minWidth: '100%',
-            minHeight: '100%'
+            minHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+            objectFit: 'cover'
           }}
         >
           {/* Multiple sources for better quality and compatibility */}
