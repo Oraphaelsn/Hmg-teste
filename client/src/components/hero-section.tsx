@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="inicio" className="hero-section pt-20 relative overflow-hidden" style={{ minHeight: '100vh', minHeight: '100dvh' }}>
+    <section id="inicio" className="hero-section pt-20 relative overflow-hidden" style={{ minHeight: '100dvh' }}>
       {/* High-Quality Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
@@ -49,7 +49,7 @@ export default function HeroSection() {
       </div>
 
       {/* Centralized CTA Button with info text - Fixed only on hero section */}
-      <div className="absolute bottom-20 sm:bottom-24 md:bottom-28 lg:bottom-32 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-2 sm:space-y-3 px-4">
+      <div className="absolute bottom-20 sm:bottom-24 md:bottom-28 lg:bottom-32 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center space-y-2 sm:space-y-3 px-4">
         <Button 
           onClick={scrollToContact}
           size="lg"

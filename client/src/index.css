@@ -163,16 +163,16 @@
     transform: translateZ(0);
   }
 
-  /* Mobile Video - Specific for iPhone and Android */
+  /* Mobile Video - iPhone and Android responsive */
   .hero-video-mobile {
-    position: fixed !important;
+    position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover !important;
     object-position: center !important;
-    z-index: -1 !important;
+    z-index: 1 !important;
   }
 
   /* Desktop Video */
@@ -186,45 +186,27 @@
     width: auto !important;
     height: auto !important;
     object-fit: cover !important;
-    z-index: -1 !important;
+    z-index: 1 !important;
   }
 
-  /* iPhone 16 Pro Max - 430x932 */
-  @media only screen 
-    and (device-width: 430px) 
-    and (device-height: 932px) 
-    and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone specific adjustments */
+  @media (max-width: 430px) and (orientation: portrait) {
     .hero-video-mobile {
-      width: 430px !important;
-      height: 932px !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      height: 100dvh !important;
       object-fit: cover !important;
-      object-position: center center !important;
+      object-position: center !important;
     }
   }
 
-  /* iPhone 16 Pro - 393x852 */
-  @media only screen 
-    and (device-width: 393px) 
-    and (device-height: 852px) 
-    and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone landscape mode */
+  @media (max-width: 932px) and (orientation: landscape) and (max-height: 430px) {
     .hero-video-mobile {
-      width: 393px !important;
-      height: 852px !important;
+      width: 100vw !important;
+      height: 100vh !important;
       object-fit: cover !important;
-      object-position: center center !important;
-    }
-  }
-
-  /* iPhone 16 - 393x852 */
-  @media only screen 
-    and (device-width: 393px) 
-    and (device-height: 852px) 
-    and (-webkit-device-pixel-ratio: 2) {
-    .hero-video-mobile {
-      width: 393px !important;
-      height: 852px !important;
-      object-fit: cover !important;
-      object-position: center center !important;
+      object-position: center !important;
     }
   }
 
