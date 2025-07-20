@@ -193,33 +193,31 @@ export default function Header() {
               fill="url(#headerConnectionGradient)"
             />
             
-            {/* Onda de fundo para profundidade ampla com curva esquerda */}
+            {/* Onda de fundo suave com curva esquerda harmonizada */}
             <path 
-              d="M0,80 C60,15 150,45 300,75 C450,65 600,55 750,45 C900,55 1050,65 1150,75 L1200,50 L1200,15 L1200,0 L0,0 Z" 
+              d="M0,45 C30,20 80,35 150,50 C250,55 350,50 450,45 C600,40 750,35 900,40 C1050,45 1150,50 1200,35 L1200,15 L1200,0 L0,0 Z" 
               fill="url(#headerWaveGradient3)"
-              opacity="0.85"
-              className="filter blur-[2px]"
+              opacity="0.75"
             />
             
-            {/* Onda intermediária robusta para transição com curva esquerda */}
+            {/* Onda intermediária suave com transição harmoniosa */}
             <path 
-              d="M0,65 C50,12 100,32 200,52 C300,45 400,38 500,32 C600,35 700,38 800,45 C900,40 1000,35 1100,30 L1200,25 L1200,12 L1200,0 L0,0 Z" 
+              d="M0,35 C25,15 70,25 130,35 C200,40 280,35 380,30 C500,25 650,20 800,25 C950,30 1100,35 1200,25 L1200,12 L1200,0 L0,0 Z" 
               fill="url(#headerWaveGradient2)"
-              opacity="0.92"
+              opacity="0.85"
             />
             
-            {/* Onda principal volumosa com curva descendente esquerda */}
+            {/* Onda principal suave com curva descendente harmoniosa */}
             <path 
-              d="M0,55 C40,8 120,35 240,65 C360,55 480,45 600,35 C720,45 840,55 960,65 C1080,55 1140,50 1180,45 L1200,40 L1200,8 L1200,0 L0,0 Z" 
+              d="M0,30 C20,12 60,20 120,30 C200,35 300,30 420,25 C560,20 720,15 880,20 C1020,25 1150,30 1200,20 L1200,8 L1200,0 L0,0 Z" 
               fill="url(#headerWaveGradient)"
-              className="filter contrast-115 brightness-105"
             />
             
-            {/* Camada de brilho corporativo superior com curva esquerda */}
+            {/* Camada superior sutil sem brilho excessivo */}
             <path 
-              d="M0,50 C35,5 120,35 240,65 C360,55 480,45 600,35 C720,45 840,55 960,65 C1080,55 1140,50 1180,45 L1200,40 L1200,5 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveHighlight)"
-              opacity="0.7"
+              d="M0,25 C18,10 55,18 110,25 C180,30 270,25 380,20 C520,15 680,10 840,15 C980,20 1120,25 1200,15 L1200,5 L1200,0 L0,0 Z" 
+              fill="url(#headerWaveSubtle)"
+              opacity="0.4"
             />
               
               {/* Definições de gradientes harmoniosos */}
@@ -233,38 +231,37 @@ export default function Header() {
                   <stop offset="100%" stopColor="#2c744c" stopOpacity="1"/>
                 </linearGradient>
                 
-                {/* Gradiente principal idêntico ao cabeçalho */}
+                {/* Gradiente principal uniforme ao cabeçalho - sem brilho */}
                 <linearGradient id="headerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2c744c" stopOpacity="1"/>
-                  <stop offset="25%" stopColor="#1e5233" stopOpacity="1"/>
-                  <stop offset="50%" stopColor="#2c744c" stopOpacity="1"/>
-                  <stop offset="75%" stopColor="#1e5233" stopOpacity="1"/>
-                  <stop offset="100%" stopColor="#2c744c" stopOpacity="1"/>
+                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.98"/>
+                  <stop offset="25%" stopColor="#1e5233" stopOpacity="0.98"/>
+                  <stop offset="50%" stopColor="#2c744c" stopOpacity="0.98"/>
+                  <stop offset="75%" stopColor="#1e5233" stopOpacity="0.98"/>
+                  <stop offset="100%" stopColor="#2c744c" stopOpacity="0.98"/>
                 </linearGradient>
                 
-                {/* Gradiente intermediário harmonioso */}
+                {/* Gradiente intermediário suave */}
                 <linearGradient id="headerWaveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.95"/>
-                  <stop offset="33%" stopColor="#1e5233" stopOpacity="0.92"/>
-                  <stop offset="66%" stopColor="#2c744c" stopOpacity="0.90"/>
+                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.88"/>
+                  <stop offset="33%" stopColor="#1e5233" stopOpacity="0.88"/>
+                  <stop offset="66%" stopColor="#2c744c" stopOpacity="0.88"/>
                   <stop offset="100%" stopColor="#1e5233" stopOpacity="0.88"/>
                 </linearGradient>
                 
-                {/* Gradiente de profundidade em tons do cabeçalho */}
+                {/* Gradiente de base discreto */}
                 <linearGradient id="headerWaveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1e5233" stopOpacity="0.85"/>
-                  <stop offset="25%" stopColor="#2c744c" stopOpacity="0.80"/>
-                  <stop offset="50%" stopColor="#1e5233" stopOpacity="0.75"/>
-                  <stop offset="75%" stopColor="#2c744c" stopOpacity="0.70"/>
-                  <stop offset="100%" stopColor="#1e5233" stopOpacity="0.65"/>
+                  <stop offset="0%" stopColor="#1e5233" stopOpacity="0.78"/>
+                  <stop offset="25%" stopColor="#2c744c" stopOpacity="0.78"/>
+                  <stop offset="50%" stopColor="#1e5233" stopOpacity="0.78"/>
+                  <stop offset="75%" stopColor="#2c744c" stopOpacity="0.78"/>
+                  <stop offset="100%" stopColor="#1e5233" stopOpacity="0.78"/>
                 </linearGradient>
                 
-                {/* Highlight corporativo refinado */}
-                <linearGradient id="headerWaveHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#34d399" stopOpacity="0.5"/>
-                  <stop offset="20%" stopColor="#10b981" stopOpacity="0.3"/>
-                  <stop offset="50%" stopColor="#059669" stopOpacity="0.15"/>
-                  <stop offset="100%" stopColor="#047857" stopOpacity="0.05"/>
+                {/* Gradiente sutil para acabamento */}
+                <linearGradient id="headerWaveSubtle" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.6"/>
+                  <stop offset="50%" stopColor="#1e5233" stopOpacity="0.6"/>
+                  <stop offset="100%" stopColor="#2c744c" stopOpacity="0.6"/>
                 </linearGradient>
               </defs>
             </svg>
