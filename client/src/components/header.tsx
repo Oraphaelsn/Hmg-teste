@@ -22,7 +22,7 @@ export default function Header() {
             <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
               <Heart className="text-white" size={20} />
             </div>
-            <span className="text-xl font-bold text-slate-800">Clínica Esperança</span>
+            <span className="text-xl font-bold text-slate-800">Estância Morro Grande</span>
           </div>
 
           {/* Desktop Menu */}

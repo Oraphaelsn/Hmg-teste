@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
                 <Heart className="text-white" size={20} />
               </div>
-              <span className="text-xl font-bold">Clínica Esperança</span>
+              <span className="text-xl font-bold">Estância Morro Grande</span>
             </div>
             <p className="text-slate-300 leading-relaxed">
               Especializada em tratamento de saúde mental e dependência química, 
@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="space-y-4 text-slate-300">
               <div className="flex items-center">
                 <MapPin className="mr-3 text-primary" size={20} />
-                <span>Rua da Esperança, 123 - São Paulo/SP</span>
+                <span>Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
               </div>
               <div className="flex items-center">
                 <Phone className="mr-3 text-primary" size={20} />
@@ -38,7 +38,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="mr-3 text-primary" size={20} />
-                <span>contato@clinicaesperanca.com.br</span>
+                <span>contato@estanciamorrogrande.com.br</span>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-700 mt-12 pt-8 text-center text-slate-400">
-          <p>&copy; 2024 Clínica Esperança. Todos os direitos reservados. | CNPJ: 00.000.000/0001-00</p>
+          <p>&copy; 2024 Estância Morro Grande. Todos os direitos reservados. | CNPJ: 00.000.000/0001-00</p>
         </div>
       </div>
     </footer>

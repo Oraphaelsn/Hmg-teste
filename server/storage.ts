@@ -18,6 +18,8 @@ export class MemStorage implements IStorage {
     const id = this.currentId++;
     const lead: Lead = {
       ...insertLead,
+      treatment: insertLead.treatment ?? null,
+      insurance: insertLead.insurance ?? null,
       id,
       createdAt: new Date(),
     };

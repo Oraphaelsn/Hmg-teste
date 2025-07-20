@@ -21,6 +21,7 @@ export default function ContactForm() {
       name: "",
       phone: "",
       treatment: "",
+      insurance: "",
     },
   });
 
@@ -34,7 +35,7 @@ export default function ContactForm() {
       form.reset();
       toast({
         title: "Solicitação enviada!",
-        description: "Entraremos em contato em até 2 horas. Obrigado por confiar na Clínica Esperança.",
+        description: "Entraremos em contato em até 2 horas. Obrigado por confiar na Estância Morro Grande.",
       });
     },
     onError: (error) => {
@@ -122,6 +123,46 @@ export default function ContactForm() {
                   <SelectItem value="dependencia-quimica">Dependência Química</SelectItem>
                   <SelectItem value="ambos">Ambos</SelectItem>
                   <SelectItem value="nao-sei">Não sei qual preciso</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="mb-6">
+              <Label htmlFor="insurance" className="text-slate-700 font-medium">
+                Convênio/Plano de Saúde
+              </Label>
+              <Select onValueChange={(value) => form.setValue("insurance", value)}>
+                <SelectTrigger className="mt-2">
+                  <SelectValue placeholder="Selecione seu convênio" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="vivest">Vivest Funcesp</SelectItem>
+                  <SelectItem value="vidatop">Vida Top Saúde</SelectItem>
+                  <SelectItem value="unimed">Unimed</SelectItem>
+                  <SelectItem value="sulamerica">SulAmérica</SelectItem>
+                  <SelectItem value="saude-caixa">Saúde Caixa</SelectItem>
+                  <SelectItem value="santa-casa">Santa Casa Saúde Piracicaba</SelectItem>
+                  <SelectItem value="postal-saude">Postal Saúde</SelectItem>
+                  <SelectItem value="leader">Leader Saúde</SelectItem>
+                  <SelectItem value="mediservice">MediService</SelectItem>
+                  <SelectItem value="hapvida">Hapvida</SelectItem>
+                  <SelectItem value="nossa-senhora">Nossa Senhora Intermédica</SelectItem>
+                  <SelectItem value="gocare">GoCare Saúde</SelectItem>
+                  <SelectItem value="geap">GEAP Saúde</SelectItem>
+                  <SelectItem value="gama">GAMA Saúde</SelectItem>
+                  <SelectItem value="fusex">FUSEX</SelectItem>
+                  <SelectItem value="funserv">FUNSERV</SelectItem>
+                  <SelectItem value="assefaz">Fundação ASSEFAZ</SelectItem>
+                  <SelectItem value="economus">Economus</SelectItem>
+                  <SelectItem value="cassi">CASSI</SelectItem>
+                  <SelectItem value="bradesco">Bradesco Saúde</SelectItem>
+                  <SelectItem value="biocentro">Biocentro</SelectItem>
+                  <SelectItem value="apas">APAS Saúde</SelectItem>
+                  <SelectItem value="amil">Amil</SelectItem>
+                  <SelectItem value="amhemered">AMHEMED</SelectItem>
+                  <SelectItem value="mais-saude">Mais Saúde</SelectItem>
+                  <SelectItem value="particular">Particular</SelectItem>
+                  <SelectItem value="outro">Outro</SelectItem>
                 </SelectContent>
               </Select>
             </div>

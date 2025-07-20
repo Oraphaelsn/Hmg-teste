@@ -2,11 +2,15 @@
 
 ## Overview
 
-This is a modern, responsive mental health and addiction treatment landing page built with React, TypeScript, and Express.js. The application is designed to capture leads for people seeking mental health treatment and addiction recovery services. It features a professional design with emotional appeal, showcasing treatment options, facility structure, testimonials, and a lead capture form.
+This is a modern, responsive mental health and addiction treatment landing page for Estância Morro Grande, built with React, TypeScript, and Express.js. The application is designed to capture leads for people seeking mental health treatment and addiction recovery services. It features a professional design with emotional appeal using a natural green color palette, showcasing treatment options, facility structure, testimonials, and a comprehensive lead capture form with insurance/health plan options.
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- Preferred communication style: Simple, everyday language (Portuguese)
+- Clinic name: Estância Morro Grande 
+- Brand colors: Natural green palette (#4F7942 primary theme)
+- Location: Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5
+- Email: contato@estanciamorrogrande.com.br
 
 ## System Architecture
 
@@ -92,6 +96,7 @@ leads: {
   name: text (required)
   phone: text (required) 
   treatment: text (optional)
+  insurance: text (optional) - health insurance/plan
   createdAt: timestamp (auto-generated)
 }
 ```

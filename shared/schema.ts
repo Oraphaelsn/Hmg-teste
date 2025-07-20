@@ -7,6 +7,7 @@ export const leads = pgTable("leads", {
   name: text("name").notNull(),
   phone: text("phone").notNull(),
   treatment: text("treatment"),
+  insurance: text("insurance"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
