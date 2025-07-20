@@ -108,7 +108,7 @@ export default function Footer() {
                 <span className="font-medium text-sm text-white">Confidencialidade Total</span>
               </div>
               <p className="text-gray-400 text-xs">
-                Todos os dados são tratados com absoluto sigilo profissional.
+                Todos os dados são tratados com absoluto sigilo profissional e em total adequação à LGPD (Lei Geral de Proteção de Dados).
               </p>
             </div>
           </div>
