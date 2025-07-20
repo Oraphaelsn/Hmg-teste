@@ -2,28 +2,28 @@ import { Clock, Users, Shield, Heart } from "lucide-react";
 
 const facilities = [
   {
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    title: "Salas de Terapia"
+    image: "https://estanciamorrogrande.com.br/wp-content/uploads/2023/05/06.jpg",
+    title: "Atividades terapeuticas"
   },
   {
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: "https://estanciamorrogrande.com.br/wp-content/uploads/2021/04/estancia_morro-grande_estrutura7.jpg",
     title: "Áreas de Convivência"
   },
   {
-    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    title: "Quartos Confortáveis"
+    image: "https://estanciamorrogrande.com.br/wp-content/uploads/2021/04/estancia_morro-grande_estrutura13.jpg",
+    title: "Quartos"
   },
   {
-    image: "https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    title: "Jardins Terapêuticos"
+    image: "https://estanciamorrogrande.com.br/wp-content/uploads/2023/05/01.jpg",
+    title: "Academia"
   },
   {
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    title: "Consultórios Médicos"
+    image: "https://estanciamorrogrande.com.br/wp-content/uploads/2021/04/estancia_morro-grande_estrutura34.jpg",
+    title: "Restaurante"
   },
   {
     image: "https://images.unsplash.com/photo-1599045118108-bf9954418b76?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    title: "Terapia em Grupo"
+    title: "Médicos e Enfermeiros"
   }
 ];
 
@@ -61,7 +61,7 @@ export default function StructureSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-6">Nossa Estrutura</h2>
           <p className="text-2xl text-accent font-medium mb-8">
-            "Ambiente seguro, supervisionado e preparado para recomeços"
+            "Ambiente seguro, supervisionado e preparado 24 horas 7 dias por semana"
           </p>
         </div>
 
