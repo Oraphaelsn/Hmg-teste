@@ -28,13 +28,8 @@ const testimonials = [
 export default function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 7000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // Removed automatic rotation - carousel is now static
+  // Users can manually navigate if navigation buttons are added later
 
   return (
     <section id="depoimentos" className="py-20 bg-white">
