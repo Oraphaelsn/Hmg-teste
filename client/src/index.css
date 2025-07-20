@@ -64,6 +64,52 @@
     scroll-behavior: smooth;
   }
 
+  /* Floating animations for icons */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes floatGentle {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-4px) rotate(1deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-2px) rotate(-1deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .float-gentle {
+    animation: floatGentle 6s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
   /* Mobile optimizations */
   @media (max-width: 640px) {
     html {
