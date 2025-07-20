@@ -16,7 +16,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/50 border-b-4 border-gradient-to-r border-emerald-400/30">
+    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/30 border-b border-emerald-400/20">
+      {/* Soft edge shadows */}
+      <div className="absolute -bottom-2 left-0 right-0 h-2 bg-gradient-to-b from-black/20 to-transparent blur-sm"></div>
+      <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/15 to-transparent blur-sm"></div>
+      <div className="absolute -right-2 top-0 bottom-0 w-2 bg-gradient-to-l from-black/15 to-transparent blur-sm"></div>
 
       
       {/* Subtle background texture */}
