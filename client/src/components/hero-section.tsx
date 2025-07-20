@@ -40,7 +40,7 @@ export default function HeroSection() {
         <Button 
           onClick={scrollToContact}
           size="lg"
-          className="relative bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-varela font-black px-10 py-5 h-auto text-xl rounded-full transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-green-500/50 border-2 border-white/20 hover:border-white/40 group overflow-hidden"
+          className="relative bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-varela font-black px-10 py-5 h-auto text-xl rounded-full transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-[#2c744c]/50 border-2 border-white/20 hover:border-white/40 group overflow-hidden"
         >
           {/* Pulse animation background */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full animate-pulse"></div>

@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-green-500 to-emerald-600 shadow-2xl shadow-green-500/50 border-b-2 border-white/20">
+    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/50 border-b-2 border-white/20">
       {/* Pulse animation background */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent animate-pulse"></div>
       
@@ -88,7 +88,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-white/30 bg-gradient-to-b from-green-600 to-emerald-700">
+          <div className="md:hidden border-t border-white/30 bg-gradient-to-b from-[#2c744c] to-[#1e5233]">
             <div className="px-4 py-4 space-y-2">
               <button 
                 onClick={() => scrollToSection("inicio")}
