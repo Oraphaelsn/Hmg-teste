@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="inicio" className="pt-20 relative min-h-screen flex items-center justify-center">
+    <section id="inicio" className="hero-section pt-20 relative min-h-screen flex items-center justify-center">
       {/* High-Quality Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
@@ -49,7 +49,7 @@ export default function HeroSection() {
       </div>
 
       {/* Centralized CTA Button with info text - Fixed only on hero section */}
-      <div className="absolute bottom-8 sm:bottom-16 md:bottom-20 lg:bottom-24 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-2 sm:space-y-3 px-4">
+      <div className="absolute bottom-20 sm:bottom-24 md:bottom-28 lg:bottom-32 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-2 sm:space-y-3 px-4">
         <Button 
           onClick={scrollToContact}
           size="lg"
@@ -69,7 +69,7 @@ export default function HeroSection() {
           </div>
         </Button>
         <div className="relative">
-          <p className="text-white/90 text-xs sm:text-sm font-medium text-center bg-gradient-to-r from-black/40 to-slate-900/40 backdrop-blur-md px-3 py-2 sm:px-6 sm:py-3 rounded-full border border-white/20 shadow-lg">
+          <p className="text-white/90 text-xs sm:text-sm font-medium text-center bg-gradient-to-r from-black/40 to-slate-900/40 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-white/20 shadow-lg">
             <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
             Atendimento 24 horas
             <span className="inline-block w-2 h-2 bg-green-400 rounded-full ml-2 animate-pulse"></span>

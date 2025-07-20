@@ -177,6 +177,17 @@
       object-position: center center;
       transform: scale(1.05);
     }
+    
+    /* Mobile CTA positioning adjustment - move buttons higher */
+    .hero-section .absolute.bottom-20 {
+      bottom: 8rem !important; /* Move significantly higher on mobile for better visibility */
+    }
+    
+    /* Ensure text is visible and well-positioned on mobile */
+    .hero-section .absolute p {
+      font-size: 0.75rem !important;
+      padding: 0.5rem 1rem !important;
+    }
   }
 
   /* Portrait orientation adjustments */
