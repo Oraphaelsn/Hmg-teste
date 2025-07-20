@@ -98,7 +98,7 @@ export default function TreatmentsSection() {
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Brain className="text-primary" size={32} />
+                <Brain className="text-primary drop-shadow-sm" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Psiquiatras</h4>
             </div>
@@ -110,13 +110,13 @@ export default function TreatmentsSection() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserCheck className="text-accent" size={32} />
+                <UserCheck className="text-accent drop-shadow-sm" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Enfermagem</h4>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-primary" size={32} />
+                <Shield className="text-primary drop-shadow-sm" size={40} style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.15))' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Monitores 24h</h4>
             </div>
