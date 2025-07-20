@@ -1,4 +1,4 @@
-import { Brain, Leaf, Check, UserCheck, Heart, Shield, Clock } from "lucide-react";
+import { Brain, Leaf, Check, UserCheck, Heart, Shield, Clock, Users } from "lucide-react";
 
 export default function TreatmentsSection() {
   return (
@@ -104,7 +104,7 @@ export default function TreatmentsSection() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Brain className="text-secondary" size={32} />
+                <div className="text-secondary text-3xl font-bold">Ψ</div>
               </div>
               <h4 className="font-semibold text-slate-800">Psicólogos</h4>
             </div>
