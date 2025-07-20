@@ -73,7 +73,8 @@ export default function AdminPage() {
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
-                className="w-20 h-16 object-contain mx-auto filter brightness-0 invert"
+                className="w-20 h-16 object-contain mx-auto filter brightness-0 invert cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
+                onClick={() => window.location.href = "/"}
               />
             </div>
             <CardTitle className="text-2xl font-bold text-[#2c744c]">

@@ -13,7 +13,13 @@ export default function Footer() {
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
-                className="w-16 h-12 object-contain filter contrast-125"
+                className="w-16 h-12 object-contain filter contrast-125 cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
+                onClick={() => {
+                  const element = document.getElementById("inicio");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
               />
             </div>
             <p className="text-slate-300 leading-relaxed">

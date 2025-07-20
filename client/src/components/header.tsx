@@ -29,12 +29,20 @@ export default function Header() {
       <nav className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center group cursor-pointer">
+          <div 
+            className="flex items-center group cursor-pointer"
+            onClick={() => {
+              const element = document.getElementById("inicio");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
             <div className="relative">
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
-                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5 filter contrast-125"
+                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 filter contrast-125"
               />
             </div>
           </div>
