@@ -11,6 +11,7 @@ This is a modern, responsive mental health and addiction treatment landing page 
 - Brand colors: Natural green palette (#4F7942 primary theme)
 - Location: Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5
 - Email: contato@estanciamorrogrande.com.br
+- Hero section: No carousel, centralized "Fale com Especialista" button at bottom center aligned with WhatsApp button
 
 ## System Architecture
 
@@ -150,3 +151,14 @@ leads: {
 - `NODE_ENV`: Environment mode (development/production)
 
 The application is designed to be deployed on platforms like Replit, Vercel, or any Node.js hosting service with PostgreSQL support.
+
+## Recent Changes
+
+- **July 20, 2025**: Successfully migrated from Replit Agent to Replit environment
+  - Installed required packages (tsx, Node.js runtime)
+  - Fixed server architecture and security configuration
+  - Updated hero section layout per user request:
+    - Removed carousel from hero section
+    - Moved "Fale com Especialista" button to fixed bottom-center position
+    - Maintained WhatsApp button in bottom-right position
+    - Both buttons now on same horizontal line for better UX
