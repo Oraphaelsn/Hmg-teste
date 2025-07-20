@@ -13,11 +13,15 @@ export default function VideoSection() {
   });
 
   // Use video from database or fallback to local file
-  const videoFile = videoData ? `@assets/${videoData.filename}` : videoFileLocal;
+  const videoFile = videoFileLocal; // Always use local file for now since it's the same
 
   const handlePlay = () => {
     setIsPlaying(true);
   };
+
+  // Debug logging
+  console.log('Video file path:', videoFile);
+  console.log('Video data from API:', videoData);
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-[#2c744c]/5">
