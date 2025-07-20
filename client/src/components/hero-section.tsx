@@ -1,39 +1,7 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { UserCheck } from "lucide-react";
 
-const heroSlides = [
-  {
-    title: "Você não está sozinho",
-    subtitle: "Recuperar é possível com acolhimento, dignidade e segurança",
-    highlight: "RECUPERAR É POSSÍVEL",
-    description: "Na Estância Morro Grande, oferecemos tratamento humanizado e especializado para dependência química e saúde mental, com ambiente seguro e equipe 24h."
-  },
-  {
-    title: "Recomeçar com dignidade",
-    subtitle: "Tratamento humanizado com equipe especializada",
-    highlight: "AMBIENTE SEGURO",
-    description: "Estrutura preparada para acolher você e sua família com total privacidade, conforto e segurança em todas as etapas do tratamento."
-  },
-  {
-    title: "Sua nova vida começa aqui",
-    subtitle: "Equipe multidisciplinar especializada em dependência",
-    highlight: "TRATAMENTO COMPLETO",
-    description: "Abordagem integral com psicólogos, médicos psiquiatras, terapeutas e enfermeiros especializados em recuperação e saúde mental."
-  }
-];
-
 export default function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 7000); // Aumentei para 7 segundos para dar mais tempo para leitura
-
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToContact = () => {
     const element = document.getElementById("contato");
     if (element) {
@@ -66,24 +34,24 @@ export default function HeroSection() {
           {/* Highlight Badge */}
           <div className="text-center mb-6">
             <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-6 py-2 text-xs font-bold tracking-wider text-white/95 animate-pulse uppercase">
-              {heroSlides[currentSlide].highlight}
+              RECUPERAR É POSSÍVEL
             </span>
           </div>
 
           {/* Main Title */}
           <h1 className="text-center font-varela text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-shadow-strong">
-            {heroSlides[currentSlide].title}
+            Você não está sozinho
           </h1>
           
           {/* Subtitle */}
           <p className="text-center text-xl md:text-2xl lg:text-3xl mb-6 font-varela font-medium text-white/95 text-shadow leading-snug">
-            {heroSlides[currentSlide].subtitle}
+            Recuperar é possível com acolhimento, dignidade e segurança
           </p>
 
           {/* Description */}
           <div className="max-w-4xl mx-auto text-center mb-10">
             <p className="text-lg md:text-xl leading-relaxed text-white/90 font-light px-4">
-              {heroSlides[currentSlide].description}
+              Na Estância Morro Grande, oferecemos tratamento humanizado e especializado para dependência química e saúde mental, com ambiente seguro e equipe 24h.
             </p>
           </div>
 
@@ -99,24 +67,11 @@ export default function HeroSection() {
                 Fale com um Especialista
               </Button>
               <p className="text-white/80 text-sm font-light">
-                • Atendimento 24 horas • 
+                Atendimento 24 horas • Primeira consulta gratuita
               </p>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Carousel indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? "bg-white" : "bg-white/30"
-            }`}
-          />
-        ))}
       </div>
     </section>
   );
