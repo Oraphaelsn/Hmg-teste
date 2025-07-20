@@ -41,8 +41,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo e Descrição */}
-          <div>
-            <div className="mb-6">
+          <div className="text-center">
+            <div className="mb-6 flex justify-center">
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
@@ -62,32 +62,32 @@ export default function Footer() {
           </div>
 
           {/* Informações de Contato */}
-          <div>
+          <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Contato</h4>
             <div className="space-y-3 text-gray-300 text-sm">
-              <div className="flex items-start">
+              <div className="flex items-start justify-center">
                 <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0" size={16} />
-                <span>Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
+                <span className="text-left">Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <Phone className="mr-3 text-[#2c744c]" size={16} />
                 <span>(11) 3333-4444</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <MessageCircle className="mr-3 text-[#25D366]" size={16} />
                 <span>(11) 99999-9999</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <Mail className="mr-3 text-[#2c744c]" size={16} />
-                <span>contato@estanciamorrogrande.com.br</span>
+                <span className="text-left">contato@estanciamorrogrande.com.br</span>
               </div>
             </div>
           </div>
 
-          {/* Redes Sociais e Privacidade */}
-          <div>
+          {/* Redes Sociais */}
+          <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Redes Sociais</h4>
-            <div className="flex space-x-3 mb-6">
+            <div className="flex justify-center space-x-3 mb-6">
               <a
                 href="#"
                 className="w-10 h-10 bg-[#2c744c]/20 rounded-full flex items-center justify-center hover:bg-[#2c744c]/40 transition-colors"
@@ -101,27 +101,30 @@ export default function Footer() {
                 <FaInstagram size={16} className="text-white" />
               </a>
             </div>
-
-            <div className="bg-gray-900 rounded-lg p-4 border border-gray-800">
-              <div className="flex items-center mb-2">
-                <Shield className="text-[#2c744c] mr-2" size={16} />
-                <span className="font-medium text-sm text-white">Confidencialidade Total</span>
-              </div>
-              <p className="text-gray-400 text-xs">
-                Todos os dados são tratados com absoluto sigilo profissional e em total adequação à LGPD (Lei Geral de Proteção de Dados).
-              </p>
-            </div>
           </div>
 
           {/* Certificações */}
-          <div>
+          <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Certificações</h4>
             <div className="flex justify-center mb-4">
               <ISO9001Seal />
             </div>
-            <p className="text-gray-400 text-xs text-center">
+            <p className="text-gray-400 text-xs">
               Certificado ISO 9001:2015<br/>
               Sistema de Gestão da Qualidade
+            </p>
+          </div>
+        </div>
+
+        {/* Seção de Confidencialidade - Separada */}
+        <div className="mt-12 flex justify-center">
+          <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 max-w-md text-center">
+            <div className="flex items-center justify-center mb-3">
+              <Shield className="text-[#2c744c] mr-2" size={20} />
+              <span className="font-medium text-base text-white">Confidencialidade Total</span>
+            </div>
+            <p className="text-gray-400 text-sm">
+              Todos os dados são tratados com absoluto sigilo profissional e em total adequação à LGPD (Lei Geral de Proteção de Dados).
             </p>
           </div>
         </div>
