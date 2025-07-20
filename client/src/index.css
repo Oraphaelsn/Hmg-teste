@@ -64,13 +64,13 @@
     scroll-behavior: smooth;
   }
 
-  /* Floating animations for icons */
+  /* Floating animations for icons - ultra smooth */
   @keyframes float {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-8px);
+      transform: translateY(-3px);
     }
   }
 
@@ -79,13 +79,13 @@
       transform: translateY(0) rotate(0deg);
     }
     25% {
-      transform: translateY(-4px) rotate(1deg);
+      transform: translateY(-1.5px) rotate(0.3deg);
     }
     50% {
-      transform: translateY(-6px) rotate(0deg);
+      transform: translateY(-2px) rotate(0deg);
     }
     75% {
-      transform: translateY(-2px) rotate(-1deg);
+      transform: translateY(-0.8px) rotate(-0.3deg);
     }
   }
 
@@ -99,11 +99,11 @@
   }
 
   .float-animation {
-    animation: float 4s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
 
   .float-gentle {
-    animation: floatGentle 6s ease-in-out infinite;
+    animation: floatGentle 12s ease-in-out infinite;
   }
 
   .pulse-glow {

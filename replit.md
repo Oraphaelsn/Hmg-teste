@@ -159,15 +159,15 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 ## Recent Changes (July 20, 2025)
 
 ✓ **MIGRAÇÃO COMPLETA PARA REPLIT**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
-✓ **SISTEMA DE ANIMAÇÕES SOFISTICADO IMPLEMENTADO**: Criado sistema completo de animações flutuantes e efeitos visuais premium
-  - **Animações CSS personalizadas**: floatGentle (6s), float (4s) e pulse-glow (3s) com delays escalonados
-  - **Ícone de psicologia**: Símbolo Ψ (psi) oficial com tipografia serif, brightness 1.2 e animações suaves
-  - **Equipe multidisciplinar**: Brain, Ψ, UserCheck e Shield com flutuação contínua e hover effects
-  - **Checkmarks animados**: 26px com rotação 12°, escala 125% e flutuação individual com delays
-  - **Diferenciais**: 5 ícones com animação float escalonada (0.5s intervals) e hover transforms
-  - **Footer interativo**: Ícones de contato com flutuação suave, rotação 6° e pulse-glow
-  - **Efeitos premium**: drop-shadow 3D, brightness 1.2, sombras coloridas e transições 500ms
-  - **Responsividade**: Animações otimizadas para todas as seções mantendo performance
+✓ **SISTEMA DE ANIMAÇÕES ULTRA-SUAVES IMPLEMENTADO**: Sistema completo de animações flutuantes ultra-relaxantes
+  - **Animações CSS ultra-suaves**: floatGentle (12s), float (8s) e pulse-glow (8s) com movimentos mínimos
+  - **Movimentos sutis**: Flutuação máxima -3px, rotação máxima ±0.3°, totalmente relaxante
+  - **Pulse-glow tranquilo**: Opacidade 0.85-0.95 com duração 8s para efeito zen
+  - **Hover effects delicados**: Escala 105-110%, elevação -0.5px a -1px, rotação ±2-3°
+  - **Transições longas**: 700ms para todos os efeitos hover, criando fluidez premium
+  - **Sombras suaves**: Drop-shadow 1-2px com brightness 1.05, visual elegante
+  - **Checkmarks zen**: Movimento sutil com scale 108% e rotação 3° no hover
+  - **Performance otimizada**: Animações leves que não impactam desempenho do site
 ✓ **BANCO DE DADOS IMPLEMENTADO**: Adicionada tabela de vídeos com schema completo
 ✓ **VÍDEO LOCAL INTEGRADO**: Substituído vídeo externo pelo arquivo local "WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4"
 ✓ **API DE VÍDEOS**: Implementadas rotas REST para gerenciar vídeos por seção

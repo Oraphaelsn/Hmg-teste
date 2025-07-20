@@ -28,15 +28,15 @@ export default function TreatmentsSection() {
             </p>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-center group">
-                <Check className="text-secondary mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 group-hover:-translate-y-1 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.3)) brightness(1.2)', animationDelay: '0.5s' }} />
+                <Check className="text-secondary mr-3 group-hover:scale-108 group-hover:rotate-3 transition-all duration-700 group-hover:-translate-y-0.5 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '0.5s' }} />
                 Avaliação psiquiátrica completa
               </li>
               <li className="flex items-center group">
-                <Check className="text-secondary mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 group-hover:-translate-y-1 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.3)) brightness(1.2)', animationDelay: '1s' }} />
+                <Check className="text-secondary mr-3 group-hover:scale-108 group-hover:rotate-3 transition-all duration-700 group-hover:-translate-y-0.5 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '1s' }} />
                 Terapia individual e em grupo
               </li>
               <li className="flex items-center group">
-                <Check className="text-secondary mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 group-hover:-translate-y-1 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.3)) brightness(1.2)', animationDelay: '1.5s' }} />
+                <Check className="text-secondary mr-3 group-hover:scale-108 group-hover:rotate-3 transition-all duration-700 group-hover:-translate-y-0.5 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '1.5s' }} />
                 Acompanhamento medicamentoso
               </li>
             </ul>
@@ -56,15 +56,15 @@ export default function TreatmentsSection() {
             </p>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-center group">
-                <Check className="text-secondary mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 group-hover:-translate-y-1 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.3)) brightness(1.2)', animationDelay: '2s' }} />
+                <Check className="text-secondary mr-3 group-hover:scale-108 group-hover:rotate-3 transition-all duration-700 group-hover:-translate-y-0.5 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '2s' }} />
                 Desintoxicação supervisionada
               </li>
               <li className="flex items-center group">
-                <Check className="text-secondary mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 group-hover:-translate-y-1 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.3)) brightness(1.2)', animationDelay: '2.5s' }} />
+                <Check className="text-secondary mr-3 group-hover:scale-108 group-hover:rotate-3 transition-all duration-700 group-hover:-translate-y-0.5 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '2.5s' }} />
                 Programa de prevenção à recaída
               </li>
               <li className="flex items-center group">
-                <Check className="text-secondary mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 group-hover:-translate-y-1 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.3)) brightness(1.2)', animationDelay: '3s' }} />
+                <Check className="text-secondary mr-3 group-hover:scale-108 group-hover:rotate-3 transition-all duration-700 group-hover:-translate-y-0.5 cursor-pointer float-gentle pulse-glow" size={26} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '3s' }} />
                 Terapia cognitivo-comportamental
               </li>
             </ul>
@@ -97,26 +97,26 @@ export default function TreatmentsSection() {
           <h3 className="text-3xl font-bold text-brand-green mb-8">Equipe Multidisciplinar 24h</h3>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 group cursor-pointer float-gentle">
-                <Brain className="text-primary group-hover:scale-125 transition-all duration-500 group-hover:rotate-6 pulse-glow" size={40} style={{ filter: 'drop-shadow(3px 3px 8px rgba(44,116,76,0.3)) brightness(1.2)' }} />
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 hover:-translate-y-1 transition-all duration-700 hover:shadow-lg hover:shadow-primary/15 group cursor-pointer float-gentle">
+                <Brain className="text-primary group-hover:scale-110 transition-all duration-700 group-hover:rotate-2 pulse-glow" size={40} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.2)) brightness(1.1)' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Psiquiatras</h4>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 group cursor-pointer float-gentle" style={{ animationDelay: '1s' }}>
-                <div className="text-secondary font-bold tracking-wider group-hover:scale-125 transition-all duration-500 group-hover:rotate-6 pulse-glow" style={{ fontFamily: 'serif', textShadow: '3px 3px 8px rgba(44,116,76,0.3)', fontSize: '2.25rem', filter: 'brightness(1.2)' }}>Ψ</div>
+              <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 hover:-translate-y-1 transition-all duration-700 hover:shadow-lg hover:shadow-secondary/15 group cursor-pointer float-gentle" style={{ animationDelay: '1s' }}>
+                <div className="text-secondary font-bold tracking-wider group-hover:scale-110 transition-all duration-700 group-hover:rotate-2 pulse-glow" style={{ fontFamily: 'serif', textShadow: '2px 2px 6px rgba(44,116,76,0.2)', fontSize: '2.25rem', filter: 'brightness(1.1)' }}>Ψ</div>
               </div>
               <h4 className="font-semibold text-slate-800">Psicólogos</h4>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 group cursor-pointer float-gentle" style={{ animationDelay: '2s' }}>
-                <UserCheck className="text-accent group-hover:scale-125 transition-all duration-500 group-hover:rotate-6 pulse-glow" size={40} style={{ filter: 'drop-shadow(3px 3px 8px rgba(44,116,76,0.3)) brightness(1.2)' }} />
+              <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 hover:-translate-y-1 transition-all duration-700 hover:shadow-lg hover:shadow-accent/15 group cursor-pointer float-gentle" style={{ animationDelay: '2s' }}>
+                <UserCheck className="text-accent group-hover:scale-110 transition-all duration-700 group-hover:rotate-2 pulse-glow" size={40} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.2)) brightness(1.1)' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Enfermagem</h4>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 group cursor-pointer float-gentle" style={{ animationDelay: '3s' }}>
-                <Shield className="text-primary group-hover:scale-125 transition-all duration-500 group-hover:rotate-6 pulse-glow" size={40} style={{ filter: 'drop-shadow(3px 3px 8px rgba(44,116,76,0.3)) brightness(1.2)' }} />
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 hover:-translate-y-1 transition-all duration-700 hover:shadow-lg hover:shadow-primary/15 group cursor-pointer float-gentle" style={{ animationDelay: '3s' }}>
+                <Shield className="text-primary group-hover:scale-110 transition-all duration-700 group-hover:rotate-2 pulse-glow" size={40} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.2)) brightness(1.1)' }} />
               </div>
               <h4 className="font-semibold text-slate-800">Monitores 24h</h4>
             </div>

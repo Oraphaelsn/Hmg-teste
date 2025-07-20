@@ -66,19 +66,19 @@ export default function Footer() {
             <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white text-center">Contato</h4>
             <div className="space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm">
               <div className="flex items-start group">
-                <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0 group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 transition-all duration-500 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.4)) brightness(1.2)' }} />
+                <MapPin className="mr-3 text-[#2c744c] mt-0.5 flex-shrink-0 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-2 transition-all duration-700 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)' }} />
                 <span>Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5</span>
               </div>
               <div className="flex items-center group">
-                <Phone className="mr-3 text-[#2c744c] group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 transition-all duration-500 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.4)) brightness(1.2)', animationDelay: '1s' }} />
+                <Phone className="mr-3 text-[#2c744c] group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-2 transition-all duration-700 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '1s' }} />
                 <span>(11) 3333-4444</span>
               </div>
               <div className="flex items-center group">
-                <MessageCircle className="mr-3 text-[#25D366] group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 transition-all duration-500 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(2px 2px 6px rgba(37,211,102,0.4)) brightness(1.2)', animationDelay: '2s' }} />
+                <MessageCircle className="mr-3 text-[#25D366] group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-2 transition-all duration-700 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(1px 1px 4px rgba(37,211,102,0.2)) brightness(1.05)', animationDelay: '2s' }} />
                 <span>(11) 99999-9999</span>
               </div>
               <div className="flex items-center group">
-                <Mail className="mr-3 text-[#2c744c] group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 transition-all duration-500 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(2px 2px 6px rgba(44,116,76,0.4)) brightness(1.2)', animationDelay: '3s' }} />
+                <Mail className="mr-3 text-[#2c744c] group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-2 transition-all duration-700 cursor-pointer float-gentle pulse-glow" size={20} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)', animationDelay: '3s' }} />
                 <span>contato@estanciamorrogrande.com.br</span>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="mt-12 flex justify-center">
           <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 max-w-md text-center">
             <div className="flex items-center justify-center mb-3 group">
-              <Shield className="text-[#2c744c] mr-2 group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 transition-all duration-500 cursor-pointer float-animation pulse-glow" size={24} style={{ filter: 'drop-shadow(3px 3px 8px rgba(44,116,76,0.4)) brightness(1.2)' }} />
+              <Shield className="text-[#2c744c] mr-2 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-2 transition-all duration-700 cursor-pointer float-animation pulse-glow" size={24} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)' }} />
               <span className="font-medium text-base text-white">Confidencialidade Total</span>
             </div>
             <p className="text-gray-400 text-sm">

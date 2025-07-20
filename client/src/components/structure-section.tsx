@@ -96,8 +96,8 @@ export default function StructureSection() {
               const IconComponent = differential.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-${differential.color}/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-${differential.color}/20 group cursor-pointer float-animation`} style={{ animationDelay: `${index * 0.5}s` }}>
-                    <IconComponent className={`text-${differential.color} group-hover:scale-125 transition-all duration-500 group-hover:rotate-12 pulse-glow`} size={32} style={{ filter: 'drop-shadow(3px 3px 8px rgba(44,116,76,0.3)) brightness(1.2)' }} />
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-${differential.color}/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 hover:scale-105 hover:-translate-y-1 transition-all duration-700 hover:shadow-lg hover:shadow-${differential.color}/15 group cursor-pointer float-animation`} style={{ animationDelay: `${index * 0.5}s` }}>
+                    <IconComponent className={`text-${differential.color} group-hover:scale-110 transition-all duration-700 group-hover:rotate-3 pulse-glow`} size={32} style={{ filter: 'drop-shadow(1px 1px 4px rgba(44,116,76,0.2)) brightness(1.05)' }} />
                   </div>
                   <h4 className="text-base sm:text-lg font-semibold text-slate-800 mb-2">{differential.title}</h4>
                   <p className="text-slate-600 text-xs sm:text-sm">{differential.description}</p>
