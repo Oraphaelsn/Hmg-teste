@@ -20,7 +20,7 @@ export default function WhatsappFloat() {
 
 
       {/* WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-10 right-6 z-50">
         {/* Tooltip */}
         {showTooltip && (
           <div className="absolute bottom-full right-0 mb-3 bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap animate-bounce-in">

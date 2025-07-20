@@ -36,7 +36,7 @@ export default function HeroSection() {
       </div>
 
       {/* Centralized CTA Button with info text - Fixed only on hero section */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-3">
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-3">
         <Button 
           onClick={scrollToContact}
           size="lg"
