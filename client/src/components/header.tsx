@@ -52,229 +52,232 @@ export default function Header() {
 
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center space-x-2">
-            <button 
-              onClick={() => scrollToSection("inicio")}
-              className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
-            >
-              <span className="relative z-10">Início</span>
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
-            </button>
-            <button 
-              onClick={() => scrollToSection("tratamentos")}
-              className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
-            >
-              <span className="relative z-10">Tratamentos</span>
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
-            </button>
-            <button 
-              onClick={() => scrollToSection("estrutura")}
-              className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
-            >
-              <span className="relative z-10">Estrutura</span>
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
-            </button>
-            <button 
-              onClick={() => scrollToSection("depoimentos")}
-              className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
-            >
-              <span className="relative z-10">Depoimentos</span>
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
-            </button>
-            <button 
-              onClick={() => scrollToSection("contato")}
-              className="relative px-4 py-2 ml-4 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
-            >
-              {/* Subtle background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
-              
-              {/* Simple shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
-              
-              <div className="relative flex items-center justify-center z-10">
-                {/* WhatsApp icon - always visible with original colors */}
-                <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
-                  <FaWhatsapp className="text-white drop-shadow-sm" size={16} />
-                </div>
-                
-                <span className="tracking-wide text-sm font-varela drop-shadow-sm group-hover:text-emerald-50 transition-colors duration-300">Contato</span>
-              </div>
-            </button>
+                <button 
+                  onClick={() => scrollToSection("inicio")}
+                  className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
+                >
+                  <span className="relative z-10">Início</span>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
+                </button>
+                <button 
+                  onClick={() => scrollToSection("tratamentos")}
+                  className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
+                >
+                  <span className="relative z-10">Tratamentos</span>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
+                </button>
+                <button 
+                  onClick={() => scrollToSection("estrutura")}
+                  className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
+                >
+                  <span className="relative z-10">Estrutura</span>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
+                </button>
+                <button 
+                  onClick={() => scrollToSection("depoimentos")}
+                  className="relative px-4 py-2 text-white font-semibold rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/20"
+                >
+                  <span className="relative z-10">Depoimentos</span>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
+                </button>
+                <button 
+                  onClick={() => scrollToSection("contato")}
+                  className="relative px-4 py-2 ml-4 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
+                >
+                  {/* Subtle background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
+                  
+                  {/* Simple shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
+                  
+                  <div className="relative flex items-center justify-center z-10">
+                    {/* WhatsApp icon - always visible with original colors */}
+                    <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
+                      <FaWhatsapp className="text-white drop-shadow-sm" size={16} />
+                    </div>
+                    
+                    <span className="tracking-wide text-sm font-varela drop-shadow-sm group-hover:text-emerald-50 transition-colors duration-300">Contato</span>
+                  </div>
+                </button>
               </div>
 
               {/* Mobile Navigation - Horizontal layout with contact button */}
               <div className="md:hidden flex items-center space-x-2">
-            {/* Mobile menu items on the right */}
-            <div className="flex items-center space-x-1 text-xs">
-              <button 
-                onClick={() => scrollToSection("inicio")}
-                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
-              >
-                Início
-              </button>
-              <button 
-                onClick={() => scrollToSection("tratamentos")}
-                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
-              >
-                Tratamentos
-              </button>
-              <button 
-                onClick={() => scrollToSection("estrutura")}
-                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
-              >
-                Estrutura
-              </button>
-              <button 
-                onClick={() => scrollToSection("depoimentos")}
-                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
-              >
-                Depoimentos
-              </button>
-            </div>
-            
-            {/* Contact button */}
-            <button 
-              onClick={() => scrollToSection("contato")}
-              className="relative px-3 py-1.5 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
-            >
-              {/* Subtle background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
-              
-              {/* Simple shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
-              
-              <div className="relative flex items-center justify-center z-10">
-                {/* WhatsApp icon - always visible with original colors */}
-                <div className="bg-[#25D366] p-0.5 rounded-full mr-1.5 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
-                  <FaWhatsapp className="text-white drop-shadow-sm" size={12} />
+                {/* Mobile menu items on the right */}
+                <div className="flex items-center space-x-1 text-xs">
+                  <button 
+                    onClick={() => scrollToSection("inicio")}
+                    className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
+                  >
+                    Início
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("tratamentos")}
+                    className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
+                  >
+                    Tratamentos
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("estrutura")}
+                    className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
+                  >
+                    Estrutura
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("depoimentos")}
+                    className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
+                  >
+                    Depoimentos
+                  </button>
                 </div>
                 
-                <span className="tracking-wide text-xs font-varela drop-shadow-sm group-hover:text-emerald-50 transition-colors duration-300">Contato</span>
-              </div>
+                {/* Contact button */}
+                <button 
+                  onClick={() => scrollToSection("contato")}
+                  className="relative px-3 py-1.5 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
+                >
+                  {/* Subtle background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
+                  
+                  {/* Simple shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
+                  
+                  <div className="relative flex items-center justify-center z-10">
+                    {/* WhatsApp icon - always visible with original colors */}
+                    <div className="bg-[#25D366] p-0.5 rounded-full mr-1.5 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
+                      <FaWhatsapp className="text-white drop-shadow-sm" size={12} />
+                    </div>
+                    
+                    <span className="tracking-wide text-xs font-varela drop-shadow-sm group-hover:text-emerald-50 transition-colors duration-300">Contato</span>
+                  </div>
                 </button>
               </div>
             </div>
           </nav>
         </div>
 
-        {/* Curva corporativa integrada e alinhada com o cabeçalho */}
+        {/* Curva corporativa perfeitamente alinhada */}
         <div className="absolute left-0 right-0 top-full z-40">
-          {/* Sombra volumétrica para profundidade corporativa */}
-          <div className="absolute inset-0 transform translate-y-3 blur-xl opacity-50">
+          {/* Container alinhado com o header */}
+          <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative">
+            {/* Sombra volumétrica para profundidade corporativa */}
+            <div className="absolute inset-0 transform translate-y-3 blur-xl opacity-50">
+              <svg 
+                className="w-full h-24 sm:h-28 md:h-36 lg:h-40" 
+                viewBox="0 0 1200 140" 
+                preserveAspectRatio="none"
+                fill="none"
+              >
+                <path 
+                  d="M0,0 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,0 Z" 
+                  fill="#000000"
+                  opacity="0.6"
+                />
+              </svg>
+            </div>
+
+            {/* Onda principal com alinhamento perfeito */}
             <svg 
-              className="w-full h-24 sm:h-28 md:h-36 lg:h-40" 
+              className="relative w-full h-24 sm:h-28 md:h-36 lg:h-40" 
               viewBox="0 0 1200 140" 
               preserveAspectRatio="none"
               fill="none"
+              style={{
+                filter: 'drop-shadow(0 8px 32px rgba(44, 116, 76, 0.4)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))'
+              }}
             >
-              <path 
-                d="M0,0 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,0 Z" 
-                fill="#000000"
-                opacity="0.6"
+              {/* Camada de conexão uniforme com o header */}
+              <rect 
+                x="0" 
+                y="0" 
+                width="1200" 
+                height="8"
+                fill="url(#headerConnectionGradient)"
               />
+              
+              {/* Onda de fundo para profundidade suave */}
+              <path 
+                d="M0,8 C150,25 300,40 450,35 C600,30 750,25 900,30 C1050,35 1150,40 1200,25 L1200,8 L1200,0 L0,0 Z" 
+                fill="url(#headerWaveGradient3)"
+                opacity="0.85"
+                className="filter blur-[1px]"
+              />
+              
+              {/* Onda intermediária para transição */}
+              <path 
+                d="M0,6 C100,18 200,28 300,25 C400,22 500,18 600,20 C700,22 800,25 900,23 C1000,21 1100,18 1200,15 L1200,6 L1200,0 L0,0 Z" 
+                fill="url(#headerWaveGradient2)"
+                opacity="0.92"
+              />
+              
+              {/* Onda principal com definição corporativa */}
+              <path 
+                d="M0,4 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,4 L1200,0 L0,0 Z" 
+                fill="url(#headerWaveGradient)"
+                className="filter contrast-115 brightness-105"
+              />
+              
+              {/* Camada de brilho corporativo superior */}
+              <path 
+                d="M0,2 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,2 L1200,0 L0,0 Z" 
+                fill="url(#headerWaveHighlight)"
+                opacity="0.7"
+              />
+              
+              {/* Definições de gradientes harmoniosos */}
+              <defs>
+                {/* Gradiente de conexão para unificar com o header */}
+                <linearGradient id="headerConnectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#2c744c" stopOpacity="1"/>
+                  <stop offset="25%" stopColor="#1e5233" stopOpacity="1"/>
+                  <stop offset="50%" stopColor="#2c744c" stopOpacity="1"/>
+                  <stop offset="75%" stopColor="#1e5233" stopOpacity="1"/>
+                  <stop offset="100%" stopColor="#2c744c" stopOpacity="1"/>
+                </linearGradient>
+                
+                {/* Gradiente principal com harmonia perfeita */}
+                <linearGradient id="headerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#2c744c" stopOpacity="0.98"/>
+                  <stop offset="20%" stopColor="#1e5233" stopOpacity="0.96"/>
+                  <stop offset="40%" stopColor="#2c744c" stopOpacity="0.94"/>
+                  <stop offset="60%" stopColor="#1e5233" stopOpacity="0.96"/>
+                  <stop offset="80%" stopColor="#2c744c" stopOpacity="0.94"/>
+                  <stop offset="100%" stopColor="#1e5233" stopOpacity="0.92"/>
+                </linearGradient>
+                
+                {/* Gradiente intermediário para transição suave */}
+                <linearGradient id="headerWaveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#1e5233" stopOpacity="0.9"/>
+                  <stop offset="33%" stopColor="#065f46" stopOpacity="0.87"/>
+                  <stop offset="66%" stopColor="#134e4a" stopOpacity="0.85"/>
+                  <stop offset="100%" stopColor="#0f3d2a" stopOpacity="0.82"/>
+                </linearGradient>
+                
+                {/* Gradiente de profundidade para base */}
+                <linearGradient id="headerWaveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#065f46" stopOpacity="0.75"/>
+                  <stop offset="25%" stopColor="#064e3b" stopOpacity="0.7"/>
+                  <stop offset="50%" stopColor="#0c4a42" stopOpacity="0.65"/>
+                  <stop offset="75%" stopColor="#134e4a" stopOpacity="0.6"/>
+                  <stop offset="100%" stopColor="#1e5233" stopOpacity="0.55"/>
+                </linearGradient>
+                
+                {/* Highlight corporativo refinado */}
+                <linearGradient id="headerWaveHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#34d399" stopOpacity="0.5"/>
+                  <stop offset="20%" stopColor="#10b981" stopOpacity="0.3"/>
+                  <stop offset="50%" stopColor="#059669" stopOpacity="0.15"/>
+                  <stop offset="100%" stopColor="#047857" stopOpacity="0.05"/>
+                </linearGradient>
+              </defs>
             </svg>
+            
+            {/* Linha de acabamento inferior para definição precisa */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent"></div>
+            
+            {/* Reflexo sutil para profissionalismo */}
+            <div className="absolute bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-sm"></div>
           </div>
-
-          {/* Onda principal com alinhamento perfeito */}
-          <svg 
-            className="relative w-full h-24 sm:h-28 md:h-36 lg:h-40" 
-            viewBox="0 0 1200 140" 
-            preserveAspectRatio="none"
-            fill="none"
-            style={{
-              filter: 'drop-shadow(0 8px 32px rgba(44, 116, 76, 0.4)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))'
-            }}
-          >
-            {/* Camada de conexão uniforme com o header */}
-            <rect 
-              x="0" 
-              y="0" 
-              width="1200" 
-              height="8"
-              fill="url(#headerConnectionGradient)"
-            />
-            
-            {/* Onda de fundo para profundidade suave */}
-            <path 
-              d="M0,8 C150,25 300,40 450,35 C600,30 750,25 900,30 C1050,35 1150,40 1200,25 L1200,8 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveGradient3)"
-              opacity="0.85"
-              className="filter blur-[1px]"
-            />
-            
-            {/* Onda intermediária para transição */}
-            <path 
-              d="M0,6 C100,18 200,28 300,25 C400,22 500,18 600,20 C700,22 800,25 900,23 C1000,21 1100,18 1200,15 L1200,6 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveGradient2)"
-              opacity="0.92"
-            />
-            
-            {/* Onda principal com definição corporativa */}
-            <path 
-              d="M0,4 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,4 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveGradient)"
-              className="filter contrast-115 brightness-105"
-            />
-            
-            {/* Camada de brilho corporativo superior */}
-            <path 
-              d="M0,2 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,2 L1200,0 L0,0 Z" 
-              fill="url(#headerWaveHighlight)"
-              opacity="0.7"
-            />
-            
-            {/* Definições de gradientes harmoniosos */}
-            <defs>
-              {/* Gradiente de conexão para unificar com o header */}
-              <linearGradient id="headerConnectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#2c744c" stopOpacity="1"/>
-                <stop offset="25%" stopColor="#1e5233" stopOpacity="1"/>
-                <stop offset="50%" stopColor="#2c744c" stopOpacity="1"/>
-                <stop offset="75%" stopColor="#1e5233" stopOpacity="1"/>
-                <stop offset="100%" stopColor="#2c744c" stopOpacity="1"/>
-              </linearGradient>
-              
-              {/* Gradiente principal com harmonia perfeita */}
-              <linearGradient id="headerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#2c744c" stopOpacity="0.98"/>
-                <stop offset="20%" stopColor="#1e5233" stopOpacity="0.96"/>
-                <stop offset="40%" stopColor="#2c744c" stopOpacity="0.94"/>
-                <stop offset="60%" stopColor="#1e5233" stopOpacity="0.96"/>
-                <stop offset="80%" stopColor="#2c744c" stopOpacity="0.94"/>
-                <stop offset="100%" stopColor="#1e5233" stopOpacity="0.92"/>
-              </linearGradient>
-              
-              {/* Gradiente intermediário para transição suave */}
-              <linearGradient id="headerWaveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1e5233" stopOpacity="0.9"/>
-                <stop offset="33%" stopColor="#065f46" stopOpacity="0.87"/>
-                <stop offset="66%" stopColor="#134e4a" stopOpacity="0.85"/>
-                <stop offset="100%" stopColor="#0f3d2a" stopOpacity="0.82"/>
-              </linearGradient>
-              
-              {/* Gradiente de profundidade para base */}
-              <linearGradient id="headerWaveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#065f46" stopOpacity="0.75"/>
-                <stop offset="25%" stopColor="#064e3b" stopOpacity="0.7"/>
-                <stop offset="50%" stopColor="#0c4a42" stopOpacity="0.65"/>
-                <stop offset="75%" stopColor="#134e4a" stopOpacity="0.6"/>
-                <stop offset="100%" stopColor="#1e5233" stopOpacity="0.55"/>
-              </linearGradient>
-              
-              {/* Highlight corporativo refinado */}
-              <linearGradient id="headerWaveHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#34d399" stopOpacity="0.5"/>
-                <stop offset="20%" stopColor="#10b981" stopOpacity="0.3"/>
-                <stop offset="50%" stopColor="#059669" stopOpacity="0.15"/>
-                <stop offset="100%" stopColor="#047857" stopOpacity="0.05"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          
-          {/* Linha de acabamento inferior para definição precisa */}
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent"></div>
-          
-          {/* Reflexo sutil para profissionalismo */}
-          <div className="absolute bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-sm"></div>
         </div>
       </div>
     </header>
