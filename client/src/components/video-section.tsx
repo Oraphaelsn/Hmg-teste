@@ -19,9 +19,7 @@ export default function VideoSection() {
     setIsPlaying(true);
   };
 
-  // Debug logging
-  console.log('Video file path:', videoFile);
-  console.log('Video data from API:', videoData);
+  // Video is ready to use from local assets
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-[#2c744c]/5">
