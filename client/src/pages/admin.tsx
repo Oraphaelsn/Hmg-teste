@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, EyeOff, Phone, User, Calendar, FileText, Shield } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import EstanciaLogoSVG from "@/components/logo-svg";
+import logoOficial from "@assets/Estância Morro Grande Branco_1752992752131.png";
 
 interface Lead {
   id: number;
@@ -70,9 +70,11 @@ export default function AdminPage() {
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <div className="mx-auto mb-4">
-              <EstanciaLogoSVG 
-                className="h-16 w-auto mx-auto cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
-                color="#2c744c"
+              <img 
+                src={logoOficial} 
+                alt="Estância Morro Grande" 
+                className="h-16 w-auto mx-auto object-contain cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl filter brightness-0 invert-0"
+                style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(39%) saturate(1276%) hue-rotate(96deg) brightness(93%) contrast(89%)' }}
                 onClick={() => window.location.href = "/"}
               />
             </div>

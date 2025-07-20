@@ -1,6 +1,6 @@
 import { Heart, MapPin, Phone, MessageCircle, Mail, Shield } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import EstanciaLogoSVG from "./logo-svg";
+import logoOficial from "@assets/Estância Morro Grande Branco_1752992752131.png";
 
 // Componente do Selo ISO 9001
 function ISO9001Seal() {
@@ -43,9 +43,10 @@ export default function Footer() {
           {/* Logo e Descrição */}
           <div className="text-center">
             <div className="mb-6 flex justify-center">
-              <EstanciaLogoSVG 
-                className="w-20 h-16 filter contrast-125 cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
-                color="white"
+              <img 
+                src={logoOficial} 
+                alt="Estância Morro Grande" 
+                className="w-20 h-16 object-contain filter contrast-125 cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-xl"
                 onClick={() => {
                   const element = document.getElementById("inicio");
                   if (element) {
