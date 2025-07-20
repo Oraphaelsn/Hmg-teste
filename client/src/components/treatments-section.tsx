@@ -98,13 +98,13 @@ export default function TreatmentsSection() {
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserCheck className="text-primary" size={32} />
+                <Brain className="text-primary" size={32} />
               </div>
               <h4 className="font-semibold text-slate-800">Psiquiatras</h4>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="text-secondary" size={32} />
+                <Brain className="text-secondary" size={32} />
               </div>
               <h4 className="font-semibold text-slate-800">Psicólogos</h4>
             </div>
