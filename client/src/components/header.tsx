@@ -159,68 +159,68 @@ export default function Header() {
         {/* Curva corporativa de borda a borda */}
         <div className="absolute left-0 right-0 top-full z-40">
           {/* Sombra volumétrica para profundidade corporativa */}
-          <div className="absolute inset-0 transform translate-y-3 blur-xl opacity-50">
+          <div className="absolute inset-0 transform translate-y-4 blur-2xl opacity-60">
             <svg 
-              className="w-full h-24 sm:h-28 md:h-36 lg:h-40" 
-              viewBox="0 0 1200 140" 
+              className="w-full h-32 sm:h-40 md:h-48 lg:h-56" 
+              viewBox="0 0 1200 200" 
               preserveAspectRatio="none"
               fill="none"
             >
               <path 
-                d="M0,0 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,0 Z" 
+                d="M0,0 C120,35 240,65 360,55 C480,45 600,35 720,45 C840,55 960,65 1080,55 C1140,50 1180,45 1200,40 L1200,0 Z" 
                 fill="#000000"
-                opacity="0.6"
+                opacity="0.7"
               />
             </svg>
           </div>
 
-          {/* Onda principal de borda a borda */}
+          {/* Onda principal robusta de borda a borda */}
           <svg 
-            className="relative w-full h-24 sm:h-28 md:h-36 lg:h-40" 
-            viewBox="0 0 1200 140" 
+            className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56" 
+            viewBox="0 0 1200 200" 
             preserveAspectRatio="none"
             fill="none"
             style={{
-              filter: 'drop-shadow(0 8px 32px rgba(44, 116, 76, 0.4)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))'
+              filter: 'drop-shadow(0 12px 48px rgba(44, 116, 76, 0.5)) drop-shadow(0 6px 24px rgba(0, 0, 0, 0.4))'
             }}
           >
-              {/* Camada de conexão uniforme com o header */}
-              <rect 
-                x="0" 
-                y="0" 
-                width="1200" 
-                height="8"
-                fill="url(#headerConnectionGradient)"
-              />
-              
-              {/* Onda de fundo para profundidade suave */}
-              <path 
-                d="M0,8 C150,25 300,40 450,35 C600,30 750,25 900,30 C1050,35 1150,40 1200,25 L1200,8 L1200,0 L0,0 Z" 
-                fill="url(#headerWaveGradient3)"
-                opacity="0.85"
-                className="filter blur-[1px]"
-              />
-              
-              {/* Onda intermediária para transição */}
-              <path 
-                d="M0,6 C100,18 200,28 300,25 C400,22 500,18 600,20 C700,22 800,25 900,23 C1000,21 1100,18 1200,15 L1200,6 L1200,0 L0,0 Z" 
-                fill="url(#headerWaveGradient2)"
-                opacity="0.92"
-              />
-              
-              {/* Onda principal com definição corporativa */}
-              <path 
-                d="M0,4 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,4 L1200,0 L0,0 Z" 
-                fill="url(#headerWaveGradient)"
-                className="filter contrast-115 brightness-105"
-              />
-              
-              {/* Camada de brilho corporativo superior */}
-              <path 
-                d="M0,2 C120,20 240,35 360,30 C480,25 600,20 720,25 C840,30 960,35 1080,30 C1140,28 1180,25 1200,20 L1200,2 L1200,0 L0,0 Z" 
-                fill="url(#headerWaveHighlight)"
-                opacity="0.7"
-              />
+            {/* Camada de conexão robusta com o header */}
+            <rect 
+              x="0" 
+              y="0" 
+              width="1200" 
+              height="15"
+              fill="url(#headerConnectionGradient)"
+            />
+            
+            {/* Onda de fundo para profundidade ampla */}
+            <path 
+              d="M0,15 C150,45 300,75 450,65 C600,55 750,45 900,55 C1050,65 1150,75 1200,50 L1200,15 L1200,0 L0,0 Z" 
+              fill="url(#headerWaveGradient3)"
+              opacity="0.85"
+              className="filter blur-[2px]"
+            />
+            
+            {/* Onda intermediária robusta para transição */}
+            <path 
+              d="M0,12 C100,32 200,52 300,45 C400,38 500,32 600,35 C700,38 800,45 900,40 C1000,35 1100,30 1200,25 L1200,12 L1200,0 L0,0 Z" 
+              fill="url(#headerWaveGradient2)"
+              opacity="0.92"
+            />
+            
+            {/* Onda principal volumosa com definição corporativa */}
+            <path 
+              d="M0,8 C120,35 240,65 360,55 C480,45 600,35 720,45 C840,55 960,65 1080,55 C1140,50 1180,45 1200,40 L1200,8 L1200,0 L0,0 Z" 
+              fill="url(#headerWaveGradient)"
+              className="filter contrast-115 brightness-105"
+            />
+            
+            {/* Camada de brilho corporativo superior ampliada */}
+            <path 
+              d="M0,5 C120,35 240,65 360,55 C480,45 600,35 720,45 C840,55 960,65 1080,55 C1140,50 1180,45 1200,40 L1200,5 L1200,0 L0,0 Z" 
+              fill="url(#headerWaveHighlight)"
+              opacity="0.7"
+            />
               
               {/* Definições de gradientes harmoniosos */}
               <defs>
