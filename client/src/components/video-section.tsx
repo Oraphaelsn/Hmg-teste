@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 // Video file from local assets (fallback)
 import videoFileLocal from "@assets/WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4";
+// Logo da Estância para thumbnail
+import logoEstancia from "@assets/Estância Morro Grande Branco_1752992752131.png";
 
 export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false); // Start with video paused
@@ -36,53 +38,56 @@ export default function VideoSection() {
           <div className="relative w-full max-w-md mx-auto">
             <div className="relative aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl">
               {!isPlaying ? (
-                // Thumbnail com botão de play
-                <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2c744c]/20 to-slate-900/60">
-                  {/* Video preview thumbnail */}
-                  <div className="absolute inset-0 w-full h-full bg-black">
-                    <video
-                      className="w-full h-full object-cover"
-                      muted
-                      preload="metadata"
-                    >
-                      <source src={videoFile} type="video/mp4" />
-                    </video>
+                // Thumbnail com logo da Estância
+                <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2c744c] via-[#245f3a] to-[#2c744c]">
+                  {/* Logo da Estância como background */}
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <img 
+                      src={logoEstancia} 
+                      alt="Estância Morro Grande" 
+                      className="w-full h-auto max-w-[200px] object-contain opacity-95 filter drop-shadow-lg"
+                    />
                   </div>
                   
-                  {/* Overlay escuro */}
-                  <div className="absolute inset-0 bg-black/40" />
+                  {/* Overlay sutil para destacar o botão */}
+                  <div className="absolute inset-0 bg-black/20" />
                   
                   {/* Botão de play centralizado */}
                   <button
                     onClick={handlePlay}
-                    className="relative z-10 group flex items-center justify-center w-16 h-16 bg-white/25 backdrop-blur-sm rounded-full border-2 border-white/40 hover:bg-white/35 hover:border-white/60 transition-all duration-300 hover:scale-110"
+                    className="relative z-10 group flex items-center justify-center w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full border-2 border-white hover:bg-white hover:border-white transition-all duration-300 hover:scale-110 shadow-2xl"
                   >
                     <Play 
-                      className="w-6 h-6 text-white ml-0.5 group-hover:scale-110 transition-transform" 
-                      fill="white"
+                      className="w-8 h-8 text-[#2c744c] ml-1 group-hover:scale-110 transition-transform" 
+                      fill="#2c744c"
                     />
                   </button>
                   
-                  {/* Texto indicativo estilo reels */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-lg font-bold mb-1 text-center">Tour Estância</h3>
-                    <p className="text-xs text-white/90 text-center">Toque para assistir</p>
+                  {/* Texto indicativo */}
+                  <div className="absolute bottom-6 left-4 right-4 text-white">
+                    <h3 className="text-lg font-bold mb-1 text-center drop-shadow-lg">Conheça Nossa História</h3>
+                    <p className="text-sm text-white/95 text-center drop-shadow-md">Toque para assistir ao tour completo</p>
                   </div>
                   
-                  {/* Indicador de vídeo estilo Instagram */}
+                  {/* Indicador de vídeo */}
                   <div className="absolute top-4 right-4">
-                    <div className="bg-black/40 backdrop-blur-sm rounded-full px-2 py-1">
-                      <Play className="w-3 h-3 text-white" fill="white" />
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/30">
+                      <div className="flex items-center gap-1">
+                        <Play className="w-3 h-3 text-white" fill="white" />
+                        <span className="text-xs text-white font-medium">VÍDEO</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               ) : (
-                // Vídeo em reprodução
+                // Vídeo em reprodução (logo desaparece)
                 <video
                   className="w-full h-full object-cover"
                   controls
+                  autoPlay
                   playsInline
                   preload="metadata"
+                  onPause={() => setIsPlaying(false)} // Volta para thumbnail se pausar
                 >
                   <source src={videoFile} type="video/mp4" />
                   Seu navegador não suporta vídeos HTML5.
