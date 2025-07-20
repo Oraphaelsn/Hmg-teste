@@ -1,4 +1,5 @@
 import { Clock, Users, Shield, Heart, Brain } from "lucide-react";
+import corpoClinicoImage from "@assets/ChatGPT Image 20 de jul. de 2025, 02_43_08_1752990204871.png";
 
 const facilities = [
   {
@@ -22,7 +23,7 @@ const facilities = [
     title: "Restaurante"
   },
   {
-    image: "@assets/ChatGPT Image 20 de jul. de 2025, 02_43_08_1752990204871.png",
+    image: corpoClinicoImage,
     title: "Corpo Clínico"
   }
 ];
