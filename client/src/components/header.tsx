@@ -1,18 +1,12 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import logoOficial from "@assets/Estância Morro Grande Branco_1752992752131.png";
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -98,67 +92,60 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-white hover:bg-white/20 rounded-xl border border-white/30 hover:border-white/50 transition-all duration-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </Button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 border-t border-white/30 bg-gradient-to-b from-[#2c744c] to-[#1e5233] shadow-xl backdrop-blur-sm">
-            <div className="px-3 py-2 space-y-1">
+          {/* Mobile Navigation - Horizontal layout with contact button */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile menu items on the right */}
+            <div className="flex items-center space-x-1 text-xs">
               <button 
                 onClick={() => scrollToSection("inicio")}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
               >
                 Início
               </button>
               <button 
                 onClick={() => scrollToSection("tratamentos")}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
               >
                 Tratamentos
               </button>
               <button 
                 onClick={() => scrollToSection("estrutura")}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
               >
                 Estrutura
               </button>
               <button 
                 onClick={() => scrollToSection("depoimentos")}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-semibold"
+                className="px-2 py-1 text-white/90 hover:text-white font-medium transition-colors duration-300"
               >
                 Depoimentos
               </button>
-              <button 
-                onClick={() => scrollToSection("contato")}
-                className="relative block w-full text-left px-4 py-2 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden mt-1 border border-white/30 hover:border-emerald-300/60"
-              >
-                {/* Subtle background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-lg"></div>
-                
-                {/* Simple shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
-                
-                <div className="relative flex items-center z-10">
-                  {/* WhatsApp icon - always visible with original colors */}
-                  <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
-                    <FaWhatsapp className="text-white drop-shadow-sm" size={16} />
-                  </div>
-                  
-                  <span className="tracking-wide text-sm font-varela drop-shadow-sm group-hover:text-emerald-50 transition-colors duration-300">Contato</span>
-                </div>
-              </button>
             </div>
+            
+            {/* Contact button */}
+            <button 
+              onClick={() => scrollToSection("contato")}
+              className="relative px-3 py-1.5 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-900/40 hover:shadow-emerald-500/60 group overflow-hidden border border-white/40 hover:border-emerald-300/70"
+            >
+              {/* Subtle background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/8 to-transparent rounded-full"></div>
+              
+              {/* Simple shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
+              
+              <div className="relative flex items-center justify-center z-10">
+                {/* WhatsApp icon - always visible with original colors */}
+                <div className="bg-[#25D366] p-0.5 rounded-full mr-1.5 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
+                  <FaWhatsapp className="text-white drop-shadow-sm" size={12} />
+                </div>
+                
+                <span className="tracking-wide text-xs font-varela drop-shadow-sm group-hover:text-emerald-50 transition-colors duration-300">Contato</span>
+              </div>
+            </button>
           </div>
-        )}
+        </div>
+
+
       </nav>
     </header>
   );
