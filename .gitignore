@@ -71,5 +71,4 @@ vite.config.ts.*
 *.db
 *.sqlite
 
-# Attached assets (temporary files)
-attached_assets/
+# Assets are now included in the repository for deployment

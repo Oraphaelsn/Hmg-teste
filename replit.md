@@ -13,6 +13,8 @@ This is a modern, responsive mental health and addiction treatment landing page 
 - Email: contato@estanciamorrogrande.com.br
 - **UI Preferences**: Minimal hero section, no automatic carousels, centralized CTA button
 - Hero section: No carousel, centralized "Fale com Especialista" button at bottom center aligned with WhatsApp button
+- **Asset Management**: All uploaded images must be saved in the project and included in GitHub repository
+- **Logo**: Use official Estância Morro Grande logo (white version: "Estância Morro Grande Branco_1752992752131.png")
 
 ## System Architecture
 

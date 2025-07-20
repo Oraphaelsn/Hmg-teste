@@ -1,0 +1,69 @@
+Crie uma landing page profissional, responsiva e moderna, voltada para a captação de leads de pessoas que buscam internação para tratamento de saúde mental e dependência química, com forte apelo emocional e chamadas de ação para conversão.
+
+Requisitos obrigatórios:
+
+Cabeçalho fixo com:
+
+Logo fictício (use placeholder)
+
+Menu com âncoras: Início | Tratamentos | Estrutura | Depoimentos | Contato
+
+Seção Hero com carrossel de imagens:
+
+Carrossel com 3 imagens representando acolhimento emocional, tratamento humanizado e apoio profissional
+
+Frases de impacto sobre cuidado, empatia e recomeço (ex: “Você não está sozinho”, “Recuperar é possível”, “Acolhimento com dignidade e segurança”)
+
+Botão “Fale com um especialista” com rolagem suave até o formulário
+
+Seção de Tratamentos:
+
+Explicação sobre saúde mental, dependência química e os tipos de internação (voluntária, involuntária)
+
+Destaque para a equipe multidisciplinar: psicólogos, psiquiatras, equipe de enfermagem e monitores 24h
+
+Seção de Estrutura:
+
+Fotos fictícias (placeholder) mostrando ambientes calmos, áreas de convivência, quartos e salas terapêuticas
+
+Frase destaque: “Ambiente seguro, supervisionado e preparado para recomeços”
+
+Diferenciais:
+
+Atendimento 24h
+
+Equipe especializada em enfermagem e monitoria
+
+Privacidade, empatia e segurança
+
+Atendimento humanizado e planos personalizados
+
+Depoimentos (em carrossel):
+
+2 a 3 depoimentos fictícios de familiares e ex-pacientes, com nomes fictícios
+
+Formulário de captação de leads:
+
+Campos: Nome, Telefone, Tipo de tratamento, Botão “Solicitar atendimento”
+
+Mensagem de sigilo: “Suas informações estão protegidas com total confidencialidade”
+
+Botão flutuante de WhatsApp no canto inferior direito, com ícone verde e frase: "Fale agora via WhatsApp"
+
+Rodapé:
+
+Contato fictício, redes sociais (Facebook e Instagram), aviso de confidencialidade
+
+Design e tecnologia:
+
+Usar HTML5, CSS3, Bootstrap (ou equivalente)
+
+Paleta de cores suave (tons de azul, verde ou roxo claro)
+
+Tipografia legível, com contraste suave
+
+Efeitos de transição suave nos botões e carrossel
+
+Layout mobile-first (responsivo)
+
+Foco principal: transmitir confiança, empatia e urgência na tomada de decisão, com visual emocional e acolhedor.
