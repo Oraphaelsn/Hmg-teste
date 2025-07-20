@@ -21,38 +21,19 @@ export default function Header() {
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-300/60 via-white/40 to-emerald-300/60"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-200/80 to-transparent"></div>
       
-      {/* Pulse animation background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent animate-pulse"></div>
-      
-      {/* Shine effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full hover:translate-x-full transition-transform duration-1000"></div>
+      {/* Subtle background texture */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
       
       <nav className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer">
+          <div className="flex items-center group cursor-pointer">
             <div className="relative">
               <img 
                 src={logoImage} 
                 alt="Estância Morro Grande" 
-                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 group-hover:drop-shadow-2xl group-hover:brightness-110 filter contrast-125"
+                className="w-24 h-16 object-contain drop-shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-0.5 filter contrast-125"
               />
-            </div>
-            <div className="flex flex-col relative">
-              {/* Text container with subtle styling */}
-              <div className="relative bg-gradient-to-r from-white/5 to-transparent px-2 py-0.5 rounded-md border border-white/15 group-hover:border-emerald-300/30 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-emerald-600/10 group-hover:to-transparent">
-                {/* Subtle shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800 rounded-md"></div>
-                
-                <span className="text-xl font-black text-white font-varela tracking-wide relative z-10 drop-shadow-md group-hover:text-emerald-50 transition-colors duration-300">
-                  Estância Morro Grande
-                  {/* Subtle underline effect */}
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-300 to-white group-hover:w-full transition-all duration-400"></div>
-                </span>
-                <span className="text-xs text-white/90 font-medium -mt-1 relative z-10 drop-shadow-sm group-hover:text-emerald-100 transition-colors duration-300">
-                  Cuidado Especializado
-                </span>
-              </div>
             </div>
           </div>
 
