@@ -59,9 +59,9 @@ export default function StructureSection() {
     <section id="estrutura" className="py-20 bg-slate-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-6">Nossa Estrutura</h2>
-          <p className="text-2xl text-accent font-medium mb-8">
-            "Ambiente seguro, supervisionado e preparado 24 horas 7 dias por semana"
+          <h2 className="text-4xl font-bold text-brand-green mb-6">Nossa Estrutura</h2>
+          <p className="text-2xl text-brand-green font-medium mb-8">
+            "Ambiente seguro, supervisionado e preparado para recomeços"
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function StructureSection() {
 
         {/* Diferenciais */}
         <div className="bg-white rounded-2xl p-8">
-          <h3 className="text-3xl font-bold text-slate-800 mb-8 text-center">Nossos Diferenciais</h3>
+          <h3 className="text-3xl font-bold text-brand-green mb-8 text-center">Nossos Diferenciais</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {differentials.map((differential, index) => {
               const IconComponent = differential.icon;

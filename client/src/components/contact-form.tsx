@@ -64,10 +64,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contato" className="py-20 gradient-bg">
+    <section id="contato" className="py-20 gradient-brand-bg">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-2xl mx-auto text-center text-white mb-12">
-          <h2 className="text-4xl font-bold mb-6">Solicite Atendimento</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white">Solicite Atendimento</h2>
           <p className="text-xl opacity-90">
             Entre em contato conosco. Nossa equipe está pronta para ajudar você ou sua família.
           </p>
@@ -169,7 +169,7 @@ export default function ContactForm() {
 
             <Button 
               type="submit" 
-              className="w-full gradient-bg text-white font-semibold py-3 px-6 h-auto hover:opacity-90 transition-all duration-300 transform hover:scale-105"
+              className="w-full gradient-brand-bg text-white font-semibold py-3 px-6 h-auto hover:opacity-90 transition-all duration-300 transform hover:scale-105"
               disabled={submitLead.isPending}
             >
               <Send className="mr-2" size={20} />

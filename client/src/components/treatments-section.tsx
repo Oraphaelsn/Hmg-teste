@@ -5,7 +5,7 @@ export default function TreatmentsSection() {
     <section id="tratamentos" className="py-20 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-6">Nossos Tratamentos</h2>
+          <h2 className="text-4xl font-bold text-brand-green mb-6">Nossos Tratamentos</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Oferecemos cuidado especializado para saúde mental e dependência química, 
             com abordagem humanizada e equipe multidisciplinar.
@@ -19,7 +19,7 @@ export default function TreatmentsSection() {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                 <Brain className="text-primary" size={32} />
               </div>
-              <h3 className="text-2xl font-bold text-slate-800">Saúde Mental</h3>
+              <h3 className="text-2xl font-bold text-brand-green">Saúde Mental</h3>
             </div>
             <p className="text-slate-600 mb-6 leading-relaxed">
               Tratamento especializado para depressão, ansiedade, transtorno bipolar, 
@@ -48,7 +48,7 @@ export default function TreatmentsSection() {
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
                 <Leaf className="text-secondary" size={32} />
               </div>
-              <h3 className="text-2xl font-bold text-slate-800">Dependência Química</h3>
+              <h3 className="text-2xl font-bold text-brand-green">Dependência Química</h3>
             </div>
             <p className="text-slate-600 mb-6 leading-relaxed">
               Programa de recuperação para dependência de álcool, drogas e outras substâncias. 
@@ -73,7 +73,7 @@ export default function TreatmentsSection() {
 
         {/* Tipos de Internação */}
         <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 mb-16">
-          <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center">Tipos de Internação</h3>
+          <h3 className="text-2xl font-bold text-brand-green mb-8 text-center">Tipos de Internação</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl p-6">
               <h4 className="text-xl font-semibold text-slate-800 mb-4">Internação Voluntária</h4>
@@ -94,7 +94,7 @@ export default function TreatmentsSection() {
 
         {/* Equipe Multidisciplinar */}
         <div className="text-center">
-          <h3 className="text-3xl font-bold text-slate-800 mb-8">Equipe Multidisciplinar 24h</h3>
+          <h3 className="text-3xl font-bold text-brand-green mb-8">Equipe Multidisciplinar 24h</h3>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">

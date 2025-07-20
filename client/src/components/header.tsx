@@ -19,7 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 gradient-brand-bg rounded-lg flex items-center justify-center">
               <Heart className="text-white" size={20} />
             </div>
             <span className="text-xl font-bold text-white font-varela">Estância Morro Grande</span>
