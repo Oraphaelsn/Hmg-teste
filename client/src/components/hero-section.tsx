@@ -34,6 +34,21 @@ export default function HeroSection() {
           {/* Conteúdo centralizado e minimalista */}
         </div>
       </div>
+
+      {/* Centralized CTA Button with info text - Fixed only on hero section */}
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-50 flex flex-col items-center space-y-3">
+        <Button 
+          onClick={scrollToContact}
+          size="lg"
+          className="bg-white text-brand-green hover:bg-slate-50 font-varela font-bold px-8 py-4 h-auto text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
+        >
+          <UserCheck className="mr-2" size={20} />
+          Fale com um Especialista
+        </Button>
+        <p className="text-white/80 text-sm font-light text-center bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
+          • Atendimento 24 horas •
+        </p>
+      </div>
     </section>
   );
 }
