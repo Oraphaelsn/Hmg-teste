@@ -13,8 +13,8 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 overflow-visible">
       {/* Container principal com efeito de onda que desce */}
       <div className="relative">
-        {/* Fundo principal do header com integração perfeita */}
-        <div className="bg-gradient-to-r from-[#2c744c] via-[#245f3a] to-[#2c744c] shadow-2xl shadow-[#2c744c]/50">
+        {/* Fundo principal do header com gradiente vertical */}
+        <div className="bg-gradient-to-b from-[#2c744c] via-[#245f3a] to-[#2c744c] shadow-2xl shadow-[#2c744c]/50">
           {/* Textura sutil unificada */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
           
@@ -204,27 +204,21 @@ export default function Header() {
               
             {/* Gradientes para as ondas */}
             <defs>
-              {/* Onda de fundo - tom mais escuro para profundidade */}
-              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              {/* Onda de fundo - cor sólida uniforme */}
+              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#2c744c"/>
-                <stop offset="50%" stopColor="#245f3a"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
               
-              {/* Onda intermediária - gradiente intercalado */}
-              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#245f3a"/>
-                <stop offset="33%" stopColor="#2c744c"/>
-                <stop offset="66%" stopColor="#245f3a"/>
+              {/* Onda intermediária - cor sólida */}
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#2c744c"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
               
-              {/* Onda frontal - tom principal dominante */}
-              <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+              {/* Onda frontal - cor sólida */}
+              <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#2c744c"/>
-                <stop offset="25%" stopColor="#245f3a"/>
-                <stop offset="50%" stopColor="#2c744c"/>
-                <stop offset="75%" stopColor="#245f3a"/>
                 <stop offset="100%" stopColor="#2c744c"/>
               </linearGradient>
             </defs>
