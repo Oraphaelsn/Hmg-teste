@@ -1,4 +1,4 @@
-import { Clock, Users, Shield, Heart } from "lucide-react";
+import { Clock, Users, Shield, Heart, Brain } from "lucide-react";
 
 const facilities = [
   {
@@ -22,8 +22,8 @@ const facilities = [
     title: "Restaurante"
   },
   {
-    image: "https://images.unsplash.com/photo-1599045118108-bf9954418b76?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    title: "Médicos e Enfermeiros"
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    title: "Corpo Clínico"
   }
 ];
 
@@ -51,6 +51,12 @@ const differentials = [
     title: "Cuidado Humanizado",
     description: "Planos personalizados e atendimento humanizado",
     color: "primary"
+  },
+  {
+    icon: Brain,
+    title: "Tratamento Multimodal",
+    description: "Abordagem integrada combinando múltiplas terapias especializadas",
+    color: "secondary"
   }
 ];
 
@@ -84,7 +90,7 @@ export default function StructureSection() {
         {/* Diferenciais */}
         <div className="bg-white rounded-2xl p-8">
           <h3 className="text-3xl font-bold text-brand-green mb-8 text-center">Nossos Diferenciais</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {differentials.map((differential, index) => {
               const IconComponent = differential.icon;
               return (

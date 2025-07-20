@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import EstanciaLogoSVG from "./logo-svg";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +16,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/50 border-b-2 border-white/20">
+    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#2c744c] to-[#1e5233] shadow-2xl shadow-[#2c744c]/50 border-b-4 border-gradient-to-r border-emerald-400/30">
+      {/* Elegant decorative border */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-300/60 via-white/40 to-emerald-300/60"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-200/80 to-transparent"></div>
+      
       {/* Pulse animation background */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent animate-pulse"></div>
       
@@ -30,7 +35,7 @@ export default function Header() {
               {/* Subtle shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800 rounded-xl"></div>
               
-              <Heart className="text-white relative z-10 drop-shadow-sm" size={22} />
+              <EstanciaLogoSVG className="w-8 h-8 relative z-10 drop-shadow-sm" color="white" />
             </div>
             <div className="flex flex-col relative">
               {/* Text container with subtle styling */}
@@ -91,13 +96,8 @@ export default function Header() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
               
               <div className="relative flex items-center justify-center z-10">
-                {/* Default icon - appears initially */}
-                <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-colors duration-300 group-hover:hidden shadow-sm border border-white/15">
-                  <MessageCircle className="text-white drop-shadow-sm" size={16} />
-                </div>
-                
-                {/* WhatsApp icon - appears on hover with original colors */}
-                <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 hidden group-hover:block animate-bounce shadow-lg border border-white/30">
+                {/* WhatsApp icon - always visible with original colors */}
+                <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
                   <FaWhatsapp className="text-white drop-shadow-sm" size={16} />
                 </div>
                 
@@ -156,13 +156,8 @@ export default function Header() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-800"></div>
                 
                 <div className="relative flex items-center z-10">
-                  {/* Default icon - appears initially */}
-                  <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-colors duration-300 group-hover:hidden shadow-sm border border-white/15">
-                    <MessageCircle className="text-white drop-shadow-sm" size={16} />
-                  </div>
-                  
-                  {/* WhatsApp icon - appears on hover with original colors */}
-                  <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 hidden group-hover:block animate-bounce shadow-lg border border-white/30">
+                  {/* WhatsApp icon - always visible with original colors */}
+                  <div className="bg-[#25D366] p-1 rounded-full mr-2 group-hover:bg-[#128C7E] transition-all duration-300 shadow-lg border border-white/30 group-hover:animate-bounce">
                     <FaWhatsapp className="text-white drop-shadow-sm" size={16} />
                   </div>
                   
