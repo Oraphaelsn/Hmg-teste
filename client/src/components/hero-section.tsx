@@ -7,19 +7,25 @@ const heroSlides = [
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     title: "Você não está sozinho",
     subtitle: "Recuperar é possível com acolhimento, dignidade e segurança",
-    gradient: "from-primary/80 to-accent/60"
+    highlight: "RECUPERAR É POSSÍVEL",
+    description: "Na Estância Morro Grande, oferecemos tratamento humanizado e especializado para dependência química e saúde mental, com ambiente seguro e equipe 24h.",
+    gradient: "from-slate-900/85 to-brand-green/75"
   },
   {
     image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-    title: "Recuperar é possível",
-    subtitle: "Tratamento humanizado com equipe especializada 24 horas",
-    gradient: "from-secondary/80 to-primary/60"
+    title: "Recomeçar com dignidade",
+    subtitle: "Tratamento humanizado com equipe especializada",
+    highlight: "AMBIENTE SEGURO",
+    description: "Estrutura preparada para acolher você e sua família com total privacidade, conforto e segurança em todas as etapas do tratamento.",
+    gradient: "from-slate-900/85 to-brand-green/75"
   },
   {
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-    title: "Acolhimento com dignidade e segurança",
-    subtitle: "Ambiente preparado para o seu recomeço com total privacidade",
-    gradient: "from-accent/80 to-secondary/60"
+    title: "Sua nova vida começa aqui",
+    subtitle: "Equipe multidisciplinar especializada em dependência",
+    highlight: "TRATAMENTO COMPLETO",
+    description: "Abordagem integral com psicólogos, médicos psiquiatras, terapeutas e enfermeiros especializados em recuperação e saúde mental.",
+    gradient: "from-slate-900/85 to-brand-green/75"
   }
 ];
 
@@ -29,7 +35,7 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 7000); // Aumentei para 7 segundos para dar mais tempo para leitura
 
     return () => clearInterval(interval);
   }, []);
@@ -42,7 +48,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="inicio" className="pt-16 relative min-h-screen flex items-center">
+    <section id="inicio" className="pt-20 relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {heroSlides.map((slide, index) => (
           <div
@@ -60,22 +66,43 @@ export default function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center text-white">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 text-white">
+        <div className="max-w-6xl mx-auto fade-in">
+          {/* Highlight Badge */}
+          <div className="text-center mb-8">
+            <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-8 py-3 text-sm font-bold tracking-wider text-white/95 animate-pulse uppercase">
+              {heroSlides[currentSlide].highlight}
+            </span>
+          </div>
+
+          {/* Main Title */}
+          <h1 className="text-center font-varela text-5xl md:text-7xl lg:text-8xl font-bold mb-10 leading-tight text-shadow-strong">
             {heroSlides[currentSlide].title}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 font-light">
+          
+          {/* Subtitle */}
+          <p className="text-center text-2xl md:text-3xl lg:text-4xl mb-10 font-varela font-medium text-white/95 text-shadow leading-snug">
             {heroSlides[currentSlide].subtitle}
           </p>
-          <Button 
-            onClick={scrollToContact}
-            size="lg"
-            className="bg-white text-primary hover:bg-slate-50 font-semibold px-8 py-4 h-auto text-lg transform hover:scale-105 transition-all duration-300 shadow-xl"
-          >
-            <UserCheck className="mr-2" size={20} />
-            Fale com um Especialista
-          </Button>
+
+          {/* Description */}
+          <div className="max-w-5xl mx-auto text-center mb-16">
+            <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed text-white/90 font-light px-4">
+              {heroSlides[currentSlide].description}
+            </p>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <Button 
+              onClick={scrollToContact}
+              size="lg"
+              className="bg-white text-brand-green hover:bg-slate-50 font-varela font-bold px-10 py-6 h-auto text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
+            >
+              <UserCheck className="mr-3" size={24} />
+              Fale com um Especialista Agora
+            </Button>
+          </div>
         </div>
       </div>
 
