@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, Menu, X, MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,10 +69,27 @@ export default function Header() {
             </button>
             <button 
               onClick={() => scrollToSection("contato")}
-              className="relative px-5 py-2.5 ml-4 bg-white/20 hover:bg-white/30 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-black/30 group overflow-hidden border-2 border-white/30"
+              className="relative px-6 py-3 ml-4 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-full transform hover:scale-110 transition-all duration-500 shadow-xl shadow-[#2c744c]/30 hover:shadow-2xl hover:shadow-[#2c744c]/60 group overflow-hidden"
             >
-              <span className="relative z-10">Contato</span>
+              {/* Pulse animation background */}
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full animate-pulse"></div>
+              
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div className="relative flex items-center justify-center">
+                {/* Default icon - appears initially */}
+                <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-colors duration-300 group-hover:hidden">
+                  <MessageCircle className="text-white" size={18} />
+                </div>
+                
+                {/* WhatsApp icon - appears on hover */}
+                <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-green-500 transition-all duration-300 hidden group-hover:block animate-bounce">
+                  <FaWhatsapp className="text-white" size={18} />
+                </div>
+                
+                <span className="tracking-wide text-sm font-varela">Contato</span>
+              </div>
             </button>
           </div>
 
@@ -116,9 +134,27 @@ export default function Header() {
               </button>
               <button 
                 onClick={() => scrollToSection("contato")}
-                className="block w-full text-left px-4 py-3 bg-white/20 text-white font-bold rounded-lg hover:bg-white/30 transition-all duration-300 mt-2 border-2 border-white/30"
+                className="relative block w-full text-left px-4 py-3 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-black rounded-lg transform hover:scale-105 transition-all duration-500 shadow-xl shadow-[#2c744c]/30 hover:shadow-2xl hover:shadow-[#2c744c]/60 group overflow-hidden mt-2"
               >
-                Contato
+                {/* Pulse animation background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg animate-pulse"></div>
+                
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                
+                <div className="relative flex items-center">
+                  {/* Default icon - appears initially */}
+                  <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-colors duration-300 group-hover:hidden">
+                    <MessageCircle className="text-white" size={18} />
+                  </div>
+                  
+                  {/* WhatsApp icon - appears on hover */}
+                  <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-green-500 transition-all duration-300 hidden group-hover:block animate-bounce">
+                    <FaWhatsapp className="text-white" size={18} />
+                  </div>
+                  
+                  <span className="tracking-wide font-varela">Contato</span>
+                </div>
               </button>
             </div>
           </div>

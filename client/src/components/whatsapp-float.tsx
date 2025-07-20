@@ -24,7 +24,7 @@ export default function WhatsappFloat() {
         {/* Tooltip */}
         {showTooltip && (
           <div className="absolute bottom-full right-0 mb-3 bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap animate-bounce-in">
-            ENTRE EM CONTATO AGORA!
+            Fale conosco!
             <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
           </div>
         )}
