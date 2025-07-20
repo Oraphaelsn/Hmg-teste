@@ -21,8 +21,8 @@ export default function VideoSection() {
             oferecer o melhor cuidado em saúde mental e dependência química.
           </p>
 
-          <div className="relative w-full max-w-3xl mx-auto">
-            <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-full max-w-md mx-auto">
+            <div className="relative aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl">
               {!isPlaying ? (
                 // Thumbnail com botão de play
                 <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2c744c]/20 to-slate-900/60">
@@ -37,21 +37,28 @@ export default function VideoSection() {
                   {/* Overlay escuro */}
                   <div className="absolute inset-0 bg-black/40" />
                   
-                  {/* Botão de play */}
+                  {/* Botão de play centralizado */}
                   <button
                     onClick={handlePlay}
-                    className="relative z-10 group flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 hover:scale-110"
+                    className="relative z-10 group flex items-center justify-center w-16 h-16 bg-white/25 backdrop-blur-sm rounded-full border-2 border-white/40 hover:bg-white/35 hover:border-white/60 transition-all duration-300 hover:scale-110"
                   >
                     <Play 
-                      className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform" 
+                      className="w-6 h-6 text-white ml-0.5 group-hover:scale-110 transition-transform" 
                       fill="white"
                     />
                   </button>
                   
-                  {/* Texto indicativo */}
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <h3 className="text-xl font-semibold mb-2">Tour pela Estância Morro Grande</h3>
-                    <p className="text-sm text-white/80">Clique para assistir</p>
+                  {/* Texto indicativo estilo reels */}
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="text-lg font-bold mb-1 text-center">Tour Estância</h3>
+                    <p className="text-xs text-white/90 text-center">Toque para assistir</p>
+                  </div>
+                  
+                  {/* Indicador de vídeo estilo Instagram */}
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-black/40 backdrop-blur-sm rounded-full px-2 py-1">
+                      <Play className="w-3 h-3 text-white" fill="white" />
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -69,30 +76,30 @@ export default function VideoSection() {
               )}
             </div>
 
-            {/* Informações adicionais */}
-            <div className="mt-8 grid md:grid-cols-3 gap-6 text-center">
-              <div className="bg-white p-6 rounded-lg shadow-md border border-[#2c744c]/10">
-                <div className="w-12 h-12 bg-[#2c744c]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <PlayCircle className="w-6 h-6 text-[#2c744c]" />
+            {/* Informações adicionais - layout adaptado para formato vertical */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center max-w-2xl mx-auto">
+              <div className="bg-white p-4 rounded-lg shadow-md border border-[#2c744c]/10">
+                <div className="w-10 h-10 bg-[#2c744c]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <PlayCircle className="w-5 h-5 text-[#2c744c]" />
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2">Ambiente Real</h4>
-                <p className="text-sm text-gray-600">Vídeo autêntico mostrando nossos espaços e estrutura</p>
+                <h4 className="font-semibold text-gray-800 mb-2 text-sm">Ambiente Real</h4>
+                <p className="text-xs text-gray-600">Vídeo autêntico mostrando nossos espaços e estrutura</p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md border border-[#2c744c]/10">
-                <div className="w-12 h-12 bg-[#2c744c]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Play className="w-6 h-6 text-[#2c744c]" />
+              <div className="bg-white p-4 rounded-lg shadow-md border border-[#2c744c]/10">
+                <div className="w-10 h-10 bg-[#2c744c]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Play className="w-5 h-5 text-[#2c744c]" />
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2">Transparência</h4>
-                <p className="text-sm text-gray-600">Mostramos exatamente como é nosso cuidado diário</p>
+                <h4 className="font-semibold text-gray-800 mb-2 text-sm">Transparência</h4>
+                <p className="text-xs text-gray-600">Mostramos exatamente como é nosso cuidado diário</p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md border border-[#2c744c]/10">
-                <div className="w-12 h-12 bg-[#2c744c]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <PlayCircle className="w-6 h-6 text-[#2c744c]" />
+              <div className="bg-white p-4 rounded-lg shadow-md border border-[#2c744c]/10">
+                <div className="w-10 h-10 bg-[#2c744c]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <PlayCircle className="w-5 h-5 text-[#2c744c]" />
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2">Confiança</h4>
-                <p className="text-sm text-gray-600">Veja por si mesmo nosso compromisso com qualidade</p>
+                <h4 className="font-semibold text-gray-800 mb-2 text-sm">Confiança</h4>
+                <p className="text-xs text-gray-600">Veja por si mesmo nosso compromisso com qualidade</p>
               </div>
             </div>
           </div>
