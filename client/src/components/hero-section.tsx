@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { UserCheck } from "lucide-react";
+import { useEffect } from "react";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -8,6 +9,46 @@ export default function HeroSection() {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  useEffect(() => {
+    const video = document.querySelector('.hero-video') as HTMLVideoElement;
+    if (video) {
+      const resizeVideo = () => {
+        const container = video.parentElement;
+        if (container) {
+          const containerWidth = container.offsetWidth;
+          const containerHeight = container.offsetHeight;
+          const videoAspectRatio = 16 / 9; // Assuming video is 16:9
+          
+          let newWidth, newHeight;
+          
+          if (containerWidth / containerHeight > videoAspectRatio) {
+            // Container is wider than video aspect ratio
+            newWidth = containerWidth;
+            newHeight = containerWidth / videoAspectRatio;
+          } else {
+            // Container is taller than video aspect ratio
+            newHeight = containerHeight;
+            newWidth = containerHeight * videoAspectRatio;
+          }
+          
+          video.style.width = `${newWidth}px`;
+          video.style.height = `${newHeight}px`;
+          video.style.left = `${(containerWidth - newWidth) / 2}px`;
+          video.style.top = `${(containerHeight - newHeight) / 2}px`;
+        }
+      };
+      
+      resizeVideo();
+      window.addEventListener('resize', resizeVideo);
+      window.addEventListener('orientationchange', resizeVideo);
+      
+      return () => {
+        window.removeEventListener('resize', resizeVideo);
+        window.removeEventListener('orientationchange', resizeVideo);
+      };
+    }
+  }, []);
 
   return (
     <section id="inicio" className="hero-section pt-20 relative min-h-screen flex items-center justify-center">
@@ -23,13 +64,6 @@ export default function HeroSection() {
           style={{
             filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            minWidth: '100%',
-            minHeight: '100%',
-            width: 'auto',
-            height: 'auto',
             objectFit: 'cover'
           }}
         >
