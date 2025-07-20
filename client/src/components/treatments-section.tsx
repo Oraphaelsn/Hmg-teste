@@ -104,7 +104,7 @@ export default function TreatmentsSection() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-secondary text-3xl font-bold">Ψ</div>
+                <div className="text-secondary text-4xl font-bold tracking-wider drop-shadow-sm" style={{ fontFamily: 'serif', textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>Ψ</div>
               </div>
               <h4 className="font-semibold text-slate-800">Psicólogos</h4>
             </div>
