@@ -69,39 +69,44 @@ export default function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-white">
         <div className="max-w-6xl mx-auto fade-in">
           {/* Highlight Badge */}
-          <div className="text-center mb-8">
-            <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-8 py-3 text-sm font-bold tracking-wider text-white/95 animate-pulse uppercase">
+          <div className="text-center mb-6">
+            <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-6 py-2 text-xs font-bold tracking-wider text-white/95 animate-pulse uppercase">
               {heroSlides[currentSlide].highlight}
             </span>
           </div>
 
           {/* Main Title */}
-          <h1 className="text-center font-varela text-5xl md:text-7xl lg:text-8xl font-bold mb-10 leading-tight text-shadow-strong">
+          <h1 className="text-center font-varela text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-shadow-strong">
             {heroSlides[currentSlide].title}
           </h1>
           
           {/* Subtitle */}
-          <p className="text-center text-2xl md:text-3xl lg:text-4xl mb-10 font-varela font-medium text-white/95 text-shadow leading-snug">
+          <p className="text-center text-xl md:text-2xl lg:text-3xl mb-6 font-varela font-medium text-white/95 text-shadow leading-snug">
             {heroSlides[currentSlide].subtitle}
           </p>
 
           {/* Description */}
-          <div className="max-w-5xl mx-auto text-center mb-16">
-            <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed text-white/90 font-light px-4">
+          <div className="max-w-4xl mx-auto text-center mb-10">
+            <p className="text-lg md:text-xl leading-relaxed text-white/90 font-light px-4">
               {heroSlides[currentSlide].description}
             </p>
           </div>
 
           {/* CTA Button */}
           <div className="text-center">
-            <Button 
-              onClick={scrollToContact}
-              size="lg"
-              className="bg-white text-brand-green hover:bg-slate-50 font-varela font-bold px-10 py-6 h-auto text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
-            >
-              <UserCheck className="mr-3" size={24} />
-              Fale com um Especialista Agora
-            </Button>
+            <div className="inline-flex flex-col items-center space-y-3">
+              <Button 
+                onClick={scrollToContact}
+                size="lg"
+                className="bg-white text-brand-green hover:bg-slate-50 font-varela font-bold px-8 py-4 h-auto text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
+              >
+                <UserCheck className="mr-2" size={20} />
+                Fale com um Especialista
+              </Button>
+              <p className="text-white/80 text-sm font-light">
+                Atendimento 24 horas • Primeira consulta gratuita
+              </p>
+            </div>
           </div>
         </div>
       </div>
