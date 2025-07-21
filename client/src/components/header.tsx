@@ -1,13 +1,25 @@
 import { FaWhatsapp } from "react-icons/fa";
+import { Home, Heart, Building2, MessageCircle, Phone, Menu, X } from "lucide-react";
+import { useState } from "react";
 import logoOficial from "@assets/Estância Morro Grande Branco_1752992752131.png";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    setIsMenuOpen(false); // Fechar menu após navegação
   };
+
+  const menuItems = [
+    { id: "inicio", icon: Home, label: "Início" },
+    { id: "tratamentos", icon: Heart, label: "Tratamentos" },
+    { id: "estrutura", icon: Building2, label: "Estrutura" },
+    { id: "depoimentos", icon: MessageCircle, label: "Depoimentos" },
+  ];
 
   return (
     <header className="fixed top-0 w-full z-50 overflow-visible">
@@ -48,36 +60,23 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Modern Desktop Menu */}
-              <div className="hidden md:flex items-center space-x-1">
-                <button 
-                  onClick={() => scrollToSection("inicio")}
-                  className="relative px-5 py-2.5 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
-                >
-                  <span className="relative z-10">Início</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
-                </button>
-                <button 
-                  onClick={() => scrollToSection("tratamentos")}
-                  className="relative px-5 py-2.5 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
-                >
-                  <span className="relative z-10">Tratamentos</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
-                </button>
-                <button 
-                  onClick={() => scrollToSection("estrutura")}
-                  className="relative px-5 py-2.5 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
-                >
-                  <span className="relative z-10">Estrutura</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
-                </button>
-                <button 
-                  onClick={() => scrollToSection("depoimentos")}
-                  className="relative px-5 py-2.5 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
-                >
-                  <span className="relative z-10">Depoimentos</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
-                </button>
+              {/* Modern Desktop Navigation with Icons */}
+              <div className="hidden md:flex items-center space-x-2">
+                {menuItems.map((item) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <button 
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="relative px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20 flex items-center space-x-2"
+                      title={item.label}
+                    >
+                      <IconComponent size={18} className="relative z-10" />
+                      <span className="relative z-10">{item.label}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
+                    </button>
+                  );
+                })}
                 <button 
                   onClick={() => scrollToSection("contato")}
                   className="relative px-6 py-3 ml-6 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-emerald-500/30 hover:shadow-emerald-400/50 group overflow-hidden border border-emerald-400/50 hover:border-emerald-300"
@@ -89,9 +88,9 @@ export default function Header() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <div className="relative flex items-center justify-center z-10">
-                    {/* Modern WhatsApp icon */}
+                    {/* Modern contact icon */}
                     <div className="bg-white/20 p-1.5 rounded-full mr-3 group-hover:bg-white/30 transition-all duration-500 backdrop-blur-sm border border-white/30">
-                      <FaWhatsapp className="text-white drop-shadow-lg" size={16} />
+                      <Phone className="text-white drop-shadow-lg" size={16} />
                     </div>
                     
                     <span className="font-medium">Contato</span>
@@ -101,51 +100,26 @@ export default function Header() {
 
               {/* Modern Mobile Navigation */}
               <div className="md:hidden flex items-center space-x-3">
-                {/* Compact mobile menu */}
-                <div className="flex items-center space-x-0.5 text-xs">
-                  <button 
-                    onClick={() => scrollToSection("inicio")}
-                    className="px-3 py-2 text-white/90 hover:text-white font-medium transition-all duration-300 rounded-full hover:bg-white/10 backdrop-blur-sm"
-                  >
-                    Início
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection("tratamentos")}
-                    className="px-3 py-2 text-white/90 hover:text-white font-medium transition-all duration-300 rounded-full hover:bg-white/10 backdrop-blur-sm"
-                  >
-                    Tratamentos
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection("estrutura")}
-                    className="px-3 py-2 text-white/90 hover:text-white font-medium transition-all duration-300 rounded-full hover:bg-white/10 backdrop-blur-sm"
-                  >
-                    Estrutura
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection("depoimentos")}
-                    className="px-3 py-2 text-white/90 hover:text-white font-medium transition-all duration-300 rounded-full hover:bg-white/10 backdrop-blur-sm"
-                  >
-                    Depoimentos
-                  </button>
-                </div>
+                {/* Hamburger Menu Button */}
+                <button 
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="relative p-2 text-white/90 hover:text-white transition-all duration-300 rounded-full hover:bg-white/10 backdrop-blur-sm"
+                >
+                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
                 
-                {/* Modern mobile contact button */}
+                {/* Quick Contact Button */}
                 <button 
                   onClick={() => scrollToSection("contato")}
                   className="relative px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-400/50 group overflow-hidden border border-emerald-400/50 hover:border-emerald-300"
                 >
-                  {/* Modern gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
-                  
-                  {/* Sophisticated shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <div className="relative flex items-center justify-center z-10">
-                    {/* Modern WhatsApp icon */}
                     <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-all duration-500 backdrop-blur-sm border border-white/30">
-                      <FaWhatsapp className="text-white drop-shadow-lg" size={12} />
+                      <Phone className="text-white drop-shadow-lg" size={12} />
                     </div>
-                    
                     <span className="font-medium">Contato</span>
                   </div>
                 </button>
@@ -154,7 +128,39 @@ export default function Header() {
           </nav>
         </div>
 
-
+        {/* Mobile Dropdown Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/20">
+            <div className="container mx-auto px-4 py-4">
+              <div className="space-y-2">
+                {menuItems.map((item) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <button 
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="w-full flex items-center space-x-3 px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
+                    >
+                      <IconComponent size={20} className="text-emerald-400" />
+                      <span>{item.label}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                    </button>
+                  );
+                })}
+                
+                {/* Mobile Contact Option in Menu */}
+                <button 
+                  onClick={() => scrollToSection("contato")}
+                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
+                >
+                  <FaWhatsapp size={20} className="text-green-400" />
+                  <span>Contato via WhatsApp</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
