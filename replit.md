@@ -181,6 +181,7 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
   - **Botão contato premium**: Gradiente emerald com shine effects e borders elegantes
   - **Mobile otimizado**: Design consistente com glassmorphism e interações modernas
   - **Animações sofisticadas**: Pulse, scale, glow e shine effects coordenados
+  - **Design clean**: Removidas bordas em curvas para visual minimalista e moderno
 ✓ **SISTEMA DE ANIMAÇÕES ULTRA-SUAVES IMPLEMENTADO**: Sistema completo de animações flutuantes ultra-relaxantes
   - **Animações CSS ultra-suaves**: floatGentle (12s), float (8s) e pulse-glow (8s) com movimentos mínimos
   - **Movimentos sutis**: Flutuação máxima -3px, rotação máxima ±0.3°, totalmente relaxante
