@@ -1,0 +1,10 @@
+# Configuração de Deploy - Replit
+# Domínio: Hemg.contato.replit.app
+
+[deployment]
+build = "npm run build"
+start = "npm start"
+deploymentTarget = "gce"
+
+[deployment.environment]
+NODE_ENV = "production"
