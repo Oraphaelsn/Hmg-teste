@@ -176,7 +176,7 @@ export default function ContactForm() {
                 name="treatment"
                 control={form.control}
                 render={({ field }) => (
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={(value) => field.onChange(value)} value={field.value || ""}>
                     <SelectTrigger className="mt-2">
                       <SelectValue placeholder="Selecione uma opção" />
                     </SelectTrigger>
@@ -202,7 +202,7 @@ export default function ContactForm() {
                 name="insurance"
                 control={form.control}
                 render={({ field }) => (
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={(value) => field.onChange(value)} value={field.value || ""}>
                     <SelectTrigger className="mt-2">
                       <SelectValue placeholder="Selecione seu convênio" />
                     </SelectTrigger>
