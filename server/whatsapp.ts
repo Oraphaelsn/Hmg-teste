@@ -37,11 +37,22 @@ function normalizePhoneNumber(phone: string): string {
 
 // Função para personalizar a mensagem com dados do lead
 function personalizeMessage(template: string, leadData: any): string {
+  const now = new Date();
+  const dateTime = now.toLocaleString('pt-BR', { 
+    timeZone: 'America/Sao_Paulo',
+    day: '2-digit',
+    month: '2-digit', 
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  
   return template
     .replace(/{nome}/g, leadData.name || 'Cliente')
     .replace(/{telefone}/g, leadData.phone || '')
     .replace(/{tratamento}/g, leadData.treatment || 'tratamento personalizado')
-    .replace(/{plano}/g, leadData.insurance || 'plano disponível');
+    .replace(/{plano}/g, leadData.insurance || 'plano disponível')
+    .replace(/\$\(date\)/g, dateTime);
 }
 
 // Simulação de envio via WhatsApp Business API
@@ -126,22 +137,22 @@ export async function sendLeadNotification(leadId: string, leadData: any): Promi
       return;
     }
     
-    // Normaliza o número de telefone
-    const normalizedPhone = normalizePhoneNumber(leadData.phone);
+    // Número de destino fixo da Estância Morro Grande
+    const destinationPhone = "+5515996834387";
     
-    // Personaliza a mensagem
+    // Personaliza a mensagem com os dados do lead
     const personalizedMessage = personalizeMessage(config.templateMessage, leadData);
     
-    // Envia a mensagem
+    // Envia a mensagem para o número da clínica
     const result = await sendWhatsAppMessage(config, {
-      to: normalizedPhone,
+      to: destinationPhone,
       text: personalizedMessage
     });
     
     // Registra o log da tentativa
     await storage.createWhatsappLog({
       leadId,
-      phoneNumber: normalizedPhone,
+      phoneNumber: destinationPhone,
       message: personalizedMessage,
       status: result.success ? 'sent' : 'failed',
       providerId: result.messageId,
@@ -149,10 +160,11 @@ export async function sendLeadNotification(leadId: string, leadData: any): Promi
     });
     
     if (result.success) {
-      console.log(`✅ Mensagem WhatsApp enviada com sucesso para ${normalizedPhone}`);
+      console.log(`✅ Notificação de novo lead enviada para ${destinationPhone}`);
       console.log(`📱 ID da mensagem: ${result.messageId}`);
+      console.log(`👤 Lead: ${leadData.name} (${leadData.phone})`);
     } else {
-      console.error(`❌ Falha ao enviar mensagem WhatsApp: ${result.error}`);
+      console.error(`❌ Falha ao enviar notificação: ${result.error}`);
     }
     
   } catch (error: any) {
@@ -161,7 +173,7 @@ export async function sendLeadNotification(leadId: string, leadData: any): Promi
     // Registra o erro
     await storage.createWhatsappLog({
       leadId,
-      phoneNumber: leadData.phone,
+      phoneNumber: "+5515996834387",
       message: 'Erro interno no processamento',
       status: 'failed',
       errorMessage: error.message
