@@ -211,11 +211,12 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 21, 2025)
 
-✓ **DEPLOY CONFIGURADO**: Preparado para deploy em Hemg.contato.replit.app
-  - **Domínio personalizado**: Hemg.contato.replit.app configurado
+✓ **DEPLOY CONFIGURADO**: Preparado para deploy com domínio personalizado
+  - **Domínio desejado**: hemg.contato.com.br (domínio .com.br personalizado)
+  - **Alternativa temporária**: Hemg.contato.replit.app
   - **Build otimizado**: Scripts de build e produção prontos
   - **Variáveis ambiente**: PostgreSQL configurado para produção
-  - **Deploy ready**: Projeto 100% pronto para publicação
+  - **DNS ready**: Configuração DNS preparada para domínio personalizado
 ✓ **VÍDEO HERO OTIMIZADO**: Removida opacidade para vídeo mais vivo e chamativo
   - **Overlays removidos**: Eliminados gradientes escuros que reduziam visibilidade do vídeo
   - **Filtros aprimorados**: brightness(1.2), contrast(1.15), saturate(1.25) para máxima vivacidade
