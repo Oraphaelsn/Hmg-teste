@@ -211,6 +211,16 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 21, 2025)
 
+✓ **VÍDEO HERO OTIMIZADO**: Removida opacidade para vídeo mais vivo e chamativo
+  - **Overlays removidos**: Eliminados gradientes escuros que reduziam visibilidade do vídeo
+  - **Filtros aprimorados**: brightness(1.2), contrast(1.15), saturate(1.25) para máxima vivacidade
+  - **Overlay mínimo**: Apenas gradiente inferior sutil para legibilidade dos botões
+  - **Cores vibrantes**: Vídeo agora aparece em cores naturais e mais atrativas
+✓ **FORMULÁRIO CONTACT CORRIGIDO**: Solucionado erro runtime dos Select components
+  - **HTML Select nativo**: Substituído shadcn Select por campos HTML nativos
+  - **Sem erros runtime**: Formulário funciona perfeitamente sem quebrar a página
+  - **Todas opções mantidas**: Tratamentos e convênios preservados integralmente
+  - **Funcionamento perfeito**: WhatsApp abre automaticamente após submissão
 ✓ **MIGRAÇÃO COMPLETA PARA REPLIT COM WHATSAPP IMPLEMENTADO**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
 ✓ **SISTEMA WHATSAPP AUTOMÁTICO IMPLEMENTADO**: Envio automático de mensagens via WhatsApp quando cliente preenche formulário
   - **Duas bases de dados**: Admin panel (PostgreSQL) + WhatsApp logs (PostgreSQL) funcionando perfeitamente

@@ -14,14 +14,14 @@ export default function HeroSection() {
       {/* High-Quality Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full hero-video filter brightness-110 contrast-105 saturate-110 object-cover"
+          className="absolute inset-0 w-full h-full hero-video object-cover"
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
           style={{
-            filter: 'brightness(1.1) contrast(1.05) saturate(1.1) hue-rotate(5deg)',
+            filter: 'brightness(1.2) contrast(1.15) saturate(1.25)',
             objectPosition: 'center center',
           }}
         >
@@ -35,12 +35,8 @@ export default function HeroSection() {
             type="video/mp4"
           />
         </video>
-        {/* Professional overlay with subtle gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-transparent to-[#2c744c]/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
-        
-        {/* Subtle vignette effect for cinematic quality */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/30" />
+        {/* Minimal overlay para manter legibilidade dos botões */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
       </div>
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-8 text-white">
@@ -70,7 +66,7 @@ export default function HeroSection() {
           </div>
         </Button>
         <div className="relative">
-          <p className="text-white/90 text-xs sm:text-sm font-medium text-center bg-gradient-to-r from-black/40 to-slate-900/40 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-white/20 shadow-lg">
+          <p className="text-white text-xs sm:text-sm font-medium text-center bg-gradient-to-r from-black/60 to-slate-900/60 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-white/30 shadow-xl">
             <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
             Atendimento 24 horas
             <span className="inline-block w-2 h-2 bg-green-400 rounded-full ml-2 animate-pulse"></span>
