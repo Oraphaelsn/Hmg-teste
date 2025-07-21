@@ -25,16 +25,19 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 overflow-visible">
       {/* Modern glassmorphism container */}
       <div className="relative">
-        {/* Ultra-modern background with advanced glassmorphism */}
-        <div className="bg-gradient-to-r from-slate-900/95 via-slate-800/90 to-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/20">
-          {/* Dynamic gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 via-transparent to-emerald-500/15"></div>
+        {/* Ultra-modern background with enhanced glassmorphism */}
+        <div className="bg-gradient-to-r from-[#2c744c]/85 via-[#1e5233]/80 to-[#2c744c]/85 backdrop-blur-2xl border-b border-[#2c744c]/20 shadow-2xl shadow-[#2c744c]/30">
+          {/* Enhanced glass effect overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-white/10"></div>
           
-          {/* Subtle animated background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+          {/* Subtle brand-colored animation */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/10 to-transparent animate-pulse"></div>
           
-          {/* Modern border accent */}
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent"></div>
+          {/* Enhanced border accent with brand colors */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/80 to-transparent"></div>
+          
+          {/* Additional glass reflection effect */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
           
           <nav className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center justify-between h-16 sm:h-20">
@@ -49,13 +52,13 @@ export default function Header() {
                 }}
               >
                 <div className="relative">
-                  {/* Glow effect behind logo */}
-                  <div className="absolute inset-0 bg-emerald-400/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Enhanced glow effect with brand colors */}
+                  <div className="absolute inset-0 bg-[#2c744c]/30 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <img 
                     src={logoOficial} 
                     alt="Estância Morro Grande" 
-                    className="w-20 h-12 sm:w-24 sm:h-14 md:w-28 md:h-18 object-contain drop-shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(16,185,129,0.5)] filter brightness-110 contrast-110 relative z-10"
+                    className="w-20 h-12 sm:w-24 sm:h-14 md:w-28 md:h-18 object-contain drop-shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(44,116,76,0.6)] filter brightness-110 contrast-110 relative z-10"
                   />
                 </div>
               </div>
@@ -68,18 +71,18 @@ export default function Header() {
                     <button 
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="relative px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20 flex items-center space-x-2"
+                      className="relative px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/15 backdrop-blur-md border border-transparent hover:border-[#2c744c]/30 flex items-center space-x-2"
                       title={item.label}
                     >
                       <IconComponent size={18} className="relative z-10" />
                       <span className="relative z-10">{item.label}</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
                     </button>
                   );
                 })}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="relative px-6 py-3 ml-6 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-emerald-500/30 hover:shadow-emerald-400/50 group overflow-hidden border border-emerald-400/50 hover:border-emerald-300"
+                  className="relative px-6 py-3 ml-6 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-[#2c744c]/40 hover:shadow-[#2c744c]/60 group overflow-hidden border border-[#2c744c]/50 hover:border-[#2c744c]/70"
                 >
                   {/* Modern gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
@@ -103,7 +106,7 @@ export default function Header() {
                 {/* Hamburger Menu Button */}
                 <button 
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="relative p-2 text-white/90 hover:text-white transition-all duration-300 rounded-full hover:bg-white/10 backdrop-blur-sm"
+                  className="relative p-2 text-white/90 hover:text-white transition-all duration-300 rounded-full hover:bg-white/15 backdrop-blur-md border border-transparent hover:border-[#2c744c]/30"
                 >
                   {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -111,7 +114,7 @@ export default function Header() {
                 {/* Quick Contact Button */}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="relative px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-400/50 group overflow-hidden border border-emerald-400/50 hover:border-emerald-300"
+                  className="relative px-4 py-2 bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-[#2c744c]/40 hover:shadow-[#2c744c]/60 group overflow-hidden border border-[#2c744c]/50 hover:border-[#2c744c]/70"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -130,7 +133,7 @@ export default function Header() {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/20">
+          <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-[#2c744c]/90 backdrop-blur-2xl border-b border-[#2c744c]/20 shadow-2xl shadow-[#2c744c]/30">
             <div className="container mx-auto px-4 py-4">
               <div className="space-y-2">
                 {menuItems.map((item) => {
@@ -139,11 +142,11 @@ export default function Header() {
                     <button 
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="w-full flex items-center space-x-3 px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
+                      className="w-full flex items-center space-x-3 px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/15 backdrop-blur-md border border-transparent hover:border-[#2c744c]/30"
                     >
-                      <IconComponent size={20} className="text-emerald-400" />
+                      <IconComponent size={20} className="text-white/80" />
                       <span>{item.label}</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
                     </button>
                   );
                 })}
@@ -151,11 +154,11 @@ export default function Header() {
                 {/* Mobile Contact Option in Menu */}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20"
+                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/90 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/15 backdrop-blur-md border border-transparent hover:border-[#2c744c]/30"
                 >
                   <FaWhatsapp size={20} className="text-green-400" />
                   <span>Contato via WhatsApp</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
                 </button>
               </div>
             </div>

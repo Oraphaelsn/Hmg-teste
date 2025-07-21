@@ -188,6 +188,13 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
   - **Ícones intuitivos**: Home (início), Heart (tratamentos), Building2 (estrutura), MessageCircle (depoimentos)
   - **Menu suspenso**: Backdrop-blur-xl, animações suaves e hover effects
   - **UX otimizada**: Menu fecha automaticamente após navegação
+✓ **PALETA DE CORES HARMONIZADA**: Integração completa com a marca Estância Morro Grande
+  - **Cor primária**: #2c744c (verde natural da marca) em todos os elementos
+  - **Opacidade aumentada**: 85-90% para melhor efeito vidro
+  - **Glassmorphism premium**: backdrop-blur-2xl com reflexos brancos sutis
+  - **Gradientes naturais**: Transições suaves entre #2c744c e #1e5233
+  - **Sombras harmonizadas**: shadow-[#2c744c]/30-40 para profundidade natural
+  - **Bordas elegantes**: border-[#2c744c]/20-30 para definição sutil
 ✓ **SISTEMA DE ANIMAÇÕES ULTRA-SUAVES IMPLEMENTADO**: Sistema completo de animações flutuantes ultra-relaxantes
   - **Animações CSS ultra-suaves**: floatGentle (12s), float (8s) e pulse-glow (8s) com movimentos mínimos
   - **Movimentos sutis**: Flutuação máxima -3px, rotação máxima ±0.3°, totalmente relaxante
