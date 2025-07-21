@@ -25,28 +25,32 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 overflow-visible">
       {/* Modern glassmorphism container */}
       <div className="relative">
-        {/* Ultra-transparent glassmorphism background */}
-        <div className="bg-gradient-to-r from-[#2c744c]/25 via-[#1e5233]/20 to-[#2c744c]/25 backdrop-blur-3xl border-b border-white/20 shadow-2xl shadow-black/10">
-          {/* Enhanced glass reflection overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/20 to-white/15"></div>
+        {/* Ultra-transparent glassmorphism background with green tint */}
+        <div className="bg-gradient-to-r from-[#2c744c]/30 via-[#1e5233]/25 to-[#2c744c]/30 backdrop-blur-3xl border-b border-[#2c744c]/25 shadow-2xl shadow-[#2c744c]/15">
+          {/* Enhanced glass reflection overlay with green hints */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/10 via-[#2c744c]/15 to-[#2c744c]/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/15 to-white/10"></div>
           
-          {/* Multiple glass layers for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/5"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent"></div>
+          {/* Multiple glass layers for depth with green undertones */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#2c744c]/8 via-transparent to-[#2c744c]/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-white/4"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/6 to-transparent"></div>
           
-          {/* Subtle animated shimmer */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/8 to-transparent animate-pulse"></div>
+          {/* Subtle animated green shimmer */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/12 to-transparent animate-pulse"></div>
           
-          {/* Glass edge highlights */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+          {/* Glass edge highlights with green tint */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/40 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent"></div>
           
-          {/* Side glass reflections */}
-          <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
-          <div className="absolute top-0 bottom-0 right-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+          {/* Side glass reflections with green accent */}
+          <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-transparent via-[#2c744c]/20 to-transparent"></div>
+          <div className="absolute top-0 bottom-0 right-0 w-px bg-gradient-to-b from-transparent via-[#2c744c]/20 to-transparent"></div>
           
-          {/* Ultra glass overlay for maximum transparency effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/3"></div>
+          {/* Ultra glass overlay with green crystalline effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2c744c]/6 via-transparent to-[#2c744c]/4"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-white/4 via-transparent to-white/2"></div>
           
           <nav className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center justify-between h-16 sm:h-20">
@@ -80,24 +84,25 @@ export default function Header() {
                     <button 
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="relative px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-white/25 backdrop-blur-xl border border-white/20 hover:border-white/40 flex items-center space-x-2"
+                      className="relative px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-full group overflow-hidden transition-all duration-500 hover:bg-[#2c744c]/20 backdrop-blur-xl border border-[#2c744c]/25 hover:border-[#2c744c]/40 flex items-center space-x-2"
                       title={item.label}
                     >
                       <IconComponent size={18} className="relative z-10" />
                       <span className="relative z-10">{item.label}</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
                     </button>
                   );
                 })}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="relative px-6 py-3 ml-6 bg-gradient-to-r from-[#2c744c]/70 to-[#1e5233]/70 hover:from-[#2c744c]/80 hover:to-[#1e5233]/80 text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-[#2c744c]/20 hover:shadow-[#2c744c]/30 group overflow-hidden border border-white/30 hover:border-white/50 backdrop-blur-xl"
+                  className="relative px-6 py-3 ml-6 bg-gradient-to-r from-[#2c744c]/75 to-[#1e5233]/75 hover:from-[#2c744c]/85 hover:to-[#1e5233]/85 text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-[#2c744c]/25 hover:shadow-[#2c744c]/35 group overflow-hidden border border-[#2c744c]/40 hover:border-[#2c744c]/60 backdrop-blur-xl"
                 >
-                  {/* Enhanced glass overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-full"></div>
+                  {/* Enhanced green glass overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/15 to-[#1e5233]/10 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/8 rounded-full"></div>
                   
-                  {/* Glass shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  {/* Green-tinted shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <div className="relative flex items-center justify-center z-10">
                     {/* Modern contact icon */}
@@ -115,7 +120,7 @@ export default function Header() {
                 {/* Hamburger Menu Button */}
                 <button 
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="relative p-2 text-white/95 hover:text-white transition-all duration-300 rounded-full hover:bg-white/25 backdrop-blur-xl border border-white/20 hover:border-white/40"
+                  className="relative p-2 text-white/95 hover:text-white transition-all duration-300 rounded-full hover:bg-[#2c744c]/20 backdrop-blur-xl border border-[#2c744c]/25 hover:border-[#2c744c]/40"
                 >
                   {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -123,10 +128,11 @@ export default function Header() {
                 {/* Quick Contact Button */}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="relative px-4 py-2 bg-gradient-to-r from-[#2c744c]/70 to-[#1e5233]/70 hover:from-[#2c744c]/80 hover:to-[#1e5233]/80 text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-[#2c744c]/20 hover:shadow-[#2c744c]/30 group overflow-hidden border border-white/30 hover:border-white/50 backdrop-blur-xl"
+                  className="relative px-4 py-2 bg-gradient-to-r from-[#2c744c]/75 to-[#1e5233]/75 hover:from-[#2c744c]/85 hover:to-[#1e5233]/85 text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-[#2c744c]/25 hover:shadow-[#2c744c]/35 group overflow-hidden border border-[#2c744c]/40 hover:border-[#2c744c]/60 backdrop-blur-xl"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-full"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/15 to-[#1e5233]/10 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/8 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <div className="relative flex items-center justify-center z-10">
                     <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-all duration-500 backdrop-blur-sm border border-white/30">
@@ -142,10 +148,11 @@ export default function Header() {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-[#2c744c]/20 backdrop-blur-3xl border-b border-white/20 shadow-2xl shadow-black/10">
-            {/* Glass overlay for mobile menu */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/15 to-white/10"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-white/4"></div>
+          <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-[#2c744c]/25 backdrop-blur-3xl border-b border-[#2c744c]/25 shadow-2xl shadow-[#2c744c]/15">
+            {/* Green glass overlay for mobile menu */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/8 via-[#2c744c]/12 to-[#2c744c]/8"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/8 via-white/12 to-white/8"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#2c744c]/6 via-transparent to-[#2c744c]/3"></div>
             <div className="container mx-auto px-4 py-4 relative z-10">
               <div className="space-y-2">
                 {menuItems.map((item) => {
@@ -154,11 +161,11 @@ export default function Header() {
                     <button 
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="w-full flex items-center space-x-3 px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/25 backdrop-blur-xl border border-white/20 hover:border-white/40"
+                      className="w-full flex items-center space-x-3 px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-[#2c744c]/20 backdrop-blur-xl border border-[#2c744c]/25 hover:border-[#2c744c]/40"
                     >
                       <IconComponent size={20} className="text-white/80" />
                       <span>{item.label}</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
                     </button>
                   );
                 })}
@@ -166,11 +173,11 @@ export default function Header() {
                 {/* Mobile Contact Option in Menu */}
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-white/25 backdrop-blur-xl border border-white/20 hover:border-white/40"
+                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-[#2c744c]/20 backdrop-blur-xl border border-[#2c744c]/25 hover:border-[#2c744c]/40"
                 >
                   <FaWhatsapp size={20} className="text-green-400" />
                   <span>Contato via WhatsApp</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
                 </button>
               </div>
             </div>

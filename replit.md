@@ -195,9 +195,12 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
   - **Gradientes naturais**: Transições suaves entre #2c744c e #1e5233
   - **Sombras harmonizadas**: shadow-[#2c744c]/30-40 para profundidade natural
   - **Bordas elegantes**: border-[#2c744c]/20-30 para definição sutil
-  - **Ultra-transparência**: Cores reduzidas para 20-25% de opacidade
-  - **Glassmorphism intenso**: backdrop-blur-3xl com múltiplas camadas de vidro
-  - **Bordas brancas**: border-white/20-40 para efeito cristal premium
+  - **Ultra-transparência**: Cores reduzidas para 25-30% de opacidade mantendo identidade verde
+  - **Glassmorphism verde**: backdrop-blur-3xl com camadas verdes e brancas intercaladas
+  - **Bordas da marca**: border-[#2c744c]/25-40 para identidade visual consistente
+  - **Efeito cristal verde**: Múltiplas camadas de vidro com tons #2c744c sutis
+  - **Shimmer animado**: Pulso verde sutil via-[#2c744c]/12 para vitalidade
+  - **Reflexos multicamadas**: Gradientes verde + branco para profundidade premium
 ✓ **SISTEMA DE ANIMAÇÕES ULTRA-SUAVES IMPLEMENTADO**: Sistema completo de animações flutuantes ultra-relaxantes
   - **Animações CSS ultra-suaves**: floatGentle (12s), float (8s) e pulse-glow (8s) com movimentos mínimos
   - **Movimentos sutis**: Flutuação máxima -3px, rotação máxima ±0.3°, totalmente relaxante
