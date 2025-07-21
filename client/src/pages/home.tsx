@@ -4,7 +4,7 @@ import TreatmentsSection from "@/components/treatments-section";
 import VideoSection from "@/components/video-section";
 import StructureSection from "@/components/structure-section";
 import TestimonialsSection from "@/components/testimonials-section";
-import ContactForm from "@/components/contact-form";
+import ContactFormFixed from "@/components/contact-form-fixed";
 import WhatsappFloat from "@/components/whatsapp-float";
 import Footer from "@/components/footer";
 
@@ -17,7 +17,7 @@ export default function Home() {
       <VideoSection />
       <StructureSection />
       <TestimonialsSection />
-      <ContactForm />
+      <ContactFormFixed />
       <WhatsappFloat />
       <Footer />
     </div>
