@@ -156,6 +156,15 @@ leads: {
 
 The application is designed to be deployed on platforms like Replit, Vercel, or any Node.js hosting service with PostgreSQL support.
 
+## Recent Changes (July 21, 2025)
+
+✓ **OTIMIZAÇÃO MOBILE PARA VÍDEO HERO IMPLEMENTADA**: Ajustes responsivos do vídeo principal
+  - **Mobile (até 640px)**: object-position center 35%, scale 1.15 para melhor enquadramento da frase
+  - **Tablet (641px-1024px)**: object-position center 40%, scale 1.1 para visualização otimizada  
+  - **Desktop (1025px+)**: object-position center center, scale 1.0 para visualização completa
+  - **Responsividade aprimorada**: Garantia de que a frase no vídeo fica sempre visível e em destaque
+  - **CSS otimizado**: Breakpoints específicos para cada dispositivo com melhor UX
+
 ## Recent Changes (July 20, 2025)
 
 ✓ **MIGRAÇÃO COMPLETA PARA REPLIT**: Projeto migrado com sucesso do Replit Agent para ambiente Replit

@@ -120,6 +120,19 @@
       overflow-x: hidden;
     }
     
+    /* Mobile video optimization for hero section */
+    .hero-video {
+      object-position: center 35% !important;
+      transform: scale(1.15);
+      width: 100vw !important;
+      height: 100vh !important;
+    }
+    
+    /* Additional mobile adjustments for better text visibility */
+    .hero-section {
+      min-height: 100vh !important;
+    }
+    
     /* Prevent horizontal scroll on mobile */
     * {
       max-width: 100%;
@@ -127,7 +140,25 @@
     }
   }
 
-  @media (min-width: 641px) {
+  /* Tablet optimization */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero-video {
+      object-position: center 40% !important;
+      transform: scale(1.1);
+    }
+    
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  /* Desktop optimization */
+  @media (min-width: 1025px) {
+    .hero-video {
+      object-position: center center !important;
+      transform: scale(1.0);
+    }
+    
     html {
       font-size: 16px;
     }
