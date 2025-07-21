@@ -168,11 +168,11 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 ## Recent Changes (July 21, 2025)
 
 ✓ **MIGRAÇÃO COMPLETA PARA REPLIT**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
-✓ **OTIMIZAÇÃO MOBILE DO VÍDEO**: Corrigido zoom excessivo no header para dispositivos móveis
-  - **Mobile**: object-position center 25% - foco na frase do vídeo
-  - **Tablet**: object-position center 30% - posicionamento intermediário
-  - **Desktop**: object-position center center - visualização completa
-  - **Removido transform scale**: Elimina zoom desnecessário em todos os dispositivos
+✓ **OTIMIZAÇÃO MOBILE DO VÍDEO**: Aplicado zoom de -25% no header para dispositivos móveis
+  - **Mobile**: transform scale(0.75) - zoom de -25% + object-position center 25%
+  - **Tablet**: object-position center 30% - sem zoom
+  - **Desktop**: object-position center center - sem zoom
+  - **Enquadramento otimizado**: Frase do vídeo destacada com melhor proporção visual
 ✓ **SISTEMA DE ANIMAÇÕES ULTRA-SUAVES IMPLEMENTADO**: Sistema completo de animações flutuantes ultra-relaxantes
   - **Animações CSS ultra-suaves**: floatGentle (12s), float (8s) e pulse-glow (8s) com movimentos mínimos
   - **Movimentos sutis**: Flutuação máxima -3px, rotação máxima ±0.3°, totalmente relaxante
