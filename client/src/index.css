@@ -122,10 +122,11 @@
     
     /* Mobile video optimization for hero section */
     .hero-video {
-      object-position: center 35% !important;
-      transform: scale(1.15);
-      width: 100vw !important;
-      height: 100vh !important;
+      object-position: center 25% !important;
+      transform: none;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
     }
     
     /* Additional mobile adjustments for better text visibility */
@@ -143,8 +144,9 @@
   /* Tablet optimization */
   @media (min-width: 641px) and (max-width: 1024px) {
     .hero-video {
-      object-position: center 40% !important;
-      transform: scale(1.1);
+      object-position: center 30% !important;
+      transform: none;
+      object-fit: cover;
     }
     
     html {
@@ -156,7 +158,8 @@
   @media (min-width: 1025px) {
     .hero-video {
       object-position: center center !important;
-      transform: scale(1.0);
+      transform: none;
+      object-fit: cover;
     }
     
     html {
