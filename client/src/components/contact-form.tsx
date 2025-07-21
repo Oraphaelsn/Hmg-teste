@@ -31,12 +31,63 @@ export default function ContactForm() {
       const response = await apiRequest("POST", "/api/leads", data);
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (response, data) => {
       setIsSubmitted(true);
       form.reset();
+      
+      // Criar mensagem WhatsApp formatada
+      const treatmentLabels: { [key: string]: string } = {
+        'saude-mental': 'Saúde Mental',
+        'dependencia-quimica': 'Dependência Química',
+        'transtornos-alimentares': 'Transtornos Alimentares',
+        'terapia-familiar': 'Terapia Familiar'
+      };
+      
+      const insuranceLabels: { [key: string]: string } = {
+        'bradesco-saude': 'Bradesco Saúde',
+        'amil': 'Amil',
+        'sulamerica': 'SulAmérica',
+        'unimed': 'Unimed',
+        'postal-saude': 'Postal Saúde',
+        'particular': 'Particular',
+        'outros': 'Outros'
+      };
+      
+      const treatmentText = treatmentLabels[data.treatment] || data.treatment || 'Não especificado';
+      const insuranceText = insuranceLabels[data.insurance] || data.insurance || 'Não especificado';
+      
+      const agora = new Date();
+      const dataHora = agora.toLocaleString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      
+      const mensagemWhatsApp = `🏥 *NOVO LEAD - Estância Morro Grande* 🏥
+
+👤 *Nome:* ${data.name}
+📞 *Telefone:* ${data.phone}
+💊 *Tratamento:* ${treatmentText}
+🏥 *Plano:* ${insuranceText}
+
+📅 *Data/Hora:* ${dataHora}
+
+🔔 Entre em contato o mais rápido possível!
+
+📧 contato@estanciamorrogrande.com.br`;
+
+      // Abrir WhatsApp automaticamente
+      const numeroWhatsApp = '5515996834387'; // Seu número sem + ou espaços
+      const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemWhatsApp)}`;
+      
+      // Abrir em nova aba
+      window.open(linkWhatsApp, '_blank');
+      
       toast({
         title: "Solicitação enviada!",
-        description: "Entraremos em contato em até 2 horas. Obrigado por confiar na Estância Morro Grande.",
+        description: "WhatsApp aberto para envio automático. Entraremos em contato em até 2 horas.",
       });
     },
     onError: (error) => {

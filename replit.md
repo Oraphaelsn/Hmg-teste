@@ -169,15 +169,15 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 21, 2025)
 
-✓ **SISTEMA WHATSAPP IMPLEMENTADO**: Integração completa para notificações automáticas de leads
-  - **Banco de dados duplo**: PostgreSQL para leads + tabelas WhatsApp (config, logs)
-  - **Notificação automática**: Mensagens enviadas para +5515996834387 a cada novo lead
-  - **Template personalizado**: Mensagem com dados do lead (nome, telefone, tratamento, plano)
-  - **Logs completos**: Histórico de todas as mensagens enviadas com status
-  - **APIs REST**: Endpoints para configurar e monitorar WhatsApp (/api/whatsapp/*)
-  - **Normalização de telefone**: Formato brasileiro +55 com validação automática
-  - **Envio em background**: Não bloqueia resposta do formulário para melhor UX
-  - **Sistema híbrido**: Funciona com PostgreSQL + fallback para memory storage
+✓ **SISTEMA WHATSAPP LINK IMPLEMENTADO**: Envio automático via wa.me para +5515996834387
+  - **Link automático**: Após submissão, abre WhatsApp com mensagem pré-preenchida
+  - **Banco PostgreSQL**: Leads salvos para histórico no admin panel
+  - **Template personalizado**: Mensagem formatada com dados do lead (nome, telefone, tratamento, plano)
+  - **Abertura automática**: window.open() abre WhatsApp em nova aba após submit
+  - **Data/hora brasileira**: Timestamp automático no formato dd/mm/yyyy hh:mm
+  - **Labels traduzidas**: Converte IDs para nomes legíveis (ex: saude-mental → Saúde Mental)
+  - **Sem APIs externas**: Funciona direto do navegador, sem necessidade de tokens
+  - **Dupla funcionalidade**: Salva no banco + envia via WhatsApp automaticamente
 ✓ **BANCO DE DADOS POSTGRESQL IMPLEMENTADO**: Sistema completo de persistência com histórico
   - **DatabaseStorage**: Integração com PostgreSQL usando Neon serverless
   - **Histórico completo**: Todos os leads salvos com data e horário precisos
