@@ -66,7 +66,7 @@ export default function HeroSection() {
             <div className="bg-white/20 p-1 rounded-full mr-2 sm:mr-3 group-hover:bg-white/30 transition-colors duration-300">
               <UserCheck className="text-white" size={18} />
             </div>
-            <span className="tracking-wide">Solicitar Orientação</span>
+            <span className="tracking-wide">Fale conosco</span>
           </div>
         </Button>
         <div className="relative">

@@ -11,12 +11,12 @@ export interface IStorage {
   getVideoBySection(section: string): Promise<Video | undefined>;
 }
 
-export class SupabaseStorage implements IStorage {
+export class DatabaseStorage implements IStorage {
   private sql;
 
   constructor() {
     if (!process.env.DATABASE_URL) {
-      throw new Error("DATABASE_URL is required for Supabase storage");
+      throw new Error("DATABASE_URL is required for PostgreSQL storage");
     }
     this.sql = neon(process.env.DATABASE_URL);
     this.initializeDatabase();
@@ -48,6 +48,23 @@ export class SupabaseStorage implements IStorage {
           created_at TIMESTAMP DEFAULT NOW()
         );
       `);
+      
+      // Seed initial video if not exists
+      const existingVideos = await this.sql(`SELECT COUNT(*) as count FROM videos WHERE section = 'tour'`);
+      if (existingVideos[0].count === 0) {
+        await this.sql(`
+          INSERT INTO videos (title, description, filename, section, is_active, created_at)
+          VALUES ($1, $2, $3, $4, $5, NOW())
+        `, [
+          "Tour Estância Morro Grande",
+          "Veja de perto nosso ambiente acolhedor e estrutura preparada para oferecer o melhor cuidado em saúde mental e dependência química.",
+          "WhatsApp Video 2025-07-18 at 09.25.19_1752995612939.mp4",
+          "tour",
+          "true"
+        ]);
+        console.log("📹 Initial video seeded");
+      }
+      
       console.log("✅ Database initialized successfully");
     } catch (error: unknown) {
       console.error("⚠️ Error initializing database:", (error as Error).message);
@@ -76,7 +93,7 @@ export class SupabaseStorage implements IStorage {
         createdAt: new Date(lead.created_at),
       };
     } catch (error) {
-      console.error("Error creating lead in Supabase:", error);
+      console.error("Error creating lead in PostgreSQL:", error);
       throw error;
     }
   }
@@ -98,7 +115,7 @@ export class SupabaseStorage implements IStorage {
         createdAt: new Date(lead.created_at),
       }));
     } catch (error: unknown) {
-      console.error("Error fetching leads from Supabase:", error);
+      console.error("Error fetching leads from PostgreSQL:", error);
       throw error;
     }
   }
@@ -127,7 +144,7 @@ export class SupabaseStorage implements IStorage {
         createdAt: new Date(video.created_at),
       };
     } catch (error: unknown) {
-      console.error("Error creating video in Supabase:", error);
+      console.error("Error creating video in PostgreSQL:", error);
       throw error;
     }
   }
@@ -150,7 +167,7 @@ export class SupabaseStorage implements IStorage {
         createdAt: new Date(video.created_at),
       }));
     } catch (error: unknown) {
-      console.error("Error fetching videos from Supabase:", error);
+      console.error("Error fetching videos from PostgreSQL:", error);
       throw error;
     }
   }
@@ -177,7 +194,7 @@ export class SupabaseStorage implements IStorage {
         createdAt: new Date(video.created_at),
       };
     } catch (error: unknown) {
-      console.error("Error fetching video by section from Supabase:", error);
+      console.error("Error fetching video by section from PostgreSQL:", error);
       throw error;
     }
   }
@@ -259,52 +276,52 @@ export class MemStorage implements IStorage {
   }
 }
 
-// Hybrid storage that tries Supabase but falls back to memory gracefully
+// Hybrid storage that tries PostgreSQL but falls back to memory gracefully
 class HybridStorage implements IStorage {
-  private supabaseStorage: SupabaseStorage | null = null;
+  private databaseStorage: DatabaseStorage | null = null;
   private memStorage: MemStorage;
-  private isSupabaseAvailable = false;
+  private isDatabaseAvailable = false;
 
   constructor() {
     this.memStorage = new MemStorage();
     
     if (process.env.DATABASE_URL) {
       try {
-        console.log("🗄️ Attempting Supabase connection...");
-        this.supabaseStorage = new SupabaseStorage();
-        this.testSupabaseConnection();
+        console.log("🗄️ Attempting PostgreSQL connection...");
+        this.databaseStorage = new DatabaseStorage();
+        this.testDatabaseConnection();
       } catch (error: unknown) {
-        console.warn("⚠️ Supabase initialization failed:", (error as Error).message);
-        this.supabaseStorage = null;
+        console.warn("⚠️ PostgreSQL initialization failed:", (error as Error).message);
+        this.databaseStorage = null;
       }
     } else {
       console.log("💾 No DATABASE_URL found, using memory storage");
     }
   }
 
-  private async testSupabaseConnection() {
-    if (!this.supabaseStorage) return;
+  private async testDatabaseConnection() {
+    if (!this.databaseStorage) return;
     
     try {
-      await this.supabaseStorage.getLeads();
-      this.isSupabaseAvailable = true;
-      console.log("✅ Supabase connection successful");
+      await this.databaseStorage.getLeads();
+      this.isDatabaseAvailable = true;
+      console.log("✅ PostgreSQL connection successful");
     } catch (error: unknown) {
-      console.warn("⚠️ Supabase connection test failed:", (error as Error).message);
-      this.isSupabaseAvailable = false;
+      console.warn("⚠️ PostgreSQL connection test failed:", (error as Error).message);
+      this.isDatabaseAvailable = false;
     }
   }
 
   async createLead(insertLead: InsertLead): Promise<Lead> {
-    // Try Supabase first, fallback to memory
-    if (this.isSupabaseAvailable && this.supabaseStorage) {
+    // Try PostgreSQL first, fallback to memory
+    if (this.isDatabaseAvailable && this.databaseStorage) {
       try {
-        const lead = await this.supabaseStorage.createLead(insertLead);
-        console.log("📝 Lead saved to Supabase");
+        const lead = await this.databaseStorage.createLead(insertLead);
+        console.log("📝 Lead saved to PostgreSQL database with timestamp");
         return lead;
       } catch (error: unknown) {
-        console.warn("⚠️ Supabase save failed, using memory storage:", (error as Error).message);
-        this.isSupabaseAvailable = false;
+        console.warn("⚠️ PostgreSQL save failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
       }
     }
     
@@ -313,15 +330,15 @@ class HybridStorage implements IStorage {
   }
 
   async getLeads(): Promise<Lead[]> {
-    // Try Supabase first, fallback to memory
-    if (this.isSupabaseAvailable && this.supabaseStorage) {
+    // Try PostgreSQL first, fallback to memory
+    if (this.isDatabaseAvailable && this.databaseStorage) {
       try {
-        const leads = await this.supabaseStorage.getLeads();
-        console.log(`📋 Retrieved ${leads.length} leads from Supabase`);
+        const leads = await this.databaseStorage.getLeads();
+        console.log(`📋 Retrieved ${leads.length} leads from PostgreSQL database (ordered by date)`);
         return leads;
       } catch (error: unknown) {
-        console.warn("⚠️ Supabase fetch failed, using memory storage:", (error as Error).message);
-        this.isSupabaseAvailable = false;
+        console.warn("⚠️ PostgreSQL fetch failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
       }
     }
     
@@ -331,15 +348,15 @@ class HybridStorage implements IStorage {
   }
 
   async createVideo(insertVideo: InsertVideo): Promise<Video> {
-    // Try Supabase first, fallback to memory
-    if (this.isSupabaseAvailable && this.supabaseStorage) {
+    // Try PostgreSQL first, fallback to memory
+    if (this.isDatabaseAvailable && this.databaseStorage) {
       try {
-        const video = await this.supabaseStorage.createVideo(insertVideo);
-        console.log("🎥 Video saved to Supabase");
+        const video = await this.databaseStorage.createVideo(insertVideo);
+        console.log("🎥 Video saved to PostgreSQL database");
         return video;
       } catch (error: unknown) {
-        console.warn("⚠️ Supabase video save failed, using memory storage:", (error as Error).message);
-        this.isSupabaseAvailable = false;
+        console.warn("⚠️ PostgreSQL video save failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
       }
     }
     
@@ -348,15 +365,15 @@ class HybridStorage implements IStorage {
   }
 
   async getVideos(): Promise<Video[]> {
-    // Try Supabase first, fallback to memory
-    if (this.isSupabaseAvailable && this.supabaseStorage) {
+    // Try PostgreSQL first, fallback to memory
+    if (this.isDatabaseAvailable && this.databaseStorage) {
       try {
-        const videos = await this.supabaseStorage.getVideos();
-        console.log(`🎬 Retrieved ${videos.length} videos from Supabase`);
+        const videos = await this.databaseStorage.getVideos();
+        console.log(`🎬 Retrieved ${videos.length} videos from PostgreSQL database`);
         return videos;
       } catch (error: unknown) {
-        console.warn("⚠️ Supabase video fetch failed, using memory storage:", (error as Error).message);
-        this.isSupabaseAvailable = false;
+        console.warn("⚠️ PostgreSQL video fetch failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
       }
     }
     
@@ -366,15 +383,15 @@ class HybridStorage implements IStorage {
   }
 
   async getVideoBySection(section: string): Promise<Video | undefined> {
-    // Try Supabase first, fallback to memory
-    if (this.isSupabaseAvailable && this.supabaseStorage) {
+    // Try PostgreSQL first, fallback to memory
+    if (this.isDatabaseAvailable && this.databaseStorage) {
       try {
-        const video = await this.supabaseStorage.getVideoBySection(section);
-        console.log(`🎥 Retrieved video for section "${section}" from Supabase`);
+        const video = await this.databaseStorage.getVideoBySection(section);
+        console.log(`🎥 Retrieved video for section "${section}" from PostgreSQL database`);
         return video;
       } catch (error: unknown) {
-        console.warn("⚠️ Supabase video fetch failed, using memory storage:", (error as Error).message);
-        this.isSupabaseAvailable = false;
+        console.warn("⚠️ PostgreSQL video fetch failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
       }
     }
     
@@ -384,6 +401,6 @@ class HybridStorage implements IStorage {
   }
 }
 
-// Use only memory storage for now due to Supabase connectivity issues in Replit
-console.log("💾 Using memory storage (Supabase connectivity issues)");
-export const storage = new MemStorage();
+// Use DatabaseStorage with PostgreSQL for production lead saving
+console.log("🗄️ Initializing PostgreSQL database storage...");
+export const storage = new HybridStorage();

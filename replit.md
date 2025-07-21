@@ -30,9 +30,10 @@ This is a modern, responsive mental health and addiction treatment landing page 
 ### Backend Architecture
 - **Runtime**: Node.js with Express.js
 - **Language**: TypeScript with ES modules
-- **Database**: PostgreSQL (configured for Neon serverless)
-- **ORM**: Drizzle ORM with Drizzle Kit for migrations
-- **Session Storage**: In-memory storage (MemStorage class) with fallback to PostgreSQL
+- **Database**: PostgreSQL (Neon serverless) with hybrid fallback system
+- **ORM**: Drizzle ORM with Drizzle Kit for schema management
+- **Storage**: HybridStorage class (PostgreSQL primary, MemStorage fallback)
+- **Lead Management**: Full CRUD operations with timestamp tracking
 
 ### Development Setup
 - **Development Server**: Vite dev server with HMR
@@ -93,16 +94,26 @@ This is a modern, responsive mental health and addiction treatment landing page 
 
 ## Database Schema
 
-The application uses a simple lead capture schema:
+The application uses PostgreSQL with the following tables:
 
 ```typescript
 leads: {
   id: serial (primary key)
   name: text (required)
   phone: text (required) 
-  treatment: text (optional)
-  insurance: text (optional) - health insurance/plan
-  createdAt: timestamp (auto-generated)
+  treatment: text (optional) - treatment type selected by user
+  insurance: text (optional) - health insurance/plan information
+  createdAt: timestamp (auto-generated with NOW()) - exact submission date/time
+}
+
+videos: {
+  id: serial (primary key)
+  title: text (required) - video title
+  description: text (optional) - video description
+  filename: text (required) - video file name in public folder
+  section: text (required) - section where video is displayed (hero, tour, etc)
+  isActive: text (default 'true') - active status for video management
+  createdAt: timestamp (auto-generated with NOW()) - upload date/time
 }
 ```
 
@@ -158,6 +169,21 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 21, 2025)
 
+✓ **BANCO DE DADOS POSTGRESQL IMPLEMENTADO**: Sistema completo de persistência com histórico
+  - **DatabaseStorage**: Integração com PostgreSQL usando Neon serverless
+  - **Histórico completo**: Todos os leads salvos com data e horário precisos
+  - **Sistema híbrido**: Fallback para memory storage se banco não disponível
+  - **Tabelas criadas**: leads e videos com schema completo e timestamps
+  - **Seeding automático**: Inicialização do vídeo tour automaticamente
+✓ **ADMIN PANEL APRIMORADO**: Interface completa para gestão de leads
+  - **Filtros avançados**: Por nome, telefone, tratamento e período de data
+  - **Ordenação flexível**: Por data (mais recentes/antigos) e nome alfabético
+  - **Estatísticas em tempo real**: Total de leads, filtrados e último lead recebido
+  - **Histórico detalhado**: Data, horário exato e tempo relativo para cada lead
+  - **Exportação CSV**: Download de dados filtrados com data/hora completa
+  - **Integração WhatsApp**: Botões diretos para contato via WhatsApp
+  - **Filtro por período**: Hoje, ontem, última semana, último mês
+  - **Busca inteligente**: Por nome ou telefone com resultados instantâneos
 ✓ **GLASSMORPHISM VERDE CRISTALINO FINALIZADO**: Efeito vidro ultra-transparente com identidade da marca
   - **Transparência premium**: Cores #2c744c/25-30% mantendo identidade verde natural
   - **Multicamadas de vidro**: Verde + branco intercalados para profundidade cristalina
