@@ -55,58 +55,93 @@ function personalizeMessage(template: string, leadData: any): string {
     .replace(/\$\(date\)/g, dateTime);
 }
 
-// Simulação de envio via WhatsApp Business API
+// Integração real com WhatsApp Business API
 async function sendWhatsAppMessage(config: any, message: WhatsAppMessage): Promise<{ success: boolean; messageId?: string; error?: string }> {
   try {
-    console.log(`📱 Simulando envio WhatsApp via ${config.providerName}:`);
+    console.log(`📱 Enviando WhatsApp via ${config.providerName}:`);
     console.log(`📞 Para: ${message.to}`);
     console.log(`💬 Mensagem: ${message.text}`);
     
-    // Aqui você integraria com a API real do WhatsApp
-    // Por exemplo, com Twilio:
-    /*
-    const client = require('twilio')(config.accountSid, config.authToken);
-    const sentMessage = await client.messages.create({
-      body: message.text,
-      from: `whatsapp:${config.phoneNumber}`,
-      to: `whatsapp:${message.to}`
-    });
-    return { success: true, messageId: sentMessage.sid };
-    */
-    
-    // Para Meta WhatsApp Business API:
-    /*
-    const response = await fetch(`https://graph.facebook.com/v17.0/${config.phoneNumberId}/messages`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${config.apiToken}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        messaging_product: 'whatsapp',
-        to: message.to.replace('+', ''),
-        type: 'text',
-        text: { body: message.text }
-      })
-    });
-    
-    const data = await response.json();
-    if (response.ok) {
-      return { success: true, messageId: data.messages[0].id };
-    } else {
-      return { success: false, error: data.error?.message || 'Erro desconhecido' };
+    // Meta WhatsApp Business API (Recomendado)
+    if (config.providerName === 'meta' || config.providerName === 'facebook') {
+      const phoneNumberId = config.phoneNumberId || config.phoneNumber.replace(/\D/g, '');
+      const response = await fetch(`https://graph.facebook.com/v18.0/${phoneNumberId}/messages`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${config.apiToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          messaging_product: 'whatsapp',
+          to: message.to.replace('+', ''),
+          type: 'text',
+          text: { body: message.text }
+        })
+      });
+      
+      const data = await response.json();
+      if (response.ok && data.messages) {
+        return { success: true, messageId: data.messages[0].id };
+      } else {
+        return { success: false, error: data.error?.message || 'Erro na API do Meta WhatsApp' };
+      }
     }
-    */
     
-    // Simulação para desenvolvimento
-    const mockMessageId = `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Twilio WhatsApp API
+    if (config.providerName === 'twilio') {
+      const accountSid = config.accountSid || config.apiToken.split(':')[0];
+      const authToken = config.authToken || config.apiToken.split(':')[1] || config.apiToken;
+      
+      const response = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${Buffer.from(`${accountSid}:${authToken}`).toString('base64')}`,
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          From: `whatsapp:${config.phoneNumber}`,
+          To: `whatsapp:${message.to}`,
+          Body: message.text
+        })
+      });
+      
+      const data = await response.json();
+      if (response.ok && data.sid) {
+        return { success: true, messageId: data.sid };
+      } else {
+        return { success: false, error: data.message || 'Erro na API do Twilio' };
+      }
+    }
     
-    // Simula um pequeno delay como se fosse uma API real
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Evolution API (Alternativa brasileira popular)
+    if (config.providerName === 'evolution') {
+      const response = await fetch(`${config.webhookUrl || 'https://api.evolution.com.br'}/message/sendText/${config.instanceName || 'default'}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': config.apiToken
+        },
+        body: JSON.stringify({
+          number: message.to.replace('+', ''),
+          textMessage: {
+            text: message.text
+          }
+        })
+      });
+      
+      const data = await response.json();
+      if (response.ok && data.key) {
+        return { success: true, messageId: data.key.id };
+      } else {
+        return { success: false, error: data.message || 'Erro na Evolution API' };
+      }
+    }
     
+    // Se chegou aqui, o provedor não é suportado ou não foi configurado
+    console.warn(`⚠️ Provedor ${config.providerName} não configurado para envio real`);
     return { 
-      success: true, 
-      messageId: mockMessageId 
+      success: false, 
+      error: `Provedor ${config.providerName} requer configuração adicional. Configure as credenciais corretas.` 
     };
     
   } catch (error: any) {
