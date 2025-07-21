@@ -68,7 +68,7 @@ export default function StructureSection() {
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-green mb-4 sm:mb-6">Nossa Estrutura</h2>
           <p className="text-lg sm:text-xl md:text-2xl text-brand-green font-medium mb-6 sm:mb-8">
-            "Ambiente seguro, supervisionado e preparado para recomeços"
+            Ambiente seguro, supervisionado e preparado para recomeços
           </p>
         </div>
 

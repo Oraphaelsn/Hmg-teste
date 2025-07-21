@@ -28,7 +28,7 @@ export default function VideoSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#2c744c] mb-6">
-            Conheça Nossa Estância
+            Conheça a Estância Morro Grande!
           </h2>
           <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
             Veja de perto nosso ambiente acolhedor e estrutura preparada para 
@@ -65,7 +65,7 @@ export default function VideoSection() {
                   
                   {/* Texto indicativo */}
                   <div className="absolute bottom-6 left-4 right-4 text-white">
-                    <h3 className="text-lg font-bold mb-1 text-center drop-shadow-lg">Conheça Nossa História</h3>
+                    <h3 className="text-lg font-bold mb-1 text-center drop-shadow-lg">Conheça Nossa História!</h3>
                     <p className="text-sm text-white/95 text-center drop-shadow-md">Toque para assistir ao tour completo</p>
                   </div>
                   

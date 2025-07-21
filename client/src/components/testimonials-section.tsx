@@ -3,17 +3,17 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "A Clínica Esperança me devolveu minha filha. O atendimento humanizado e a dedicação de toda equipe foram fundamentais para sua recuperação. Hoje ela tem uma vida plena e feliz.",
-    name: "Maria Rosa",
+    quote: "O Hospital Estância Morro Grande me devolveu minha filha. O atendimento humanizado e a dedicação de toda equipe foram fundamentais para sua recuperação. Hoje ela tem uma vida plena e feliz.",
+    name: "Marcela Rios",
     role: "Mãe de paciente",
     initials: "MR",
     gradient: "from-primary to-secondary"
   },
   {
-    quote: "Após anos lutando contra a depressão, encontrei na Clínica Esperança o apoio que precisava. A equipe me acolheu com carinho e hoje posso dizer que minha vida mudou completamente.",
-    name: "João Silva",
+    quote: "Após anos lutando contra a depressão, encontrei no Hospital Estância Grande o apoio que precisava. A equipe me acolheu com carinho e hoje posso dizer que minha vida mudou completamente.",
+    name: "Jhonatan Andrade",
     role: "Ex-paciente",
-    initials: "JS",
+    initials: "JA",
     gradient: "from-secondary to-accent"
   },
   {
