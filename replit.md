@@ -169,7 +169,7 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 21, 2025)
 
-✓ **SISTEMA WHATSAPP LINK IMPLEMENTADO**: Envio automático via wa.me para +5515996834387
+✓ **SISTEMA WHATSAPP LINK IMPLEMENTADO**: Envio automático via wa.me para +5515997559520
   - **Link automático**: Após submissão, abre WhatsApp com mensagem pré-preenchida
   - **Banco PostgreSQL**: Leads salvos para histórico no admin panel
   - **Template personalizado**: Mensagem formatada com dados do lead (nome, telefone, tratamento, plano)

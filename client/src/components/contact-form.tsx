@@ -53,8 +53,8 @@ export default function ContactForm() {
         'outros': 'Outros'
       };
       
-      const treatmentText = treatmentLabels[data.treatment] || data.treatment || 'Não especificado';
-      const insuranceText = insuranceLabels[data.insurance] || data.insurance || 'Não especificado';
+      const treatmentText = treatmentLabels[data.treatment || ''] || data.treatment || 'Não especificado';
+      const insuranceText = insuranceLabels[data.insurance || ''] || data.insurance || 'Não especificado';
       
       const agora = new Date();
       const dataHora = agora.toLocaleString('pt-BR', {
@@ -78,8 +78,8 @@ export default function ContactForm() {
 
 📧 contato@estanciamorrogrande.com.br`;
 
-      // Abrir WhatsApp automaticamente
-      const numeroWhatsApp = '5515996834387'; // Seu número sem + ou espaços
+      // Abrir WhatsApp automaticamente - mesmo número do botão flutuante
+      const numeroWhatsApp = '5515997559520'; // Número do botão WhatsApp
       const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemWhatsApp)}`;
       
       // Abrir em nova aba
