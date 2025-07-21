@@ -1,4 +1,17 @@
-import { leads, videos, type Lead, type InsertLead, type Video, type InsertVideo } from "@shared/schema";
+import { 
+  leads, 
+  videos, 
+  whatsappConfig, 
+  whatsappLogs,
+  type Lead, 
+  type InsertLead, 
+  type Video, 
+  type InsertVideo,
+  type WhatsappConfig,
+  type InsertWhatsappConfig,
+  type WhatsappLog,
+  type InsertWhatsappLog
+} from "@shared/schema";
 import { drizzle } from "drizzle-orm/neon-serverless";
 import { neon } from "@neondatabase/serverless";
 import { desc, eq } from "drizzle-orm";
@@ -9,6 +22,16 @@ export interface IStorage {
   createVideo(video: InsertVideo): Promise<Video>;
   getVideos(): Promise<Video[]>;
   getVideoBySection(section: string): Promise<Video | undefined>;
+  
+  // WhatsApp Configuration methods
+  createWhatsappConfig(config: InsertWhatsappConfig): Promise<WhatsappConfig>;
+  getActiveWhatsappConfig(): Promise<WhatsappConfig | undefined>;
+  updateWhatsappConfig(id: number, config: Partial<InsertWhatsappConfig>): Promise<WhatsappConfig | undefined>;
+  
+  // WhatsApp Logs methods
+  createWhatsappLog(log: InsertWhatsappLog): Promise<WhatsappLog>;
+  getWhatsappLogs(): Promise<WhatsappLog[]>;
+  getWhatsappLogsByLead(leadId: string): Promise<WhatsappLog[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -46,6 +69,34 @@ export class DatabaseStorage implements IStorage {
           section TEXT NOT NULL,
           is_active TEXT DEFAULT 'true' NOT NULL,
           created_at TIMESTAMP DEFAULT NOW()
+        );
+      `);
+      
+      // Create the whatsapp_config table if it doesn't exist
+      await this.sql(`
+        CREATE TABLE IF NOT EXISTS whatsapp_config (
+          id SERIAL PRIMARY KEY,
+          provider_name TEXT NOT NULL,
+          is_active TEXT DEFAULT 'true' NOT NULL,
+          api_token TEXT NOT NULL,
+          phone_number TEXT NOT NULL,
+          template_message TEXT NOT NULL,
+          webhook_url TEXT,
+          created_at TIMESTAMP DEFAULT NOW()
+        );
+      `);
+      
+      // Create the whatsapp_logs table if it doesn't exist
+      await this.sql(`
+        CREATE TABLE IF NOT EXISTS whatsapp_logs (
+          id SERIAL PRIMARY KEY,
+          lead_id TEXT NOT NULL,
+          phone_number TEXT NOT NULL,
+          message TEXT NOT NULL,
+          status TEXT NOT NULL,
+          provider_id TEXT,
+          error_message TEXT,
+          sent_at TIMESTAMP DEFAULT NOW()
         );
       `);
       
@@ -198,19 +249,198 @@ export class DatabaseStorage implements IStorage {
       throw error;
     }
   }
+
+  // WhatsApp Configuration methods
+  async createWhatsappConfig(config: InsertWhatsappConfig): Promise<WhatsappConfig> {
+    try {
+      const [whatsappConfig] = await this.sql(`
+        INSERT INTO whatsapp_config (provider_name, is_active, api_token, phone_number, template_message, webhook_url, created_at)
+        VALUES ($1, $2, $3, $4, $5, $6, NOW())
+        RETURNING id, provider_name, is_active, api_token, phone_number, template_message, webhook_url, created_at
+      `, [
+        config.providerName,
+        config.isActive || 'true',
+        config.apiToken,
+        config.phoneNumber,
+        config.templateMessage,
+        config.webhookUrl || null,
+      ]);
+      
+      return {
+        id: whatsappConfig.id,
+        providerName: whatsappConfig.provider_name,
+        isActive: whatsappConfig.is_active,
+        apiToken: whatsappConfig.api_token,
+        phoneNumber: whatsappConfig.phone_number,
+        templateMessage: whatsappConfig.template_message,
+        webhookUrl: whatsappConfig.webhook_url,
+        createdAt: new Date(whatsappConfig.created_at),
+      };
+    } catch (error: unknown) {
+      console.error("Error creating WhatsApp config in PostgreSQL:", error);
+      throw error;
+    }
+  }
+
+  async getActiveWhatsappConfig(): Promise<WhatsappConfig | undefined> {
+    try {
+      const [config] = await this.sql(`
+        SELECT id, provider_name, is_active, api_token, phone_number, template_message, webhook_url, created_at
+        FROM whatsapp_config
+        WHERE is_active = 'true'
+        ORDER BY created_at DESC
+        LIMIT 1
+      `);
+      
+      if (!config) return undefined;
+      
+      return {
+        id: config.id,
+        providerName: config.provider_name,
+        isActive: config.is_active,
+        apiToken: config.api_token,
+        phoneNumber: config.phone_number,
+        templateMessage: config.template_message,
+        webhookUrl: config.webhook_url,
+        createdAt: new Date(config.created_at),
+      };
+    } catch (error: unknown) {
+      console.error("Error fetching active WhatsApp config from PostgreSQL:", error);
+      throw error;
+    }
+  }
+
+  async updateWhatsappConfig(id: number, config: Partial<InsertWhatsappConfig>): Promise<WhatsappConfig | undefined> {
+    try {
+      const setClause = Object.keys(config).map((key, index) => `${key} = $${index + 2}`).join(', ');
+      const values = [id, ...Object.values(config)];
+      
+      const [updatedConfig] = await this.sql(`
+        UPDATE whatsapp_config 
+        SET ${setClause}
+        WHERE id = $1
+        RETURNING id, provider_name, is_active, api_token, phone_number, template_message, webhook_url, created_at
+      `, values);
+      
+      if (!updatedConfig) return undefined;
+      
+      return {
+        id: updatedConfig.id,
+        providerName: updatedConfig.provider_name,
+        isActive: updatedConfig.is_active,
+        apiToken: updatedConfig.api_token,
+        phoneNumber: updatedConfig.phone_number,
+        templateMessage: updatedConfig.template_message,
+        webhookUrl: updatedConfig.webhook_url,
+        createdAt: new Date(updatedConfig.created_at),
+      };
+    } catch (error: unknown) {
+      console.error("Error updating WhatsApp config in PostgreSQL:", error);
+      throw error;
+    }
+  }
+
+  // WhatsApp Logs methods
+  async createWhatsappLog(log: InsertWhatsappLog): Promise<WhatsappLog> {
+    try {
+      const [whatsappLog] = await this.sql(`
+        INSERT INTO whatsapp_logs (lead_id, phone_number, message, status, provider_id, error_message, sent_at)
+        VALUES ($1, $2, $3, $4, $5, $6, NOW())
+        RETURNING id, lead_id, phone_number, message, status, provider_id, error_message, sent_at
+      `, [
+        log.leadId,
+        log.phoneNumber,
+        log.message,
+        log.status,
+        log.providerId || null,
+        log.errorMessage || null,
+      ]);
+      
+      return {
+        id: whatsappLog.id,
+        leadId: whatsappLog.lead_id,
+        phoneNumber: whatsappLog.phone_number,
+        message: whatsappLog.message,
+        status: whatsappLog.status,
+        providerId: whatsappLog.provider_id,
+        errorMessage: whatsappLog.error_message,
+        sentAt: new Date(whatsappLog.sent_at),
+      };
+    } catch (error: unknown) {
+      console.error("Error creating WhatsApp log in PostgreSQL:", error);
+      throw error;
+    }
+  }
+
+  async getWhatsappLogs(): Promise<WhatsappLog[]> {
+    try {
+      const allLogs = await this.sql(`
+        SELECT id, lead_id, phone_number, message, status, provider_id, error_message, sent_at
+        FROM whatsapp_logs
+        ORDER BY sent_at DESC
+      `);
+      
+      return allLogs.map((log: any) => ({
+        id: log.id,
+        leadId: log.lead_id,
+        phoneNumber: log.phone_number,
+        message: log.message,
+        status: log.status,
+        providerId: log.provider_id,
+        errorMessage: log.error_message,
+        sentAt: new Date(log.sent_at),
+      }));
+    } catch (error: unknown) {
+      console.error("Error fetching WhatsApp logs from PostgreSQL:", error);
+      throw error;
+    }
+  }
+
+  async getWhatsappLogsByLead(leadId: string): Promise<WhatsappLog[]> {
+    try {
+      const logs = await this.sql(`
+        SELECT id, lead_id, phone_number, message, status, provider_id, error_message, sent_at
+        FROM whatsapp_logs
+        WHERE lead_id = $1
+        ORDER BY sent_at DESC
+      `, [leadId]);
+      
+      return logs.map((log: any) => ({
+        id: log.id,
+        leadId: log.lead_id,
+        phoneNumber: log.phone_number,
+        message: log.message,
+        status: log.status,
+        providerId: log.provider_id,
+        errorMessage: log.error_message,
+        sentAt: new Date(log.sent_at),
+      }));
+    } catch (error: unknown) {
+      console.error("Error fetching WhatsApp logs by lead from PostgreSQL:", error);
+      throw error;
+    }
+  }
 }
 
 export class MemStorage implements IStorage {
   private leads: Map<number, Lead>;
   private videos: Map<number, Video>;
+  private whatsappConfigs: Map<number, WhatsappConfig>;
+  private whatsappLogs: Map<number, WhatsappLog>;
   private currentLeadId: number;
   private currentVideoId: number;
+  private currentConfigId: number;
+  private currentLogId: number;
 
   constructor() {
     this.leads = new Map();
     this.videos = new Map();
+    this.whatsappConfigs = new Map();
+    this.whatsappLogs = new Map();
     this.currentLeadId = 1;
     this.currentVideoId = 1;
+    this.currentConfigId = 1;
+    this.currentLogId = 1;
     
     // Initialize with the existing video
     this.seedInitialVideo();
@@ -273,6 +503,63 @@ export class MemStorage implements IStorage {
       .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
     
     return videos[0] || undefined;
+  }
+
+  // WhatsApp Configuration methods
+  async createWhatsappConfig(config: InsertWhatsappConfig): Promise<WhatsappConfig> {
+    const id = this.currentConfigId++;
+    const whatsappConfig: WhatsappConfig = {
+      ...config,
+      isActive: config.isActive ?? "true",
+      webhookUrl: config.webhookUrl ?? null,
+      id,
+      createdAt: new Date(),
+    };
+    this.whatsappConfigs.set(id, whatsappConfig);
+    return whatsappConfig;
+  }
+
+  async getActiveWhatsappConfig(): Promise<WhatsappConfig | undefined> {
+    const configs = Array.from(this.whatsappConfigs.values())
+      .filter(config => config.isActive === "true")
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+    
+    return configs[0] || undefined;
+  }
+
+  async updateWhatsappConfig(id: number, config: Partial<InsertWhatsappConfig>): Promise<WhatsappConfig | undefined> {
+    const existing = this.whatsappConfigs.get(id);
+    if (!existing) return undefined;
+    
+    const updated: WhatsappConfig = { ...existing, ...config };
+    this.whatsappConfigs.set(id, updated);
+    return updated;
+  }
+
+  // WhatsApp Logs methods
+  async createWhatsappLog(log: InsertWhatsappLog): Promise<WhatsappLog> {
+    const id = this.currentLogId++;
+    const whatsappLog: WhatsappLog = {
+      ...log,
+      providerId: log.providerId ?? null,
+      errorMessage: log.errorMessage ?? null,
+      id,
+      sentAt: new Date(),
+    };
+    this.whatsappLogs.set(id, whatsappLog);
+    return whatsappLog;
+  }
+
+  async getWhatsappLogs(): Promise<WhatsappLog[]> {
+    return Array.from(this.whatsappLogs.values()).sort(
+      (a, b) => b.sentAt.getTime() - a.sentAt.getTime()
+    );
+  }
+
+  async getWhatsappLogsByLead(leadId: string): Promise<WhatsappLog[]> {
+    return Array.from(this.whatsappLogs.values())
+      .filter(log => log.leadId === leadId)
+      .sort((a, b) => b.sentAt.getTime() - a.sentAt.getTime());
   }
 }
 
@@ -398,6 +685,107 @@ class HybridStorage implements IStorage {
     const video = await this.memStorage.getVideoBySection(section);
     console.log(`🎥 Retrieved video for section "${section}" from memory storage`);
     return video;
+  }
+
+  // WhatsApp Configuration methods
+  async createWhatsappConfig(config: InsertWhatsappConfig): Promise<WhatsappConfig> {
+    if (this.isDatabaseAvailable && this.databaseStorage) {
+      try {
+        const whatsappConfig = await this.databaseStorage.createWhatsappConfig(config);
+        console.log("📱 WhatsApp config saved to PostgreSQL database");
+        return whatsappConfig;
+      } catch (error: unknown) {
+        console.warn("⚠️ PostgreSQL WhatsApp config save failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
+      }
+    }
+    
+    console.log("📱 WhatsApp config saved to memory storage");
+    return this.memStorage.createWhatsappConfig(config);
+  }
+
+  async getActiveWhatsappConfig(): Promise<WhatsappConfig | undefined> {
+    if (this.isDatabaseAvailable && this.databaseStorage) {
+      try {
+        const config = await this.databaseStorage.getActiveWhatsappConfig();
+        console.log("📱 Retrieved active WhatsApp config from PostgreSQL database");
+        return config;
+      } catch (error: unknown) {
+        console.warn("⚠️ PostgreSQL WhatsApp config fetch failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
+      }
+    }
+    
+    const config = await this.memStorage.getActiveWhatsappConfig();
+    console.log("📱 Retrieved active WhatsApp config from memory storage");
+    return config;
+  }
+
+  async updateWhatsappConfig(id: number, config: Partial<InsertWhatsappConfig>): Promise<WhatsappConfig | undefined> {
+    if (this.isDatabaseAvailable && this.databaseStorage) {
+      try {
+        const updatedConfig = await this.databaseStorage.updateWhatsappConfig(id, config);
+        console.log("📱 WhatsApp config updated in PostgreSQL database");
+        return updatedConfig;
+      } catch (error: unknown) {
+        console.warn("⚠️ PostgreSQL WhatsApp config update failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
+      }
+    }
+    
+    console.log("📱 WhatsApp config updated in memory storage");
+    return this.memStorage.updateWhatsappConfig(id, config);
+  }
+
+  // WhatsApp Logs methods
+  async createWhatsappLog(log: InsertWhatsappLog): Promise<WhatsappLog> {
+    if (this.isDatabaseAvailable && this.databaseStorage) {
+      try {
+        const whatsappLog = await this.databaseStorage.createWhatsappLog(log);
+        console.log("📱 WhatsApp log saved to PostgreSQL database");
+        return whatsappLog;
+      } catch (error: unknown) {
+        console.warn("⚠️ PostgreSQL WhatsApp log save failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
+      }
+    }
+    
+    console.log("📱 WhatsApp log saved to memory storage");
+    return this.memStorage.createWhatsappLog(log);
+  }
+
+  async getWhatsappLogs(): Promise<WhatsappLog[]> {
+    if (this.isDatabaseAvailable && this.databaseStorage) {
+      try {
+        const logs = await this.databaseStorage.getWhatsappLogs();
+        console.log(`📱 Retrieved ${logs.length} WhatsApp logs from PostgreSQL database`);
+        return logs;
+      } catch (error: unknown) {
+        console.warn("⚠️ PostgreSQL WhatsApp logs fetch failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
+      }
+    }
+    
+    const logs = await this.memStorage.getWhatsappLogs();
+    console.log(`📱 Retrieved ${logs.length} WhatsApp logs from memory storage`);
+    return logs;
+  }
+
+  async getWhatsappLogsByLead(leadId: string): Promise<WhatsappLog[]> {
+    if (this.isDatabaseAvailable && this.databaseStorage) {
+      try {
+        const logs = await this.databaseStorage.getWhatsappLogsByLead(leadId);
+        console.log(`📱 Retrieved ${logs.length} WhatsApp logs for lead ${leadId} from PostgreSQL database`);
+        return logs;
+      } catch (error: unknown) {
+        console.warn("⚠️ PostgreSQL WhatsApp logs by lead fetch failed, using memory storage:", (error as Error).message);
+        this.isDatabaseAvailable = false;
+      }
+    }
+    
+    const logs = await this.memStorage.getWhatsappLogsByLead(leadId);
+    console.log(`📱 Retrieved ${logs.length} WhatsApp logs for lead ${leadId} from memory storage`);
+    return logs;
   }
 }
 

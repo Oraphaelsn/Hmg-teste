@@ -202,7 +202,16 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
 
 ## Recent Changes (July 21, 2025)
 
-✓ **MIGRAÇÃO COMPLETA PARA REPLIT**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
+✓ **MIGRAÇÃO COMPLETA PARA REPLIT COM WHATSAPP IMPLEMENTADO**: Projeto migrado com sucesso do Replit Agent para ambiente Replit
+✓ **SISTEMA WHATSAPP AUTOMÁTICO IMPLEMENTADO**: Envio automático de mensagens via WhatsApp quando cliente preenche formulário
+  - **Duas bases de dados**: Admin panel (PostgreSQL) + WhatsApp logs (PostgreSQL) funcionando perfeitamente
+  - **Normalização números brasileiros**: Sistema trata formatos +55 11 9XXXX-XXXX e +55 11 XXXX-XXXX automaticamente
+  - **Templates personalizáveis**: Mensagens com variáveis {nome}, {telefone}, {tratamento}, {plano}
+  - **Multi-provider support**: Suporte para Twilio, Meta WhatsApp Business API, Zenvia, etc
+  - **Logs completos**: Histórico de todas as mensagens enviadas com status e erros
+  - **Envio em background**: Não bloqueia resposta do formulário, processamento assíncrono
+  - **APIs REST completas**: /api/whatsapp/config, /api/whatsapp/logs, /api/whatsapp/setup
+  - **Segurança**: Tokens API nunca expostos nas respostas, armazenamento seguro no banco
 ✓ **OTIMIZAÇÃO MOBILE DO VÍDEO**: Aplicado zoom de -25% no header para dispositivos móveis
   - **Mobile**: transform scale(0.75) - zoom de -25% + object-position center 25%
   - **Tablet**: object-position center 30% - sem zoom

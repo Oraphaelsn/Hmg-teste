@@ -1,7 +1,8 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertLeadSchema, insertVideoSchema } from "@shared/schema";
+import { insertLeadSchema, insertVideoSchema, insertWhatsappConfigSchema } from "@shared/schema";
+import { sendLeadNotification, setupWhatsAppIntegration } from "./whatsapp";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Lead submission endpoint
@@ -9,6 +10,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertLeadSchema.parse(req.body);
       const lead = await storage.createLead(validatedData);
+      
+      // Enviar notificação WhatsApp em background (não bloquear a resposta)
+      setImmediate(async () => {
+        try {
+          await sendLeadNotification(lead.id.toString(), lead);
+        } catch (error) {
+          console.error("Erro ao enviar notificação WhatsApp:", error);
+        }
+      });
+      
       res.json({ success: true, lead });
     } catch (error) {
       console.error("Error creating lead:", error);
@@ -65,6 +76,90 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(400).json({ 
         success: false, 
         error: "Dados inválidos para vídeo. Verifique as informações e tente novamente." 
+      });
+    }
+  });
+
+  // WhatsApp Configuration routes
+  app.post("/api/whatsapp/config", async (req, res) => {
+    try {
+      const validatedData = insertWhatsappConfigSchema.parse(req.body);
+      const config = await storage.createWhatsappConfig(validatedData);
+      res.json({ success: true, config });
+    } catch (error) {
+      console.error("Error creating WhatsApp config:", error);
+      res.status(400).json({ 
+        success: false, 
+        error: "Dados inválidos para configuração WhatsApp. Verifique as informações e tente novamente." 
+      });
+    }
+  });
+
+  app.get("/api/whatsapp/config", async (req, res) => {
+    try {
+      const config = await storage.getActiveWhatsappConfig();
+      if (!config) {
+        return res.status(404).json({ error: "Nenhuma configuração WhatsApp ativa encontrada" });
+      }
+      // Remove o token da resposta por segurança
+      const safeConfig = { ...config, apiToken: '***hidden***' };
+      res.json(safeConfig);
+    } catch (error) {
+      console.error("Error fetching WhatsApp config:", error);
+      res.status(500).json({ error: "Erro interno do servidor" });
+    }
+  });
+
+  app.put("/api/whatsapp/config/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updates = req.body;
+      const config = await storage.updateWhatsappConfig(parseInt(id), updates);
+      if (!config) {
+        return res.status(404).json({ error: "Configuração WhatsApp não encontrada" });
+      }
+      res.json({ success: true, config });
+    } catch (error) {
+      console.error("Error updating WhatsApp config:", error);
+      res.status(400).json({ 
+        success: false, 
+        error: "Erro ao atualizar configuração WhatsApp" 
+      });
+    }
+  });
+
+  // WhatsApp Logs routes
+  app.get("/api/whatsapp/logs", async (req, res) => {
+    try {
+      const logs = await storage.getWhatsappLogs();
+      res.json(logs);
+    } catch (error) {
+      console.error("Error fetching WhatsApp logs:", error);
+      res.status(500).json({ error: "Erro interno do servidor" });
+    }
+  });
+
+  app.get("/api/whatsapp/logs/lead/:leadId", async (req, res) => {
+    try {
+      const { leadId } = req.params;
+      const logs = await storage.getWhatsappLogsByLead(leadId);
+      res.json(logs);
+    } catch (error) {
+      console.error("Error fetching WhatsApp logs by lead:", error);
+      res.status(500).json({ error: "Erro interno do servidor" });
+    }
+  });
+
+  // Setup endpoint for easy WhatsApp configuration
+  app.post("/api/whatsapp/setup", async (req, res) => {
+    try {
+      const config = await setupWhatsAppIntegration(req.body);
+      res.json({ success: true, config: { ...config, apiToken: '***hidden***' } });
+    } catch (error) {
+      console.error("Error setting up WhatsApp integration:", error);
+      res.status(400).json({ 
+        success: false, 
+        error: "Erro ao configurar integração WhatsApp" 
       });
     }
   });
