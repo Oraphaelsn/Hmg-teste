@@ -93,26 +93,29 @@ export default function Header() {
                     </button>
                   );
                 })}
-                <button 
-                  onClick={() => scrollToSection("contato")}
-                  className="relative px-6 py-3 ml-6 bg-gradient-to-r from-[#2c744c]/75 to-[#1e5233]/75 hover:from-[#2c744c]/85 hover:to-[#1e5233]/85 text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-[#2c744c]/25 hover:shadow-[#2c744c]/35 group overflow-hidden border border-[#2c744c]/40 hover:border-[#2c744c]/60 backdrop-blur-xl"
+                <a
+                  href="https://wa.me/5515997559520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos%20da%20Estância%20Morro%20Grande."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-6 py-3 ml-6 bg-gradient-to-r from-green-600/75 to-green-700/75 hover:from-green-600/85 hover:to-green-700/85 text-white font-semibold text-sm tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-xl shadow-green-600/25 hover:shadow-green-600/35 group overflow-hidden border border-green-600/40 hover:border-green-600/60 backdrop-blur-xl"
+                  title="Fale agora via WhatsApp"
                 >
                   {/* Enhanced green glass overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/15 to-[#1e5233]/10 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-600/15 to-green-700/10 rounded-full"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/8 rounded-full"></div>
                   
                   {/* Green-tinted shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-600/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <div className="relative flex items-center justify-center z-10">
-                    {/* Modern contact icon */}
+                    {/* WhatsApp icon */}
                     <div className="bg-white/20 p-1.5 rounded-full mr-3 group-hover:bg-white/30 transition-all duration-500 backdrop-blur-sm border border-white/30">
-                      <Phone className="text-white drop-shadow-lg" size={16} />
+                      <FaWhatsapp className="text-white drop-shadow-lg" size={16} />
                     </div>
                     
-                    <span className="font-medium">Contato</span>
+                    <span className="font-medium">WhatsApp</span>
                   </div>
-                </button>
+                </a>
               </div>
 
               {/* Modern Mobile Navigation */}
@@ -125,22 +128,25 @@ export default function Header() {
                   {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
                 
-                {/* Quick Contact Button */}
-                <button 
-                  onClick={() => scrollToSection("contato")}
-                  className="relative px-4 py-2 bg-gradient-to-r from-[#2c744c]/75 to-[#1e5233]/75 hover:from-[#2c744c]/85 hover:to-[#1e5233]/85 text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-[#2c744c]/25 hover:shadow-[#2c744c]/35 group overflow-hidden border border-[#2c744c]/40 hover:border-[#2c744c]/60 backdrop-blur-xl"
+                {/* Quick WhatsApp Button */}
+                <a
+                  href="https://wa.me/5515997559520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos%20da%20Estância%20Morro%20Grande."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-4 py-2 bg-gradient-to-r from-green-600/75 to-green-700/75 hover:from-green-600/85 hover:to-green-700/85 text-white font-semibold text-xs tracking-wide rounded-full transform hover:scale-105 transition-all duration-500 shadow-lg shadow-green-600/25 hover:shadow-green-600/35 group overflow-hidden border border-green-600/40 hover:border-green-600/60 backdrop-blur-xl"
+                  title="Fale agora via WhatsApp"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/15 to-[#1e5233]/10 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-600/15 to-green-700/10 rounded-full"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/8 rounded-full"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2c744c]/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-600/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <div className="relative flex items-center justify-center z-10">
                     <div className="bg-white/20 p-1 rounded-full mr-2 group-hover:bg-white/30 transition-all duration-500 backdrop-blur-sm border border-white/30">
-                      <Phone className="text-white drop-shadow-lg" size={12} />
+                      <FaWhatsapp className="text-white drop-shadow-lg" size={12} />
                     </div>
-                    <span className="font-medium">Contato</span>
+                    <span className="font-medium">WhatsApp</span>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </nav>
@@ -170,15 +176,18 @@ export default function Header() {
                   );
                 })}
                 
-                {/* Mobile Contact Option in Menu */}
-                <button 
-                  onClick={() => scrollToSection("contato")}
-                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-[#2c744c]/20 backdrop-blur-xl border border-[#2c744c]/25 hover:border-[#2c744c]/40"
+                {/* Mobile WhatsApp Option in Menu */}
+                <a
+                  href="https://wa.me/5515997559520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos%20da%20Estância%20Morro%20Grande."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center space-x-3 px-4 py-3 text-white/95 hover:text-white font-medium text-sm tracking-wide rounded-lg group overflow-hidden transition-all duration-300 hover:bg-green-600/20 backdrop-blur-xl border border-green-600/25 hover:border-green-600/40"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   <FaWhatsapp size={20} className="text-green-400" />
                   <span>Contato via WhatsApp</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#2c744c]/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
-                </button>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-600/25 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg"></div>
+                </a>
               </div>
             </div>
           </div>

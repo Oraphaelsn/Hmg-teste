@@ -180,6 +180,12 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
   - **Geolocalização**: Meta tags geo com coordenadas de São Paulo para busca local
   - **Breadcrumbs**: Navegação estruturada para melhor indexação e UX
   - **Semantic HTML**: Componentes semânticos para melhor acessibilidade e SEO
+✓ **BOTÃO HEADER WHATSAPP UNIFICADO**: Botão de contato no cabeçalho agora igual ao flutuante
+  - **Link direto WhatsApp**: Abre wa.me/5515997559520 com mensagem pré-preenchida
+  - **Ícone unificado**: FaWhatsapp em todas as versões (desktop, mobile, menu)
+  - **Cores WhatsApp**: Verde do WhatsApp (green-600/700) em vez do verde da marca
+  - **Comportamento consistente**: Mesmo funcionamento do botão flutuante
+  - **Todas as versões**: Desktop, mobile e menu dropdown funcionam igual
 
 ## Recent Changes (July 21, 2025)
 
