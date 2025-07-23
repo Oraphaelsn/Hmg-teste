@@ -224,17 +224,20 @@ export async function setupWhatsAppIntegration(config: {
   templateMessage?: string;
   webhookUrl?: string;
 }) {
-  const defaultTemplate = `Olá {nome}! 👋
+  const defaultTemplate = `🌿 *Olá, Estância Morro Grande!* 🌿
 
-Recebemos seu interesse em nossos serviços de {tratamento} na Estância Morro Grande.
+Gostaria de saber mais informações sobre os tratamentos disponíveis.
 
-Nossa equipe especializada entrará em contato em breve para agendar uma avaliação personalizada.
+👤 *Meu nome:* {nome}
+📞 *Telefone para contato:* {telefone}
+💊 *Tipo de tratamento:* {tratamento}
+🏥 *Plano de saúde:* {plano}
 
-🏥 *Estância Morro Grande*
-📍 Estrada Nakayama 150, Rodovia Bunjiro Nakao km 67,5
-📧 contato@estanciamorrogrande.com.br
+📅 *Solicitado em:* $(date)
 
-Estamos aqui para cuidar de você! 💚`;
+Aguardo retorno para agendar uma conversa. Obrigado(a)!
+
+💚 _Mensagem enviada automaticamente pelo site_`;
 
   const whatsappConfig = await storage.createWhatsappConfig({
     providerName: config.providerName,

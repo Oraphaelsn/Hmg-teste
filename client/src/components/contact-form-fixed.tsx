@@ -86,18 +86,20 @@ export default function ContactFormFixed() {
         minute: '2-digit'
       });
       
-      const mensagemWhatsApp = `🏥 *NOVO LEAD - Estância Morro Grande* 🏥
+      const mensagemWhatsApp = `🌿 *Olá, Estância Morro Grande!* 🌿
 
-👤 *Nome:* ${data.name}
-📞 *Telefone:* ${data.phone}
-💊 *Tratamento:* ${treatmentText}
-🏥 *Plano:* ${insuranceText}
+Gostaria de saber mais informações sobre os tratamentos disponíveis.
 
-📅 *Data/Hora:* ${dataHora}
+👤 *Meu nome:* ${data.name}
+📞 *Telefone para contato:* ${data.phone}
+💊 *Tipo de tratamento:* ${treatmentText}
+🏥 *Plano de saúde:* ${insuranceText}
 
-🔔 Entre em contato o mais rápido possível!
+📅 *Solicitado em:* ${dataHora}
 
-📧 contato@estanciamorrogrande.com.br`;
+Aguardo retorno para agendar uma conversa. Obrigado(a)!
+
+💚 _Mensagem enviada automaticamente pelo site_`;
 
       // Abrir WhatsApp automaticamente - mesmo número do botão flutuante
       const numeroWhatsApp = '5515997559520'; // Número do botão WhatsApp

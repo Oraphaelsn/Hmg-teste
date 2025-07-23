@@ -89,18 +89,20 @@ export default function WhatsAppAdmin() {
     apiToken: '',
     phoneNumber: '+5515996834387',
     phoneNumberId: '',
-    templateMessage: `🏥 *NOVO LEAD - Estância Morro Grande* 🏥
+    templateMessage: `🌿 *Olá, Estância Morro Grande!* 🌿
 
-👤 *Nome:* {nome}
-📞 *Telefone:* {telefone}
-💊 *Tratamento:* {tratamento}
-🏥 *Plano:* {plano}
+Gostaria de saber mais informações sobre os tratamentos disponíveis.
 
-📅 *Data/Hora:* 21/07/2025, 14:00
+👤 *Meu nome:* {nome}
+📞 *Telefone para contato:* {telefone}
+💊 *Tipo de tratamento:* {tratamento}
+🏥 *Plano de saúde:* {plano}
 
-🔔 Entre em contato o mais rápido possível!
+📅 *Solicitado em:* $(date)
 
-📧 contato@estanciamorrogrande.com.br`
+Aguardo retorno para agendar uma conversa. Obrigado(a)!
+
+💚 _Mensagem enviada automaticamente pelo site_`
   });
 
   const handleSubmit = (e: React.FormEvent) => {
