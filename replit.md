@@ -167,6 +167,20 @@ videos: {
 
 The application is designed to be deployed on platforms like Replit, Vercel, or any Node.js hosting service with PostgreSQL support.
 
+## Recent Changes (January 23, 2025)
+
+✓ **SISTEMA SEO COMPLETO IMPLEMENTADO**: SEO otimizado para clínicas de saúde mental
+  - **Meta tags otimizadas**: Title, description, keywords específicos para saúde mental e dependência química
+  - **Open Graph completo**: Facebook, Twitter e redes sociais com imagens e descrições otimizadas
+  - **Schema.org estruturado**: MedicalOrganization, LocalBusiness, serviços médicos e depoimentos
+  - **Sitemap.xml dinâmico**: Geração automática via rota /sitemap.xml com todas as páginas
+  - **Robots.txt otimizado**: Configuração para crawlers com proteção das páginas admin
+  - **Componente SEOHead**: Sistema reativo que atualiza meta tags dinamicamente por página
+  - **Structured data médico**: FAQ, serviços, avaliações e informações de contato estruturadas
+  - **Geolocalização**: Meta tags geo com coordenadas de São Paulo para busca local
+  - **Breadcrumbs**: Navegação estruturada para melhor indexação e UX
+  - **Semantic HTML**: Componentes semânticos para melhor acessibilidade e SEO
+
 ## Recent Changes (July 21, 2025)
 
 ✓ **SISTEMA WHATSAPP LINK IMPLEMENTADO**: Envio automático via wa.me para +5515997559520

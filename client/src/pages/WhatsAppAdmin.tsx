@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MessageSquare, Settings, History, CheckCircle, XCircle, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest, queryClient } from '@/lib/queryClient';
+import { SEOHead, seoConfigs } from '@/components/seo-head';
 
 interface WhatsAppConfig {
   id: number;
@@ -139,6 +140,7 @@ export default function WhatsAppAdmin() {
 
   return (
     <div className="container mx-auto p-6 max-w-7xl">
+      <SEOHead {...seoConfigs.whatsapp} />
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           WhatsApp Business - Estância Morro Grande

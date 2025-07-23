@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /whatsapp
+
+# Sitemaps
+Sitemap: https://estanciamorrogrande.com.br/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

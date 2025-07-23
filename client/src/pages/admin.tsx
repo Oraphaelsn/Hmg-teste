@@ -9,6 +9,7 @@ import { Eye, EyeOff, Phone, User, Calendar, FileText, Shield, Search, Filter, D
 import { format, formatDistanceToNow, isAfter, isBefore, startOfDay, endOfDay } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import logoOficial from "@assets/Estância Morro Grande Branco_1752992752131.png";
+import { SEOHead, seoConfigs } from "@/components/seo-head";
 
 interface Lead {
   id: number;
@@ -231,6 +232,7 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-[#2c744c]/10 p-4">
+      <SEOHead {...seoConfigs.admin} />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">

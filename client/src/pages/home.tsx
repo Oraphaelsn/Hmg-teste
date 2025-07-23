@@ -7,10 +7,15 @@ import TestimonialsSection from "@/components/testimonials-section";
 import ContactFormFixed from "@/components/contact-form-fixed";
 import WhatsappFloat from "@/components/whatsapp-float";
 import Footer from "@/components/footer";
+import { SEOHead, seoConfigs, medicalStructuredData } from "@/components/seo-head";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        {...seoConfigs.home}
+        structuredData={medicalStructuredData}
+      />
       <Header />
       <HeroSection />
       <TreatmentsSection />

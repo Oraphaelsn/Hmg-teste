@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertLeadSchema, insertVideoSchema, insertWhatsappConfigSchema } from "@shared/schema";
 import { sendLeadNotification, setupWhatsAppIntegration } from "./whatsapp";
+import seoRouter from "./seo-routes";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Lead submission endpoint
@@ -163,6 +164,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     }
   });
+
+  // Add SEO routes
+  app.use(seoRouter);
 
   const httpServer = createServer(app);
   return httpServer;
