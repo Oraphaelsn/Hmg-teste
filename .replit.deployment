@@ -1,5 +1,6 @@
 # Configuração de Deploy - Replit
-# Domínio: Hemg.contato.replit.app
+# Domínio customizado: www.hemginternacoes.com.br
+# Domínio temporário: hemg-contato.replit.app
 
 [deployment]
 build = "npm run build"
@@ -8,3 +9,8 @@ deploymentTarget = "gce"
 
 [deployment.environment]
 NODE_ENV = "production"
+DATABASE_URL = "$DATABASE_URL"
+
+# Configuração para domínio customizado
+[deployment.customDomain]
+domain = "www.hemginternacoes.com.br"
