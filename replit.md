@@ -229,8 +229,14 @@ The application is designed to be deployed on platforms like Replit, Vercel, or 
   - **Responsividade aprimorada**: Garantia de que a frase no vídeo fica sempre visível e em destaque
   - **CSS otimizado**: Breakpoints específicos para cada dispositivo com melhor UX
 
-## Recent Changes (July 21, 2025)
+## Recent Changes (July 25, 2025)
 
+✓ **TEMPLATES WHATSAPP HUMANIZADOS**: Mensagens naturais como paciente/familiar
+  - **Removido "NOVO LEAD"**: Agora parece contato direto do interessado
+  - **Tom humano**: "Gostaria de saber mais informações sobre os tratamentos"
+  - **Primeira pessoa**: "Meu nome", "Telefone para contato"
+  - **Final educado**: "Aguardo retorno" e "Obrigado(a)"
+  - **Ícone natural**: 🌿 em vez de 🏥 para ser menos institucional
 ✓ **DEPLOY CONFIGURADO**: Preparado para deploy com domínio personalizado
   - **Domínio desejado**: hemg.contato.com.br (domínio .com.br personalizado)
   - **Alternativa temporária**: Hemg.contato.replit.app

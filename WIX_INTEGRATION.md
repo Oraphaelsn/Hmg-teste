@@ -1,168 +1,151 @@
-# Integração com Wix - Estância Morro Grande
+# Deploy no Wix - Estância Morro Grande
 
-## ⚠️ Limitações do Wix
+## ⚠️ IMPORTANTE: Limitações do Wix
 
-O Wix tem limitações significativas para projetos React/Node.js:
-- Não suporta aplicações React completas
-- Não permite servidor Node.js próprio
-- Limitado a JavaScript vanilla e APIs do Wix
+O Wix funciona de forma diferente do seu projeto atual:
+- **Wix**: Editor visual + templates prontos
+- **Seu projeto**: React + Express + PostgreSQL customizado
 
-## 🔄 Opções de Integração
+## Opções para Usar o Wix
 
-### Opção 1: Recriar no Editor Wix (Recomendado)
-**Vantagens:**
-- Interface visual do Wix
-- Templates prontos
-- Hospedagem inclusa
-- SEO otimizado
+### Opção 1: Wix Studio (Recomendada)
+**Para manter suas funcionalidades:**
 
-**Processo:**
-1. Criar novo site no Wix
-2. Escolher template similar
-3. Personalizar com o conteúdo da Estância Morro Grande
-4. Configurar formulário de contato do Wix
-5. Integrar com WhatsApp via botões
+1. **Criar conta Wix Studio** (mais avançado que Wix normal)
+2. **Importar design visual** do seu site atual
+3. **Recriar funcionalidades** usando Wix APIs
+4. **Configurar formulários** com Wix Forms
+5. **Integrar WhatsApp** via Wix Chat
 
-### Opção 2: Embed/iFrame (Não Recomendado)
-- Hospedar landing atual no Replit/Vercel
-- Embed no Wix via iFrame
-- Problemas: SEO, responsividade, performance
+### Opção 2: Wix + Integração Externa
+**Híbrida - Visual no Wix, Backend separado:**
 
-### Opção 3: Migração Manual dos Componentes
+1. **Site visual** no Wix
+2. **Formulário integrado** apontando para seu backend Replit
+3. **Melhor dos dois mundos**
 
-#### Elementos para Migrar:
+### Opção 3: Migração Completa (Não Recomendada)
+**Perda de funcionalidades customizadas:**
+- Perderia admin panel personalizado
+- Perderia integração WhatsApp customizada
+- Perderia flexibilidade do código
 
-**Header:**
-- Logo: Usar imagem do Estância Morro Grande
-- Navegação: Menu do Wix
-- Vídeo de fundo: Upload no Wix
+## Passo a Passo - Opção 1 (Wix Studio)
 
-**Seções:**
-- Tratamentos: Texto + imagens
-- Estrutura: Galeria de fotos
-- Depoimentos: Carrossel do Wix
-- Contato: Formulário nativo do Wix
+### 1. Registro e Setup Inicial
+```
+1. Acesse wix.com/studio
+2. Crie conta business
+3. Escolha "Blank Template" 
+4. Configure domínio: www.hemginternacoes.com.br
+```
 
-**Formulário de Contato:**
-- Usar Wix Forms
-- Campos: Nome, Telefone, Tratamento, Convênio
-- Integração: Wix CRM ou email
+### 2. Estrutura do Site
+**Páginas a criar:**
+- Home (landing page principal)
+- Admin (/admin para gerenciar leads)
 
-**WhatsApp:**
-- Botão flutuante: Widget do Wix
-- Link direto: wa.me/5515997559520
-
-## 📋 Assets Necessários
-
-### Imagens (já disponíveis):
-- Logo: `Estância Morro Grande Branco_1752992752131.png`
-- Background: `2021-09-22_1752972757556.webp`
-- Equipe: `ChatGPT Image 20 de jul. de 2025...png`
-
-### Vídeo:
-- `WhatsApp Video 2025-07-18 at 09.25.19...mp4`
-
-### Textos:
-- Todos os conteúdos da landing atual
-- Depoimentos dos pacientes
-- Informações de contato
-
-## 🎨 Design no Wix
-
-### Cores:
-- Verde principal: #2c744c
-- Verde secundário: #1e5233
-- Branco e tons de cinza
-
-### Fontes:
-- Similar ao atual (Wix tem biblioteca extensa)
-
-### Layout:
-- Hero com vídeo de fundo
-- Seções organizadas verticalmente
-- Formulário destacado
-- Footer com informações
-
-## 📱 Funcionalidades no Wix
-
-### Formulário de Contato:
+### 3. Formulário de Contato
 ```javascript
-// Exemplo de código Wix para WhatsApp
-$w('#contactForm').onWixFormSubmitted((event) => {
-  const name = event.formData.name;
-  const phone = event.formData.phone;
-  const treatment = event.formData.treatment;
-  
-  // Construir mensagem WhatsApp
-  const message = `Novo lead: ${name}, ${phone}, ${treatment}`;
-  const whatsappUrl = `https://wa.me/5515997559520?text=${encodeURIComponent(message)}`;
-  
-  // Abrir WhatsApp
-  wixLocation.to(whatsappUrl);
+// Código Wix para formulário
+import { fetch } from 'wix-fetch';
+
+$w.onReady(function () {
+    $w('#submitButton').onClick(() => {
+        const formData = {
+            name: $w('#nameInput').value,
+            phone: $w('#phoneInput').value,
+            treatment: $w('#treatmentSelect').value,
+            insurance: $w('#insuranceSelect').value
+        };
+        
+        // Enviar para backend ou Wix Database
+        saveLeadData(formData);
+        sendWhatsAppMessage(formData);
+    });
 });
 ```
 
-### Botão WhatsApp Flutuante:
+### 4. Integração WhatsApp
+**Usando Wix Corvid:**
 ```javascript
-// Widget personalizado
-$w('#whatsappButton').onClick(() => {
-  wixLocation.to('https://wa.me/5515997559520');
-});
+// Função para enviar WhatsApp
+function sendWhatsAppMessage(data) {
+    const message = `🌿 Olá, Estância Morro Grande!
+    
+    Gostaria de saber mais informações sobre os tratamentos disponíveis.
+    
+    👤 Meu nome: ${data.name}
+    📞 Telefone para contato: ${data.phone}
+    💊 Tipo de tratamento: ${data.treatment}
+    🏥 Plano de saúde: ${data.insurance}`;
+    
+    const whatsappUrl = `https://wa.me/5515996834387?text=${encodeURIComponent(message)}`;
+    wixLocation.to(whatsappUrl);
+}
 ```
 
-## 🚀 Processo de Migração
+### 5. Banco de Dados Wix
+```javascript
+// Configurar Wix Database
+import wixData from 'wix-data';
 
-### Passo 1: Preparação
-1. Fazer download de todos os assets
-2. Organizar textos e conteúdos
-3. Criar conta Wix premium
+// Salvar lead
+function saveLeadData(formData) {
+    wixData.insert("Leads", {
+        "name": formData.name,
+        "phone": formData.phone,
+        "treatment": formData.treatment,
+        "insurance": formData.insurance,
+        "_dateCreated": new Date()
+    });
+}
+```
 
-### Passo 2: Criação no Wix
-1. Escolher template profissional
-2. Personalizar cores e fontes
-3. Adicionar seções uma por uma
-4. Upload das imagens e vídeo
+## Passo a Passo - Opção 2 (Híbrida)
 
-### Passo 3: Funcionalidades
-1. Configurar formulário de contato
-2. Adicionar botão WhatsApp
-3. Configurar SEO
-4. Testar responsividade
+### 1. Site Visual no Wix
+- Design responsivo no editor Wix
+- Seções: Hero, Tratamentos, Estrutura, Depoimentos
 
-### Passo 4: Domínio
-1. Conectar domínio personalizado
-2. Configurar SSL
-3. Testar tudo
+### 2. Formulário Integrado
+```html
+<!-- Formulário que aponta para seu Replit -->
+<form action="https://hemg-contato.replit.app/api/leads" method="POST">
+    <input name="name" placeholder="Nome completo">
+    <input name="phone" placeholder="Telefone">
+    <select name="treatment">
+        <option value="saude-mental">Saúde Mental</option>
+        <option value="dependencia-quimica">Dependência Química</option>
+    </select>
+    <button type="submit">Enviar</button>
+</form>
+```
 
-## 💡 Recomendação
+## Custos Comparativos
+
+### Wix Studio
+- **Plano Business**: R$ 49/mês
+- **Plano Business Elite**: R$ 99/mês
+- **Domínio customizado**: Incluído
+- **SSL**: Incluído
+
+### Seu Projeto Atual (Replit)
+- **Replit Deploy**: $7-20/mês
+- **Funcionalidades**: Completas e customizadas
+
+## Recomendação Final
 
 **Para Estância Morro Grande:**
+1. **Mantenha no Replit**: Projeto já perfeito e funcional
+2. **Se quiser Wix**: Use opção híbrida (visual Wix + backend Replit)
+3. **Evite migração completa**: Perderia funcionalidades importantes
 
-1. **Melhor opção**: Manter no Replit/Vercel
-   - Funcionalidades completas
-   - Performance superior
-   - Controle total
+**Seu projeto atual é superior ao Wix em:**
+- Flexibilidade total
+- Admin panel personalizado
+- Integração WhatsApp avançada
+- SEO otimizado
+- Performance
 
-2. **Se insistir no Wix**: Recriar manualmente
-   - Perderá algumas funcionalidades avançadas
-   - Mais trabalho de migração
-   - Menos flexibilidade
-
-3. **Alternativa**: WordPress
-   - Mais flexível que Wix
-   - Plugins para React
-   - Melhor para SEO
-
-## 📊 Comparação
-
-| Recurso | Atual (React) | Wix | WordPress |
-|---------|---------------|-----|-----------|
-| Performance | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Flexibilidade | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
-| SEO | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Manutenção | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Custo | $ | $$$ | $$ |
-
----
-
-**Conclusão**: Recomendo manter a landing atual no Replit com domínio personalizado. É mais profissional e eficiente.
+**Qual opção prefere explorar?**
