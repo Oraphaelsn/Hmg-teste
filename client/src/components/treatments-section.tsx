@@ -15,7 +15,7 @@ export default function TreatmentsSection() {
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-10 sm:mb-12 md:mb-16">
           {/* Saúde Mental */}
-          <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+          <EnhancedCard className="bg-slate-50 rounded-2xl p-4 sm:p-6 md:p-8 enhanced-hover fade-in-scale">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mr-3 sm:mr-4">
                 <Brain className="text-primary" size={24} />
@@ -41,10 +41,10 @@ export default function TreatmentsSection() {
                 Acompanhamento medicamentoso
               </li>
             </ul>
-          </div>
+          </EnhancedCard>
 
           {/* Dependência Química */}
-          <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+          <EnhancedCard className="bg-slate-50 rounded-2xl p-4 sm:p-6 md:p-8 enhanced-hover fade-in-scale">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-secondary/10 rounded-full flex items-center justify-center mr-3 sm:mr-4">
                 <Leaf className="text-secondary" size={24} />
@@ -69,7 +69,7 @@ export default function TreatmentsSection() {
                 Terapia cognitivo-comportamental
               </li>
             </ul>
-          </div>
+          </EnhancedCard>
         </div>
 
         {/* Tipos de Internação */}

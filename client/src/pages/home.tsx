@@ -8,6 +8,7 @@ import ContactFormFixed from "@/components/contact-form-fixed";
 import WhatsappFloat from "@/components/whatsapp-float";
 import Footer from "@/components/footer";
 import ScrollProgress from "@/components/scroll-progress";
+import { AnimationConsistency } from "@/components/consistency-improvements";
 import { SEOHead, seoConfigs, medicalStructuredData } from "@/components/seo-head";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         structuredData={medicalStructuredData}
       />
       <ScrollProgress />
+      <AnimationConsistency />
       <Header />
       <HeroSection />
       <TreatmentsSection />
