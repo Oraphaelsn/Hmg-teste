@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/testimonials-section";
 import ContactFormFixed from "@/components/contact-form-fixed";
 import WhatsappFloat from "@/components/whatsapp-float";
 import Footer from "@/components/footer";
+import ScrollProgress from "@/components/scroll-progress";
 import { SEOHead, seoConfigs, medicalStructuredData } from "@/components/seo-head";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         {...seoConfigs.home}
         structuredData={medicalStructuredData}
       />
+      <ScrollProgress />
       <Header />
       <HeroSection />
       <TreatmentsSection />

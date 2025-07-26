@@ -1,4 +1,5 @@
 import { Brain, Leaf, Check, UserCheck, Heart, Shield, Clock, Users } from "lucide-react";
+import EnhancedCard from "./enhanced-card";
 
 export default function TreatmentsSection() {
   return (

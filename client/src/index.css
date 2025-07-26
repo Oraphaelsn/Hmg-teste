@@ -24,6 +24,30 @@
   --ring: hsl(215, 25%, 27%);
   --radius: 0.5rem;
   --warm-gray: hsl(215, 16%, 47%);
+  
+  /* Paleta expandida com tons complementares */
+  --primary-50: hsl(155, 60%, 95%);
+  --primary-100: hsl(155, 55%, 88%);
+  --primary-200: hsl(155, 50%, 75%);
+  --primary-300: hsl(155, 48%, 62%);
+  --primary-400: hsl(155, 46%, 45%);
+  --primary-500: hsl(155, 45%, 28%);
+  --primary-600: hsl(155, 50%, 22%);
+  --primary-700: hsl(155, 55%, 18%);
+  --primary-800: hsl(155, 60%, 14%);
+  --primary-900: hsl(155, 65%, 10%);
+  
+  /* Cores complementares para contraste */
+  --complementary: hsl(335, 45%, 28%);
+  --complementary-light: hsl(335, 40%, 45%);
+  --complementary-dark: hsl(335, 55%, 18%);
+  
+  /* Tons neutros quentes */
+  --neutral-warm-50: hsl(35, 20%, 97%);
+  --neutral-warm-100: hsl(35, 15%, 92%);
+  --neutral-warm-200: hsl(35, 12%, 85%);
+  --neutral-warm-800: hsl(35, 8%, 25%);
+  --neutral-warm-900: hsl(35, 10%, 15%);
 }
 
 .dark {
@@ -110,6 +134,92 @@
     animation: pulse-glow 8s ease-in-out infinite;
   }
 
+  /* Micro-animations e interações */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes progressBar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  .slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+  
+  .fade-in-scale {
+    animation: fadeInScale 0.5s ease-out;
+  }
+  
+  /* Scroll progress indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-400));
+    z-index: 9999;
+    transition: width 0.2s ease;
+  }
+  
+  /* Enhanced glassmorphism */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-effect-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
   /* Mobile optimizations */
   @media (max-width: 640px) {
     html {

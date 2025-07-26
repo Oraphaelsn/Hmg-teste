@@ -6,9 +6,9 @@ import { insertLeadSchema, type InsertLead } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Shield, Send } from "lucide-react";
+import { FloatingLabelInput } from "@/components/floating-labels-input";
+import { FloatingLabelSelect } from "@/components/floating-labels-select";
+import { Shield, Send, CheckCircle, Heart } from "lucide-react";
 import backgroundImage from "@assets/2021-09-22_1752972757556.webp";
 
 export default function ContactFormFixed() {
@@ -155,140 +155,131 @@ Aguardo retorno para agendar uma conversa. Obrigado(a)!
         </div>
 
         <div className="max-w-lg mx-auto">
-          <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl">
-            <div className="mb-6">
-              <Label htmlFor="name" className="text-slate-700 font-medium">
-                Nome Completo *
-              </Label>
-              <Input
-                id="name"
-                {...form.register("name")}
-                placeholder="Digite seu nome completo"
-                className="mt-2"
-              />
-              {form.formState.errors.name && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.name.message}</p>
-              )}
-            </div>
-
-            <div className="mb-6">
-              <Label htmlFor="phone" className="text-slate-700 font-medium">
-                Telefone/WhatsApp *
-              </Label>
-              <Input
-                id="phone"
-                {...form.register("phone")}
-                placeholder="(11) 99999-9999"
-                className="mt-2"
-                onChange={(e) => {
-                  const formatted = formatPhone(e.target.value);
-                  e.target.value = formatted;
-                  form.setValue("phone", formatted);
-                }}
-              />
-              {form.formState.errors.phone && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.phone.message}</p>
-              )}
-            </div>
-
-            <div className="mb-6">
-              <Label htmlFor="treatment" className="text-slate-700 font-medium">
-                Tipo de Tratamento
-              </Label>
-              <select
-                id="treatment"
-                {...form.register("treatment")}
-                className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2c744c] focus:border-transparent"
-              >
-                <option value="">Selecione uma opção</option>
-                <option value="saude-mental">Saúde Mental</option>
-                <option value="dependencia-quimica">Dependência Química</option>
-                <option value="ambos">Ambos</option>
-                <option value="nao-sei">Não sei qual preciso</option>
-              </select>
-              {form.formState.errors.treatment && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.treatment.message}</p>
-              )}
-            </div>
-
-            <div className="mb-6">
-              <Label htmlFor="insurance" className="text-slate-700 font-medium">
-                Convênio/Plano de Saúde
-              </Label>
-              <select
-                id="insurance"
-                {...form.register("insurance")}
-                className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2c744c] focus:border-transparent"
-              >
-                <option value="">Selecione seu convênio</option>
-                <option value="vivest">Vivest Funcesp</option>
-                <option value="vidatop">Vida Top Saúde</option>
-                <option value="unimed">Unimed</option>
-                <option value="sulamerica">SulAmérica</option>
-                <option value="saude-caixa">Saúde Caixa</option>
-                <option value="santa-casa">Santa Casa Saúde Piracicaba</option>
-                <option value="postal-saude">Postal Saúde</option>
-                <option value="leader">Leader Saúde</option>
-                <option value="mediservice">MediService</option>
-                <option value="hapvida">Hapvida</option>
-                <option value="nossa-senhora">Nossa Senhora Intermédica</option>
-                <option value="gocare">GoCare Saúde</option>
-                <option value="geap">GEAP Saúde</option>
-                <option value="gama">GAMA Saúde</option>
-                <option value="fusex">FUSEX</option>
-                <option value="funserv">FUNSERV</option>
-                <option value="assefaz">Fundação ASSEFAZ</option>
-                <option value="economus">Economus</option>
-                <option value="cassi">CASSI</option>
-                <option value="bradesco">Bradesco Saúde</option>
-                <option value="biocentro">Biocentro</option>
-                <option value="apas">APAS Saúde</option>
-                <option value="amil">Amil</option>
-                <option value="amhemered">AMHEMED</option>
-                <option value="mais-saude">Mais Saúde</option>
-                <option value="particular">Particular</option>
-                <option value="outro">Outro</option>
-              </select>
-              {form.formState.errors.insurance && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.insurance.message}</p>
-              )}
-            </div>
-
-            <Button 
-              type="submit" 
-              className="relative w-full bg-gradient-to-r from-[#2c744c] to-[#1e5233] hover:from-[#1e5233] hover:to-[#2c744c] text-white font-varela font-black py-5 px-8 h-auto text-lg rounded-full transform hover:scale-110 transition-all duration-500 shadow-xl shadow-[#2c744c]/30 hover:shadow-2xl hover:shadow-[#2c744c]/60 group overflow-hidden"
-              disabled={submitLead.isPending}
-            >
-              {/* Pulse animation background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full animate-pulse"></div>
-              
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              
-              <div className="relative flex items-center justify-center">
-                <div className="bg-white/20 p-1 rounded-full mr-3 group-hover:bg-white/30 transition-colors duration-300">
-                  <Send className="text-white" size={20} />
+          <div className="bg-white/95 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border border-white/20">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 mb-4 fade-in-scale">
+                  <Heart className="w-8 h-8 text-white" />
                 </div>
-                <span className="tracking-wide">{submitLead.isPending ? "Enviando..." : "Solicitar Atendimento"}</span>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Formulário de Contato</h3>
+                <p className="text-gray-600 text-sm">Preencha os dados abaixo para solicitar atendimento</p>
               </div>
-            </Button>
 
-            <div className="mt-6 text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Shield className="text-secondary mr-2" size={20} />
-                <span className="text-slate-600 font-medium">100% Confidencial</span>
+              <div className="space-y-6">
+                <FloatingLabelInput
+                  label="Nome Completo"
+                  {...form.register("name")}
+                  error={form.formState.errors.name?.message}
+                  className="slide-in-up"
+                />
+
+                <FloatingLabelInput
+                  label="Telefone/WhatsApp"
+                  {...form.register("phone")}
+                  placeholder="(11) 99999-9999"
+                  error={form.formState.errors.phone?.message}
+                  className="slide-in-up"
+                  onChange={(e) => {
+                    const formatted = formatPhone(e.target.value);
+                    e.target.value = formatted;
+                    form.setValue("phone", formatted);
+                  }}
+                />
+
+                <FloatingLabelSelect
+                  label="Tipo de Tratamento"
+                  {...form.register("treatment")}
+                  error={form.formState.errors.treatment?.message}
+                  className="slide-in-up"
+                  options={[
+                    { value: "saude-mental", label: "Saúde Mental" },
+                    { value: "dependencia-quimica", label: "Dependência Química" },
+                    { value: "ambos", label: "Ambos" },
+                    { value: "nao-sei", label: "Não sei qual preciso" }
+                  ]}
+                />
+
+                <FloatingLabelSelect
+                  label="Convênio/Plano de Saúde"
+                  {...form.register("insurance")}
+                  error={form.formState.errors.insurance?.message}
+                  className="slide-in-up"
+                  options={[
+                    { value: "vivest", label: "Vivest Funcesp" },
+                    { value: "vidatop", label: "Vida Top Saúde" },
+                    { value: "unimed", label: "Unimed" },
+                    { value: "sulamerica", label: "SulAmérica" },
+                    { value: "saude-caixa", label: "Saúde Caixa" },
+                    { value: "santa-casa", label: "Santa Casa Saúde Piracicaba" },
+                    { value: "postal-saude", label: "Postal Saúde" },
+                    { value: "leader", label: "Leader Saúde" },
+                    { value: "mediservice", label: "MediService" },
+                    { value: "hapvida", label: "Hapvida" },
+                    { value: "nossa-senhora", label: "Nossa Senhora Intermédica" },
+                    { value: "gocare", label: "GoCare Saúde" },
+                    { value: "geap", label: "GEAP Saúde" },
+                    { value: "gama", label: "GAMA Saúde" },
+                    { value: "fusex", label: "FUSEX" },
+                    { value: "funserv", label: "FUNSERV" },
+                    { value: "assefaz", label: "Fundação ASSEFAZ" },
+                    { value: "economus", label: "Economus" },
+                    { value: "cassi", label: "CASSI" },
+                    { value: "bradesco", label: "Bradesco Saúde" },
+                    { value: "biocentro", label: "Biocentro" },
+                    { value: "apas", label: "APAS Saúde" },
+                    { value: "amil", label: "Amil" },
+                    { value: "amhemered", label: "AMHEMED" },
+                    { value: "mais-saude", label: "Mais Saúde" },
+                    { value: "particular", label: "Particular" },
+                    { value: "outro", label: "Outro" }
+                  ]}
+                />
               </div>
-              <p className="text-slate-500 text-sm">
-                Suas informações estão protegidas com total confidencialidade. 
-                Entraremos em contato em até 2 horas.
-              </p>
-            </div>
-          </form>
+
+              <Button 
+                type="submit" 
+                className="relative w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-4 px-8 h-auto text-lg rounded-xl transform hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/40 group overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
+                disabled={submitLead.isPending}
+              >
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100"></div>
+                
+                <div className="relative flex items-center justify-center space-x-3">
+                  {submitLead.isPending ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Enviando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Solicitar Atendimento</span>
+                    </>
+                  )}
+                </div>
+              </Button>
+
+              <div className="mt-6 text-center space-y-3">
+                <div className="flex items-center justify-center space-x-2">
+                  <Shield className="w-5 h-5 text-primary-600" />
+                  <span className="text-gray-700 font-medium text-sm">100% Confidencial e Seguro</span>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Suas informações estão protegidas. Nossa equipe entrará em contato em até 2 horas.
+                </p>
+              </div>
+            </form>
+          </div>
 
           {isSubmitted && (
-            <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
-              <p className="text-green-800 font-medium">
-                Obrigado! Sua solicitação foi enviada com sucesso.
+            <div className="mt-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl text-center shadow-lg fade-in-scale">
+              <div className="flex items-center justify-center mb-3">
+                <CheckCircle className="w-8 h-8 text-green-600 mr-2" />
+                <h4 className="text-lg font-semibold text-green-800">Solicitação Enviada!</h4>
+              </div>
+              <p className="text-green-700 text-sm leading-relaxed">
+                Obrigado! Sua solicitação foi enviada com sucesso. 
+                <br />Nossa equipe entrará em contato em breve.
               </p>
             </div>
           )}
