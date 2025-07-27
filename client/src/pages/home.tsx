@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import ScrollProgress from "@/components/scroll-progress";
 import { AnimationConsistency } from "@/components/consistency-improvements";
 import { SEOHead, seoConfigs, medicalStructuredData } from "@/components/seo-head";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <ContactFormFixed />
       <WhatsappFloat />
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }
